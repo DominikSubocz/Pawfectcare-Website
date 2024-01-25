@@ -1,0 +1,415 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+body, button, input, textarea, select {
+  font-family: "Arial", "Helvetica", sans-serif;
+  font-size: 16px;
+}
+
+.button {
+  background-color: orange;
+  color: black;
+  display: inline-block;
+  font-weight: bold;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+input.button {
+  border: 0;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: orangered;
+  color: white;
+}
+
+.danger {
+  background-color: #c11537;
+  color: white;
+}
+
+.danger:hover {
+  background-color: #920925;
+  color: white;
+}
+
+.button-form {
+  margin-bottom: 16px;
+}
+
+.button-form .button {
+  text-align: center;
+  width: 100%;
+}
+
+/* HEADER, NAVIGATION, FOOTER */
+.page-header {
+  background-color: orange;
+}
+
+.page-footer {
+  border-top: 2px solid black;
+  margin-top: 32px;
+  text-align: center;
+}
+
+.page-header, .page-footer {
+  padding: 16px;
+}
+
+.content-wrapper {
+  margin: auto;
+  width: 100%;
+}
+
+.main-content {
+  padding: 16px;
+}
+
+.mobile-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-button {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  outline: 0;
+  width: 100px;
+}
+
+.nav-button img {
+  width: 100%;
+}
+
+.page-navigation {
+  display: none;
+}
+
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.nav-links a {
+  color: black;
+  display: block;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 16px;
+  padding: 8px;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  background-color: orangered;
+  color: white;
+}
+
+/* BOOK LIST */
+.book-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.book-container {
+  margin-top: 32px;
+}
+
+.book-card {
+  color: black;
+  flex: 1;
+  margin: 0 auto 32px;
+  max-width: 300px;
+  padding-top: 16px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.book-card:hover {
+  background-color: #eee;
+}
+
+.book-image {
+  width: 100%;
+  object-fit: cover;
+}
+
+.book-list .book-image {
+  height: 350px;
+  width: 225px;
+}
+
+.book-price {
+  color: crimson;
+  font-weight: bold;
+}
+
+/* BOOK TABLE */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 4px;
+}
+
+.center {
+  text-align: center;
+}
+
+.image-cell img {
+  display: block;
+  margin: auto;
+  width: 100%;
+}
+
+.buttons-cell a {
+  display: block;
+  margin: 32px auto;
+  text-align: center;
+}
+
+.basket-controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+}
+
+.basket-controls .button-form {
+  margin-bottom: 0;
+}
+
+/* LOGIN / REGISTER FORMS */
+input:not(input.button) {
+  margin-bottom: 16px;
+  padding: 8px;
+  width: 100%;
+}
+
+.form .button {
+  border: 0;
+  cursor: pointer;
+  width: 100%;
+}
+
+.error {
+  background-color: crimson;
+  color: white;
+  font-weight: bold;
+  padding: 8px;
+  text-align: center;
+}
+
+/* ORDERS */
+.order-group {
+  border: 2px solid black;
+  margin-bottom: 32px;
+}
+
+.order-group-head {
+  border-bottom: 1px solid black;
+  padding: 4px 16px;
+}
+
+.order-group-meta {
+  font-size: 18px;
+}
+
+.order-group-row {
+  padding: 16px;
+  text-align: center;
+}
+
+.order-image {
+  margin: 0 auto 16px;
+  max-width: 60%;
+  object-fit: cover;
+}
+
+/* FORM */
+.inline-inputs {
+  display: flex;
+  gap: 8px;
+}
+
+.inline-inputs input {
+  flex: 1;
+}
+
+/* MOBILE AND TABLET */
+@media screen and (max-width: 949px) {
+  /* 
+    Lets us show elements that may be hidden 
+    (i.e., display: none;) on mobile by default, 
+    such as the page navigation.
+  */
+  .show-on-mobile {
+    display: block;
+  }
+
+  /* DIALOGUE BUTTONS */
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+  }
+
+  .button-group > .button {
+    flex: 1;
+    text-align: center;
+  }
+
+  /* TABLE */
+  .buttons-cell {
+    width: 20%;
+  }
+
+  .basket-controls a {
+    padding: 12px 36px;
+  }
+}
+
+/* DESKTOP */
+@media screen and (min-width: 950px) {
+  .button-form .button {
+    text-align: center;
+    max-width: 250px;
+  }
+
+  /* HEADER, NAVIGATION, FOOTER */
+  .content-wrapper {
+    width: 900px;
+  }
+
+  .main-content {
+    padding: 0;
+  }
+
+  .desktop-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nav-button {
+    display: none;
+  }
+
+  .page-navigation {
+    display: block;
+  }
+
+  .nav-links {
+    display: flex;
+  }
+
+  .nav-links a {
+    margin-top: 0;
+    margin-left: 16px;
+  }
+
+  /* BOOK LIST */
+  .book-card {
+    max-width: 250px;
+  }
+
+  .book-image {
+    height: 300px;
+    width: 200px;
+  }
+
+  /* BOOK */
+  .book-container {
+    display: flex;
+    gap: 16px;
+  }
+
+  /* TABLES */
+  th,
+  td {
+    padding: 8px;
+  }
+
+  .image-cell {
+    width: 250px;
+  }
+
+  .buttons-cell {
+    width: 100px;
+  }
+
+  .buttons-cell a {
+    margin: 16px auto;
+  }
+
+  /* LOGIN / REGISTER FORMS */
+
+  /* 
+    On desktop, make form buttons smaller and 
+    centred, but only for buttons that are 
+    immediate descendents of a form.
+  */
+  .form > .button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
+  .inline-inputs input {
+    width: 100px;
+  }
+
+  .form-row {
+    display: flex;
+    gap: 32px;
+    justify-content: space-between;
+  }
+
+  .form-row div:last-of-type {
+    flex: 1;
+  }
+
+  /* ORDERS */
+  .order-group-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .order-group-meta {
+    display: flex;
+    gap: 32px;
+  }
+
+  .order-price {
+    order: 1;
+  }
+
+  .order-group-row {
+    display: flex;
+    align-items: center;
+    text-align: left;
+  }
+
+  .order-image {
+    height: 280px;
+    width: 300px;
+  }
+}
