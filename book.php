@@ -8,16 +8,16 @@ if(!isset($_GET["id"]) || !is_numeric($_GET["id"])) {
 
 }
 
-$book = Book::getBook($_GET["id"]);
+$pet = Book::getPet($_GET["id"]);
 
 $pageTitle = "Book not found";
 
 if(!empty($book)){
-    $pageTitle = $book["title"] . " - " . $book["author"];
+    $pageTitle = $pet["title"] . " - " . $pet["author"];
 }
 
 Components::pageHeader($pageTitle, ["style"], ["mobile-nav"]);
-Components::singleBook($book);
+Components::singleBook($pet);
 Components::pageFooter();
 
 ?>

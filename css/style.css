@@ -49,19 +49,18 @@ input.button {
   width: 100%;
 }
 
+
+
 /* HEADER, NAVIGATION, FOOTER */
-.page-header {
-  background-color: orange;
+
+.header-content-top{
+  background-color: #00A385;
 }
 
 .page-footer {
   border-top: 2px solid black;
   margin-top: 32px;
   text-align: center;
-}
-
-.page-header, .page-footer {
-  padding: 16px;
 }
 
 .content-wrapper {
@@ -153,8 +152,7 @@ input.button {
   width: 225px;
 }
 
-.book-price {
-  color: crimson;
+.pet-age {
   font-weight: bold;
 }
 
@@ -293,6 +291,13 @@ input:not(input.button) {
   }
 
   /* HEADER, NAVIGATION, FOOTER */
+
+  .header-content-top{
+
+    height: 20vw;
+
+  }
+  
   .content-wrapper {
     width: 900px;
   }
@@ -412,4 +417,5 @@ input:not(input.button) {
     height: 280px;
     width: 300px;
   }
+
 }

@@ -5,30 +5,30 @@ require_once("utils.php");
 
 class Book{
 
-    public static function getAllBooks()
+    public static function getAllPets()
     {
         $conn = Connection::connect();
 
-        $stmt = $conn->prepare(SQL::$getAllBooks);
+        $stmt = $conn->prepare(SQL::$getAllPets);
         $stmt-> execute();
-        $books = $stmt-> fetchAll();
+        $pets = $stmt-> fetchAll();
 
         $conn = null;
 
-        return $books;
+        return $pets;
     }
 
-    public static function getBook($bookId)
+    public static function getPet($petId)
     {
         $conn = Connection::connect();
 
-        $stmt = $conn->prepare(SQL::$getBook);
-        $stmt->execute([$bookid]);
-        $book = $stms->fetch();
+        $stmt = $conn->prepare(SQL::$getPet);
+        $stmt->execute([$petId]);
+        $pet = $stms->fetch();
 
         $conn = null;
 
-        return $book;
+        return $pet;
     }
 
 }

@@ -10,15 +10,15 @@ class Components {
         require ("components/footer.php");   
     }
 
-    public static function allBooks($books){
+    public static function allPets($pets){
 
-        if(!empty($books)){
-            foreach($books as $book){
-                $bookId = Utils::escape($book["book_id"]);
-                $title = Utils::escape($book["title"]);
-                $author = Utils::escape($book["author"]);
-                $price = Utils::escape($book["price"]);
-                $filename = Utils::escape($book["filename"]);
+        if(!empty($pets)){
+            foreach($pets as $pet){
+                $petId = Utils::escape($pet["pet_id"]);
+                $name = Utils::escape($pet["name_"]);
+                $species = Utils::escape($pet["species"]);
+                $age = Utils::escape($pet["age"]);
+                $filename = Utils::escape($pet["filename"]);
 
                 require("components/book-card.php");
 
@@ -35,13 +35,13 @@ class Components {
 
     }
 
-    public static function singleBook($book){
-        if(!empty($book)){
-            $bookId = Utils::escape($book["book_id"]);
-            $title = Utils::escape($book["title"]);
-            $author = Utils::escape($book["author"]);
-            $price = Utils::escape($book["price"]);
-            $filename = Utils::escape($book["filename"]);
+    public static function singleBook($pet){
+        if(!empty($pet)){
+            $petId = Utils::escape($pet["pet_id"]);
+            $name = Utils::escape($pet["name"]);
+            $species = Utils::escape($pet["species"]);
+            $age = Utils::escape($pet["age"]);
+            $filename = Utils::escape($pet["filename"]);
 
             require("components/book-single.php");
         }
