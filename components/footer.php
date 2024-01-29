@@ -2,7 +2,7 @@
 
   <footer class="page-footer">
   <div class="footer-container">
-    <div class="footer-section-one">
+    <div class="footer-section-one footer-section">
       <img class="logo" src="images/logo.png" alt="Pawfect Care logo with green fox">
       <p> Pawfect Care - Nuturing Happy Tails, One Caring Step at a Time.
 
@@ -26,7 +26,7 @@
       </div>
       
     </div>
-    <div class="contact-info">
+    <div class="contact-info footer-section">
       <h3>Follow Us</h3> 
       <div class="social-container">
         <div class="social social-facebook">
@@ -48,7 +48,7 @@
       </ul>
 
     </div>
-    <div class="useful-websites">
+    <div class="useful-websites footer-section">
       <h3>Useful Websites</h3>
       <ul>
         <li>Petfinder (petfinder.com)</li>
@@ -58,7 +58,7 @@
         <li>Petful (petful.com)</li>
       </ul>
     </div>  
-    <div class="legal-info">
+    <div class="legal-info footer-section">
       <h3>Legal Information</h3>
       <ul>
         <li>Privacy Policy</li>
@@ -66,7 +66,7 @@
         <li>Disclaimer</li>
       </ul>
     </div>  
-    <div class="legal-info">
+    <div class="legal-info footer-section">
       <h3>Legal Information</h3>
       <ul>
         <li>Privacy Policy</li>
