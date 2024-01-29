@@ -24,7 +24,7 @@ class Book{
 
         $stmt = $conn->prepare(SQL::$getPet);
         $stmt->execute([$petId]);
-        $pet = $stms->fetch();
+        $pet = $stmt->fetch();
 
         $conn = null;
 

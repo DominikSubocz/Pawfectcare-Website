@@ -12,7 +12,7 @@ body, button, input, textarea, select {
 }
 
 .button {
-  background-color: orange;
+  background-color: #00A385;
   color: black;
   display: inline-block;
   font-weight: bold;
@@ -26,7 +26,7 @@ input.button {
 }
 
 .button:hover {
-  background-color: orangered;
+  background-color: #006855;
   color: white;
 }
 
@@ -41,7 +41,7 @@ input.button {
 }
 
 .button-form {
-  margin-bottom: 16px;
+  margin-top: 16px;
 }
 
 .button-form .button {
@@ -49,16 +49,34 @@ input.button {
   width: 100%;
 }
 
+.description{
+  color: #000;
+}
 
 
 /* HEADER, NAVIGATION, FOOTER */
 
-.header-content-top{
+
+.header-content{
   background-color: #00A385;
+  color: #fff;
+}
+
+.header-content-bot > h2,.header-content-bot > p{
+color: #fff;
+
+}
+
+.footer-container{
+  color: #fff;
+}
+
+.logo{
+  width: 5vw;
 }
 
 .page-footer {
-  border-top: 2px solid black;
+  background-color: #00A385;
   margin-top: 32px;
   text-align: center;
 }
@@ -124,6 +142,11 @@ input.button {
   gap: 16px;
 }
 
+.pet-list-container > h1{
+  text-align: center;
+  color: #00A385;
+}
+
 .book-container {
   margin-top: 32px;
 }
@@ -153,6 +176,7 @@ input.button {
 }
 
 .pet-age {
+  color:#000;
   font-weight: bold;
 }
 
@@ -294,13 +318,32 @@ input:not(input.button) {
 
   .header-content-top{
 
-    height: 20vw;
+    height: 15vw;
 
   }
+
+  .header-content-bot{
+    padding:0 0 0 10vw;
+  }
+
+  .header-content-bot > h2,p{
+    margin:0;
+    padding:0;
+  }
+
+  .header-content-bot > p{
+    padding:0.5vw 0 0 0;
+    font-size: 16px;
+  }
   
+  .header-content-bot > h2{
+    font-size: 48px;
+  }
+
   .content-wrapper {
     width: 900px;
   }
+  
 
   .main-content {
     padding: 0;
@@ -310,6 +353,7 @@ input:not(input.button) {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 1750px;
   }
   
   .nav-button {
@@ -329,6 +373,77 @@ input:not(input.button) {
     margin-left: 16px;
   }
 
+  .footer-container{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding:0 60px;
+  }
+
+  .page-footer >.footer-container > div > ul > li{
+    list-style: none;
+    padding:8px 0;
+  }
+
+  .page-footer >.footer-container > div > ul{
+    padding:0;
+  }
+
+  .page-footer > .footer-container > div{
+    text-align: left;
+  }
+
+  .footer-section-one{
+    text-align: left;
+  }
+
+  .footer-section-one > p{
+    text-align: left;
+  }
+
+  .footer-section-one > .logo{
+    margin-left:-15px;
+  }
+
+  .copyright, .footer-section-one > hr{
+    margin: 1vw 0;
+  }
+
+
+  .someContainer > div > a,  .someContainer > div > p{
+    margin:0 2vw;
+  }
+
+
+  .someContainer{
+    display: flex;
+    margin: 2vw 0;
+    justify-content: space-between;
+  }
+
+  .contact-info{
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .social-container{
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .social{
+    width: 100%;
+  }
+
+  .soc-icon{
+    width: 35%;
+  }
+
+
+
+
+
   /* BOOK LIST */
   .book-card {
     max-width: 250px;
@@ -343,7 +458,9 @@ input:not(input.button) {
   .book-container {
     display: flex;
     gap: 16px;
+    padding:100px 0;
   }
+
 
   /* TABLES */
   th,

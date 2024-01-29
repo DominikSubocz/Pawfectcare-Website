@@ -4,17 +4,13 @@
   <div class="book-info">
     <h2><?php echo $name; ?></h2>
 
-    <h3><?php echo $species; ?></h3>
+    <h3>Species: <?php echo $species; ?></h3>
 
-    <p class="book-age">£<?php echo $age; ?></p>
+    <p class="book-age">Age: <?php echo $age; ?> years old.</p>
 
-    <form
-      method="POST"
-      action="<?php echo $_SERVER["PHP_SELF"]; ?>?id=<?php echo $petId; ?>&action=add"
-      class="button-form"
-    >
-      <input class="button" value="Add to Basket">
-    </form>
+
+
+    <h2><?php echo $name; ?>'s story</h2>
 
     <p class="description">
       Lorem ipsum dolor, sit amet consectetur adipisicing elit.
@@ -24,5 +20,13 @@
       Perspiciatis repudiandae aliquid fuga voluptates ipsum aliquam
       nulla.
     </p>
+
+    <form
+      method="POST"
+      action="<?php echo $_SERVER["PHP_SELF"]; ?>?id=<?php echo $petId; ?>&action=add"
+      class="button-form"
+    >
+      <input class="button" value="Adopt <?php echo $name; ?>">  
+    </form>
   </div>
 </div>

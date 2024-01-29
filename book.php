@@ -12,11 +12,12 @@ $pet = Book::getPet($_GET["id"]);
 
 $pageTitle = "Book not found";
 
-if(!empty($book)){
-    $pageTitle = $pet["title"] . " - " . $pet["author"];
+if (!empty($pet)) {
+    $pageTitle = $pet["name_"] . " - " . $pet["species"];
 }
 
-Components::pageHeader($pageTitle, ["style"], ["mobile-nav"]);
+
+Components::pageHeaderAlt($pageTitle, ["style"], ["mobile-nav"]);
 Components::singleBook($pet);
 Components::pageFooter();
 

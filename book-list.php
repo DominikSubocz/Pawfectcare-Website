@@ -7,15 +7,17 @@ Components::pageHeader("All Books", ["style"], ["mobile-nav"]);
 
 ?>
 
-<h2>Book List</h2>
-
-<div class="book-list">
-    <?php
-
-    $pets = Book::getAllPets();
-    Components::allPets($pets);
-
-    ?>
+<div class="pet-list-container">
+    <h1>Find a Pet</h1>
+    
+    <div class="book-list">
+        <?php
+    
+        $pets = Book::getAllPets();
+        Components::allPets($pets);
+    
+        ?>
+    </div>
 </div>
 
 <?php

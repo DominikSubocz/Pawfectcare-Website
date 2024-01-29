@@ -25,7 +25,7 @@
 </head>
 <body>
   <header class="page-header">
-    <div class="header-content-top header-content">
+  <div class="header-content-top header-content">
       <div class="content-wrapper desktop-header-row">
         <div class="mobile-top">
           <img class="logo" src="images/logo.png" alt="Pawfect Care logo with green fox">
@@ -55,18 +55,6 @@
         </nav>
       </div>
     </div>
-    <div class="waves">
-
-    <div class="header-content-bot header-content">
-
-            <h2> Pawfect Care Adoption </h2>
-
-            <p> Find your furry friend: Discover joy through pet adoption today. </p>
-
-
-    </div>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#00A385" fill-opacity="1" d="M0,320L60,293.3C120,267,240,213,360,186.7C480,160,600,160,720,170.7C840,181,960,203,1080,197.3C1200,192,1320,160,1380,144L1440,128L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>    </div>
-
   </header>
 
   <main class="content-wrapper main-content">

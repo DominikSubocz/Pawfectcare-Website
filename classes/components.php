@@ -6,6 +6,10 @@ class Components {
         require ("components/header.php");   
     }
 
+    public static function pageHeaderAlt($pageTittle, $stylesheets, $scripts){
+        require ("components/header-alt.php");   
+    }
+
     public static function pageFooter(){
         require ("components/footer.php");   
     }
@@ -38,7 +42,7 @@ class Components {
     public static function singleBook($pet){
         if(!empty($pet)){
             $petId = Utils::escape($pet["pet_id"]);
-            $name = Utils::escape($pet["name"]);
+            $name = Utils::escape($pet["name_"]);
             $species = Utils::escape($pet["species"]);
             $age = Utils::escape($pet["age"]);
             $filename = Utils::escape($pet["filename"]);
