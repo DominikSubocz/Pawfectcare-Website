@@ -2,14 +2,13 @@
 
   <footer class="page-footer">
   <div class="footer-container">
-    <div class="footer-section-one footer-section">
-      <img class="logo" src="images/logo.png" alt="Pawfect Care logo with green fox">
-      <p> Pawfect Care - Nuturing Happy Tails, One Caring Step at a Time.
-
-      <hr>
-      <div class="copyright">
-        <p>Copyright &copy;<?php echo date("Y"); ?></p>
-      </div>
+<div class="footer-section-one footer-section">
+  <img class="logo" src="images/logo.png" alt="Pawfect Care logo with green fox">
+  <p> Pawfect Care - Nurturing Happy Tails, One Caring Step at a Time.</p>
+  <hr>
+  <div class="copyright">
+    <p>Copyright &copy;<?php echo date("Y"); ?></p>
+  </div>
 
       <div class="someContainer">
         <!-- <div><a href="login.php">Privacy Policy</a></div>
@@ -53,7 +52,7 @@
       <ul>
         <li>Petfinder (petfinder.com)</li>
         <li>ASPCA Pet Health Insurance</li>
-        <li>Fear Free Pets</li>
+        <li><a href="#">Fear Free Pets</a></li>
         <li>Dog Food Advisor</li>
         <li>Petful (petful.com)</li>
       </ul>
