@@ -4,7 +4,7 @@ require("classes/utils.php");
 require("classes/book.php");
 
 if(!isset($_GET["id"]) || !is_numeric($_GET["id"])) {
-    header("Location: " .utils::$projectFilePath . "/book-list.php");
+    header("Location: " . utils::$projectFilePath . "/book-list.php");
 
 }
 

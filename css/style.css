@@ -19,6 +19,7 @@ body, button, input, textarea, select {
   font-size: 16px;
 }
 
+
 .button {
   background-color: #00A385;
   color: black;
@@ -137,6 +138,21 @@ color: #fff;
   background-color: orangered;
   color: white;
 }
+
+.footer-container li{
+  list-style: none;
+  color: #fff;
+}
+
+.footer-container p{
+  color: #fff;
+}
+
+.page-footer h3{
+  color: #fff;
+}
+
+
 
 /* BOOK LIST */
 .book-list {
@@ -310,14 +326,7 @@ input:not(input.button) {
     padding: 12px 36px;
   }
 
-  .footer-container{
-    display: flex;
-    flex-direction: column;
-  }
 
-  .footer-container > .footer-section-one > .logo{
-    width:35%;
-  }
 
   .page-header > .header-content > .desktop-header-row >.mobile-top > div {
     display: flex;
@@ -360,8 +369,13 @@ input:not(input.button) {
     padding: 2% 10%;
   }
 
-  .page-footer > .footer-container > .footer-section-one > .logo{
-    width: 75px;
+  .footer-container{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .page-footer .logo{
+    width: 125px;
   }
 
   .social-container{
@@ -377,12 +391,12 @@ input:not(input.button) {
     width: 35%;
   }
 
-  .footer-container > .footer-section-one > hr{
+  .footer-container hr{
     margin:25px 0;
   }
 
   .footer-section-one {
-    margin-bottom:55px;
+    margin-bottom:25px;
   }
 
   .copyright{
@@ -390,13 +404,7 @@ input:not(input.button) {
   }
 
   
-  .someContainer{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    gap: 24px;
-    flex-wrap: wrap;
-  }
+
 
   .contact-info{
     padding:0 50px;
@@ -506,61 +514,37 @@ input:not(input.button) {
 
   }
 
-  .footer-container > .footer-section-one > .logo{
+  .copyright{
+    margin:  0 0 25px 0;
+  }
+
+  .footer-container .logo{
     width:125px;
   }
 
 
-  .page-footer >.footer-container > div > ul > li{
-    list-style: none;
+  .footer-container li{
     padding:8px 0;
     font-size: 14px;
   }
 
-  .page-footer >.footer-container > div > div > div{
-    font-size: 14px;
+  .footer-container p{
+    font-size:14px;
   }
 
-  .footer-container > .footer-section-one > p{
-    font-size: 14px;
-  }
-
-  .page-footer >.footer-container > div > h3{
+  .page-footer h3{
     font-size: 24px;
-  }
-
-
-
-  .page-footer > .footer-container > div{
-    text-align: left;
   }
 
   .footer-section-one{
     text-align: left;
   }
 
-  .footer-section-one > p{
-    text-align: left;
-    font-size: 1.25vw;
-  }
-
-
-
-
-  .copyright, .footer-section-one > hr{
-    margin: 1vw 0;
-  }
-
-
-  .someContainer > div > a,  .someContainer > div > p{
-    margin:0 2vw;
-  }
-
-
-  .someContainer{
+  .footer-section-one ul{
     display: flex;
     margin: 2vw 0;
-    justify-content: space-between;
+    gap:16px;
+    justify-content: space-around;
   }
 
   .contact-info{
