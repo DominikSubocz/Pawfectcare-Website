@@ -25,11 +25,18 @@
 </head>
 <body>
   <header class="page-header">
-  <div class="header-content-top header-content">
+    <div class="header-content-top header-content">
       <div class="content-wrapper desktop-header-row">
         <div class="mobile-top">
-          <img class="logo" src="images/logo.png" alt="Pawfect Care logo with green fox">
-          <h1 class="page-title">PawFect Care</h1>
+          <div class="logo-mobile">
+            <img class="logo" src="images/logo-mobile.png" alt="Pawfect Care logo with green fox">
+            <h1 class="page-title">PawFect Care</h1>
+          </div>
+
+          <div class="logo-desktop">
+            <img class="logo" src="images/logo.png" alt="Pawfect Care logo with green fox">
+            <h1 class="page-title">PawFect Care</h1>
+          </div>
           <button class="nav-button" id="nav-button">
             <img src="icons/nav-button.png">
           </button>
@@ -55,6 +62,16 @@
         </nav>
       </div>
     </div>
+
+    <div class="header-content-bot header-content">
+
+            <h2> Pawfect Care Adoption </h2>
+
+            <p> Find your furry friend: Discover joy through pet adoption today. </p>
+
+
+    </div>
+
   </header>
 
   <main class="content-wrapper main-content">

@@ -28,8 +28,15 @@
     <div class="header-content-top header-content">
       <div class="content-wrapper desktop-header-row">
         <div class="mobile-top">
-          <img class="logo" src="images/logo.png" alt="Pawfect Care logo with green fox">
-          <h1 class="page-title">PawFect Care</h1>
+          <div class="logo-mobile">
+            <img class="logo" src="images/logo-mobile.png" alt="Pawfect Care logo with green fox">
+            <h1 class="page-title">PawFect Care</h1>
+          </div>
+
+          <div class="logo-desktop">
+            <img class="logo" src="images/logo.png" alt="Pawfect Care logo with green fox">
+            <h1 class="page-title">PawFect Care</h1>
+          </div>
           <button class="nav-button" id="nav-button">
             <img src="icons/nav-button.png">
           </button>

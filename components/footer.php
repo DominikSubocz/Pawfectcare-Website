@@ -13,7 +13,6 @@
 
       <div class="someContainer">
         <!-- <div><a href="login.php">Privacy Policy</a></div>
-        <div><a href="login.php">Terms of Use</a></div>
         <div><a href="login.php">Sales and Refundsy</a></div>
         <div><a href="login.php">Legal</a></div>
         <div><a href="login.php">Site Map</a></div> -->
@@ -41,6 +40,7 @@
 
 
     </div>
+    <h3>Conact Us</h3> 
       <ul>
         <li>Email: pawfectcaresupport@gmail.com</li>
         <li>Mobile: +44 0172 4280 1673</li>
