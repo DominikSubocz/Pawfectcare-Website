@@ -54,4 +54,16 @@ class Components {
             require("components/no-single-book-found.php");
         }
     }
+
+    public static function test($test){
+        if(!empty($test)){
+            $storyText = Utils::escape($test["story_text"]);
+
+            require("components/book-single.php");
+        }
+
+        else{
+            require("components/no-single-book-found.php");
+        }
+    }
 }

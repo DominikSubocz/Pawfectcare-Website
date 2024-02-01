@@ -13,12 +13,7 @@
     <h2><?php echo $name; ?>'s story</h2>
 
     <p class="description">
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-      Vero illo et sit aliquam quae dolore tempore debitis alias
-      explicabo. Nostrum, eum amet sed necessitatibus harum quae
-      reprehenderit, tempora minima voluptatem aliquam ducimus!
-      Perspiciatis repudiandae aliquid fuga voluptates ipsum aliquam
-      nulla.
+      <p><?php echo $storyText?></p>
     </p>
 
     <form

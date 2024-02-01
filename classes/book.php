@@ -31,6 +31,19 @@ class Book{
         return $pet;
     }
 
+    public static function getStory($petId)
+    {
+        $conn = Connection::connect();
+
+        $stmt = $conn->prepare(SQL::$getStory);
+        $stmt->execute([$petId]);
+        $pet = $stmt->fetch();
+
+        $conn = null;
+
+        return $pet;
+    }
+
     public static function validate(){
         if (Utils::postValuesAreEmpty(["title", "author", "price"])){
             return "<p class='error'>ERROR: One or more inputs are empty</p>";
