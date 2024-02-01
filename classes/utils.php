@@ -1,7 +1,7 @@
 <?php
 
 class Utils {
-  public static $projectFilePath = "http://localhost/bookstore";
+  public static $projectFilePath = "http://localhost/Pawfectcare-Website/";
   public static $defaultBookCover = "default.png";
 
   /**

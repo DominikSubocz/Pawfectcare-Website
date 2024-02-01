@@ -258,6 +258,14 @@ input:not(input.button) {
   text-align: center;
 }
 
+.register-success-content{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+
 /* ORDERS */
 .order-group {
   border: 2px solid black;
@@ -388,7 +396,7 @@ input:not(input.button) {
   }
 
   .soc-icon{
-    width: 35%;
+    width: 35px
   }
 
   .footer-container hr{
@@ -413,6 +421,12 @@ input:not(input.button) {
 
   .social-container{
     margin-bottom:50px;
+  }
+
+  /* Registration */
+
+  .animated-tick-icon{
+    width: 125px;
   }
 
 }
@@ -506,11 +520,9 @@ input:not(input.button) {
   .footer-container{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     flex-direction: row;
-    padding:0 60px;
-    width: 100vw;
-    gap: 16px;
+    column-gap: 110px;
 
   }
 

@@ -91,7 +91,7 @@ Components::pageHeader("Login", ["style"], ["mobile-nav"]);
         ?>"
     >
     <label>Password</label>
-    <input type="password" name="password">
+    <input type="password" name="passwordOne">
 
     <label>Password (retype)</label>
     <input type="password" name="passwordTwo">
