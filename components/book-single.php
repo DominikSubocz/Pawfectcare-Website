@@ -13,7 +13,7 @@
     <h2><?php echo $name; ?>'s story</h2>
 
     <p class="description">
-      <p><?php echo $storyText?></p>
+      <p><?php echo $petStory?></p>
     </p>
 
     <form

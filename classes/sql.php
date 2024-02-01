@@ -9,8 +9,8 @@ class SQL {
    * The ? indicates a placeholder value which we will supply 
    * when executing the statement.
    */
-  public static $getPet = "SELECT * FROM petsinfo WHERE pet_id = ?";
-  public static $getStory = "SELECT * FROM petstories WHERE pet_id = ?";
+  // public static $getPet = "SELECT * FROM petsinfo WHERE pet_id = ?";
+  public static $getPet = "SELECT p.*, s.story_text FROM petsinfo p LEFT JOIN petstories s ON p.pet_id = s.pet_id WHERE p.pet_id = ?";
   public static $getUser = "SELECT user_id, username, password, user_role FROM users WHERE username = ?";
   public static $createUser = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
   public static $createBook = "INSERT INTO petsinfo (name_, species, age, filename) VALUES (?,?,?,?)";

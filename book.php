@@ -10,7 +10,7 @@ if(!isset($_GET["id"]) || !is_numeric($_GET["id"])) {
 
 $pet = Book::getPet($_GET["id"]);
 
-$test = Book::getStory($_GET["id"]);
+
 
 $pageTitle = "Book not found";
 
@@ -21,7 +21,6 @@ if (!empty($pet)) {
 
 Components::pageHeaderAlt($pageTitle, ["style"], ["mobile-nav"]);
 Components::singleBook($pet);
-Components::test($test);
 Components::pageFooter();
 
 ?>
