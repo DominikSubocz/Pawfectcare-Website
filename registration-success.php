@@ -5,9 +5,9 @@ session_start();
 require("classes/components.php");
 require("classes/utils.php");
 
-// if(!isset($_SESSION["justRegistered"])){
-//     header("Location: " . Utils::$projectFilePath . "/book-list.php");
-// }
+if(!isset($_SESSION["justRegistered"])){
+    header("Location: " . Utils::$projectFilePath . "/book-list.php");
+}
 
 unset($_SESSION["justRegistered"]);
 

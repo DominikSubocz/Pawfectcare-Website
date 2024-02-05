@@ -22,5 +22,20 @@ class SQL {
       SET name_ = ?, species = ?, age = ?
       WHERE pet_id = ?";
   public static $deleteBook = "DELETE FROM petsinfo WHERE pet_id = ?";
+  public static $createOrder = "INSERT INTO orders
+      (order_id, book_id, user_id, quantity, order_date, address_line, postcode) VALUES
+      (?, ?, ?, ?, ?, ?, ?)";
+  public static $getMaxOrderID = "SELECT MAX(order_id) FROM orders";
+  public static $getPostcode = "SELECT * FROM postcodes WHERE postcode = ?";
+  public static $createPostcode = "INSERT INTO postcodes (postcode, town, county) VALUES (?, ?, ?,)";
+  public static $getUserOrders = "SELECT * FROM orders INNER JOIN petsinfo
+    ON orders.pet_id = petsinfo.pet_id
+    WHERE user_id = ?
+    ORDER BY orders.order_date DESC";
 
+    public static $getTotalOrderPrice = "SELECT SUM(orders.quantity * books.price)
+      FROM orders
+      INNER JOIN books
+      ON orders.book_id = books.book_id
+      WHERE orders.user_id = ? AND orders.order_id = ?";
 }
