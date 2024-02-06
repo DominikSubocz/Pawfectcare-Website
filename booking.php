@@ -1,32 +1,15 @@
 <?php
 require("classes/components.php");
 
-// Handle booking submission if the form is submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Retrieve booking data from the form
-    $userId = $_POST["user_id"];
-    // Extract more booking data as needed
-
-    // Perform validation and database insertion here
-    // You can use your existing PHP logic for handling bookings
-}
-
 Components::pageHeader("Book Appointment", ["style"], ["mobile-nav"]);
 ?>
 
-<!-- Include FullCalendar library -->
-<script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js'></script>
+<!-- Include jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    var calendarEl = document.getElementById('calendar');
-    var calendar = new FullCalendar.Calendar(calendarEl, {
-      initialView: 'dayGridMonth',
-      // Customize your calendar options as needed
-    });
-    calendar.render();
-  });
-</script>
+<!-- Include jQuery UI styles and scripts -->
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 <div id="main-content">
     <div id="calendar">
@@ -36,12 +19,18 @@ Components::pageHeader("Book Appointment", ["style"], ["mobile-nav"]);
     <div id="booking-form">
         <!-- Booking form component goes here -->
         <form method="POST" action="booking.php">
-            <!-- Input fields for user selections -->
-            <label for="user_id">User ID:</label>
-            <input type="text" name="user_id" id="user_id">
-            <!-- Add more input fields for vet selection, date, and time -->
+          <label for="bookingDate">Select Date:</label>
+          <input type="text" id="bookingDate" name="bookingDate">
 
+          <label for="bookingTime">Select Time:</label>
+          <input type="text" id="bookingTime" name="bookingTime">
             <input type="submit" value="Book Now">
         </form>
     </div>
 </div>
+
+<?php
+
+Components::pageFooter();
+
+?>
