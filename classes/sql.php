@@ -33,9 +33,11 @@ class SQL {
     WHERE user_id = ?
     ORDER BY orders.order_date DESC";
 
-    public static $getTotalOrderPrice = "SELECT SUM(orders.quantity * books.price)
+  public static $getTotalOrderPrice = "SELECT SUM(orders.quantity * books.price)
       FROM orders
       INNER JOIN books
       ON orders.book_id = books.book_id
       WHERE orders.user_id = ? AND orders.order_id = ?";
+  public static $createBooking = "INSERT INTO bookings (booking_id, user_id, vet_id, booking_date, booking_time) VALUES (?,?,?,?,?)";
+     
 }

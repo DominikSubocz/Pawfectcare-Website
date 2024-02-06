@@ -21,7 +21,7 @@
       action="<?php echo $_SERVER["PHP_SELF"]; ?>?id=<?php echo $petId; ?>&action=add"
       class="button-form"
     >
-      <input class="button" value="Adopt <?php echo $name; ?>">  
+      <input class="button" type="submit" name="addToBasketButton" value="Adopt <?php echo $name; ?>">  
     </form>
   </div>
 </div>

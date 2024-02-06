@@ -42,24 +42,29 @@
           </button>
         </div>
         <nav class="page-navigation" id="nav-list">
-          <ul class="nav-links">
-            <li><a href="book-list.php">Pets</a></li>
-            <?php
-            if(isset($_SESSION["loggedIn"])){
-              $user = $_SESSION["username"];
-              if($_SESSION["user_role"] === "Admin"){
-                echo "<li><a href='add-book.php'>AddBook</a></li>";
-              }
-              echo "<li><a href='basket.php'>Basket</a></li>
-                <li><a href='user.php'>$user's Account </a></li>
-                <li><a href='logout.php'>Logout</a></li>";
-            }
-            else{
-              echo "<li><a href='login.php'>Login</a></li>";
-            }
-            ?>
-          </ul>
-        </nav>
+                <ul class="nav-links">
+                    <li><a href="book-list.php">Books</a></li>
+                    <?php
+                    /*
+                    An example of conditional rendering.
+
+                    If the user is logged in, replace the login link with a logout link.
+                    */
+                    if (isset($_SESSION['loggedIn'])) {
+                        $user = $_SESSION['username'];
+                        // Site administrators can add new books
+                        if ($_SESSION['user_role'] === "Admin") {
+                            echo "<li><a href='add-book.php'>Add Book</a></li>";
+                        }
+                        echo "<li><a href='basket.php'>Basket</a></li>
+                              <li><a href='user.php'>$user's Account</a></li>
+                              <li><a href='logout.php'>Logout</a></li>";
+                    } else {
+                        echo "<li><a href='login.php'>Login</a></li>";
+                    }
+                    ?>
+                </ul>
+            </nav>
       </div>
     </div>
     <div class="waves">

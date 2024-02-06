@@ -8,6 +8,21 @@ if(!isset($_GET["id"]) || !is_numeric($_GET["id"])) {
 
 }
 
+if(
+    $_SERVER["REQUEST_METHOD"] === "POST" &&
+    isset($GET["action"]) &&
+    $GET["action"] === "add"
+) {
+    if(!isset($_SESSION["loggedIn"])){
+        header("Location: " . Utils::$projectFilePath . "/login.php");
+    }
+
+    require ("classes/basket.php");
+
+    Basket::add($GET["id"]);
+    header("Location: " . Utils::$projectFilePath . "/basket.php");
+}
+
 $pet = Book::getPet($_GET["id"]);
 
 

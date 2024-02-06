@@ -88,3 +88,38 @@ CREATE TABLE pets.orders (
   FOREIGN KEY (user_id) REFERENCES users(user_id),
   FOREIGN KEY (postcode) REFERENCES postcodes(postcode)
 );
+
+CREATE TABLE pets.vets(
+    vet_id INT PRIMARY KEY AUTO_INCREMENT,
+    firstname VARCHAR(32) NOT NULL,
+    lastname VARCHAR(32) NOT NULL,
+    contactnumber VARCHAR(25) NOT NULL,
+    emailaddress VARCHAR(25) NOT NULL
+
+
+);
+
+CREATE TABLE pets.bookings(
+  booking_id INT NOT NULL,
+  user_id INT NOT NULL,
+  vet_id INT NOT NULL,
+  booking_date DATE NOT NULL,
+  booking_time TIME NOT NULL,
+
+  PRIMARY KEY(booking_id, user_id, vet_id),
+
+    
+  FOREIGN KEY (user_id) REFERENCES users(user_id),
+  FOREIGN KEY (vet_id) REFERENCES vets(vet_id)
+);
+
+INSERT INTO pets.vets (firstname, lastname, contactnumber, emailaddress) VALUES
+("Angela", "Ziegler", "07123 456 789", "angela.ziegler@pawfectcare.co.uk"),
+("John", "Smith", "07456 789 123", "john.smith@example.com"),
+("James", "Evans", "07789 234 567", "james.evans@vetsrus.com"),
+("Amelia", "King", "07901 345 678 ", "amelia.king@vetpractice.org.uk"),
+("Laura", "Davis", "07345 678 901", "laura.davis@vetgroup.co.uk"),
+("David", "Lis", "07654 321 098", "david_brown@mail.uk"),
+("Michael", "Taylor", "07543 210 987", "michael_taylor@animals.uk"),
+("Sarah", "Johnson", "07890 876 543", "sarah.j@example.co.uk"),
+("Benjamin", "Wright", "07761 234 567", "benjamin.wright@petsclinic.co.uk");

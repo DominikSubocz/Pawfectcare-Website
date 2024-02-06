@@ -42,7 +42,7 @@
           </button>
         </div>
         <nav class="page-navigation" id="nav-list">
-          <ul class="nav-links">
+        <ul class="nav-links">
             <li><a href="book-list.php">Pets</a></li>
             <?php
             if(isset($_SESSION["loggedIn"])){

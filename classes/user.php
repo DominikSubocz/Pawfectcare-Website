@@ -76,7 +76,7 @@ class User {
         $conn = Connection::connect();
 
         // Check if the given username already exists in the database
-        $stmt = $conn->prepare(SQL::$etUser);
+        $stmt = $conn->prepare(SQL::$getUser);
         $stmt->execute([$username]);
         $user = $stmt->fetch();
 
