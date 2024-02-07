@@ -41,5 +41,6 @@ class SQL {
   public static $createBooking = "INSERT INTO bookings (user_id, vet_id, booking_date, booking_time) VALUES (?,?,?,?)";
   public static $test = "SELECT * FROM bookings WHERE month(booking_date) = ? AND year(booking_date) = ?";
   public static $test2 = "SELECT * FROM bookings WHERE booking_date = ?";
+  public static $test3 = "SELECT * FROM bookings WHERE booking_date = ? AND booking_time = ?";
 
 }

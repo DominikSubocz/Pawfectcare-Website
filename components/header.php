@@ -58,6 +58,7 @@
                         }
                         echo "<li><a href='basket.php'>Basket</a></li>
                               <li><a href='user.php'>$user's Account</a></li>
+                              <li><a href='calendar.php'>Book Appointment</a></li>
                               <li><a href='logout.php'>Logout</a></li>";
                     } else {
                         echo "<li><a href='login.php'>Login</a></li>";

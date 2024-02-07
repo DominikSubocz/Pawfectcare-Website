@@ -44,6 +44,10 @@ body {
   
   }
 
+  .closed{
+    background:#dadada;
+  }
+
 
 .page-footer >.footer-container > div > ul > li{
   list-style: none;
@@ -643,6 +647,11 @@ td{
 
 
 
+/* Booking Calendar */
+
+.btn-success, .btn-danger{
+  font-size:14px;
+}
 
 
 
@@ -672,7 +681,15 @@ td{
   } */
 
   .day-row{
-    padding: 8px 16px;
+    padding: 16px 4px;
+  }
+
+  .row{
+    padding:200px 0;
+  }
+
+  .day-row > h4{
+    margin-top:-10px;
   }
 
 

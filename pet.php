@@ -3,6 +3,8 @@ require("classes/components.php");
 require("classes/utils.php");
 require("classes/pet.php");
 
+session_start();
+
 if(!isset($_GET["id"]) || !is_numeric($_GET["id"])) {
     header("Location: " . utils::$projectFilePath . "/book-list.php");
 

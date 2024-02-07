@@ -104,7 +104,7 @@ CREATE TABLE pets.bookings(
   user_id INT NOT NULL,
   vet_id INT NOT NULL,
   booking_date DATE NOT NULL,
-  booking_time TIME NOT NULL,
+  booking_time VARCHAR(11),
 
   PRIMARY KEY(booking_id, user_id, vet_id),
 

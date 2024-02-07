@@ -4,12 +4,13 @@ require_once("classes/sql.php");
 require_once("classes/utils.php");
 require("classes/components.php");
 
-Components::pageHeader("Book Appointment", ["style"], ["mobile-nav"]);
+session_start();
+
+Components::pageHeaderAlt("Book Appointment", ["style"], ["mobile-nav"]);
 
 function build_calendar($month, $year){
 
 
-    // $conn = Connection::connect();
 
     // // Prepare the SQL statement with placeholders
     // $stmt = $conn->prepare(SQL::$test);
@@ -33,14 +34,20 @@ function build_calendar($month, $year){
     // Further code using $bookings goes here
     
 
-    $daysOfWeek = array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday');
+    $daysOfWeek = array('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday','Sunday');
     $firstDayOfMonth = mktime(0,0,0,$month,1,$year);
     $numberDays = date('t',$firstDayOfMonth);
     $dateComponents = getdate($firstDayOfMonth);
     $monthName = $dateComponents['month'];
     $dayOfWeek = $dateComponents['wday'];
+
+    if($dayOfWeek==0){
+        $dayOfWeek = 6;
+    }else{
+        $dayOfWeek = $dayOfWeek-1;
+    }
     $dateToday = date('Y-m-d');
-    $calendar = "<center>$monthName $year</center>";
+    $calendar = "<center>Book Appointment</center>";
     $prev_month = date('m', mktime(0,0,0,$month-1,1,$year));
     $prev_year = date('Y', mktime(0,0,0,$month-1,1,$year));
     $next_month = date('m', mktime(0,0,0,$month+1,1,$year));
@@ -71,22 +78,31 @@ function build_calendar($month, $year){
             $dayOfWeek = 0;
             $calendar .= "</tr><tr>";
         }
-
+    
         $currentDayRel = str_pad($currentDay,2,"0", STR_PAD_LEFT);
         $date = "$year-$month-$currentDayRel";
-        $dayName = strtolower(date('I',strtotime($date)));
-        $today = $date == date('Y-m-d') ? 'today' : '';
+        $dayName = strtolower(date('l',strtotime($date))); // Get the day name in lowercase
+    
+        // Check if the current day is Sunday
+        if($dayName == 'sunday'){
+            $calendar .= "<td class='day-row closed'><h4>$currentDay</h4><a class='btn btn-danger btn-xs'>Closed</a></td>";
+        } else {
+            // Otherwise, normal cell
+            if($date < date('Y-m-d')){
+                $calendar .= "<td class='day-row booked'><h4>$currentDay</h4><a class='btn btn-danger btn-xs'>N/A</a></td>";
+            } else {
+                $totalbookings = checkSlots($date);
+                if($totalbookings == 18){
+                    $calendar .= "<td class='day-row booked'><h4>$currentDay</h4><a class='btn btn-danger btn-xs'>All Booked</a></td>";
+                } else{
+                    $availableSlots = 18 - $totalbookings;
 
-        $bookedDates = array_column($bookings, 'booking_date'); // Extracting booking dates from $bookings array
-
-        if($date<date('Y-m-d')){
-            $calendar .= "<td class='day-row booked'><h4>$currentDay</h4><a class='btn btn-danger btn-xs'>N/A</a></td>";
-        } else{
-            $calendar .= "<td class='day-row'><h4>$currentDay</h4><a href='book.php?date=$date' class='btn btn-success btn-xs'>Book</a></td>";
-
+                    $calendar .= "<td class='day-row'><h4>$currentDay</h4><a href='book.php?date=$date' class='btn btn-success btn-xs'>Book</a>
+                    <small><i>$availableSlots slots left</i></small>";
+                }
+            }
         }
-
-
+    
         $currentDay++;
         $dayOfWeek++;
     }
@@ -102,6 +118,24 @@ function build_calendar($month, $year){
     $calendar .= "</center>";
 
     return $calendar;
+}
+
+function checkSlots($date){
+
+    $conn = Connection::connect();
+
+
+    $stmt = $conn->prepare(SQL::$test2);
+    $stmt->bindParam(1, $date, PDO::PARAM_STR);
+    
+    $totalbookings = 0;
+
+    if ($stmt->execute()) {
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $totalbookings = count($result);
+    }
+    
+    return $totalbookings;
 }
 
 ?>
