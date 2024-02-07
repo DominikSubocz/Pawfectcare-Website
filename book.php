@@ -3,9 +3,9 @@ session_start();
 
 require("classes/user.php");
 
+
 $username = Utils::escape($_SESSION["username"]);
 $userId = Utils::escape($_SESSION["user_id"]);
-
 
 
 if (isset($_GET['date'])) {
@@ -64,12 +64,12 @@ if (isset($_POST['submit'])) {
                 <form action="" method="post" autocomplete="off">
                     <div class="form-group">
                         <label for="">Name</label>
-                        <input type="text" class="form-control" name="name" value="<?php echo $username; ?>">
+                        <input type="text" class="form-control" name="name" value="<?php echo $username; ?>" readonly>
                     </div>
-                    <!-- <div class="form-group">
+                    <div class="form-group">
                         <label for="">Email</label>
-                        <input type="email" class="form-control" name="email">
-                    </div> -->
+                        <input type="email" class="form-control" name="email"readonly>
+                    </div>
                     <button class="btn btn-primary" type="submit" name="submit">Submit</button>
                 </form>
             </div>
