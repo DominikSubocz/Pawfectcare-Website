@@ -20,7 +20,7 @@ Components::pageHeaderAlt("Registration Successful", ["style"], ["mobile-nav"]);
 
     <img class="animated-tick-icon" src="images/tick.gif" alt="Animation of green box being ticked">
     
-    <p>Return to <a href="book-list.php">home page</a>.</p>
+    <p>Return to <a href="pet-list.php">home page</a>.</p>
 </div>
 
 <?php

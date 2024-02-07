@@ -13,7 +13,7 @@ require("classes/utils.php");
 
 // Redirect user from this page if they're already logged in
 if (isset($_SESSION["loggedIn"])) {
-    header("Location: " . Utils::$projectFilePath . "/book-list.php");
+    header("Location: " . Utils::$projectFilePath . "/pet-list.php");
 }
 
 $output = "";

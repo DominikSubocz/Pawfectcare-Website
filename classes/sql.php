@@ -38,6 +38,7 @@ class SQL {
       INNER JOIN books
       ON orders.book_id = books.book_id
       WHERE orders.user_id = ? AND orders.order_id = ?";
-  public static $createBooking = "INSERT INTO bookings (booking_id, user_id, vet_id, booking_date, booking_time) VALUES (?,?,?,?,?)";
-     
+  public static $createBooking = "INSERT INTO bookings (user_id, vet_id, booking_date, booking_time) VALUES (?,?,?,?)";
+  public static $test = "SELECT * FROM bookings WHERE month(booking_date) = ? AND year(booking_date) = ?";
+
 }

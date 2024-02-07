@@ -1,7 +1,7 @@
 <?php
 
 require("classes/components.php");
-require("classes/book.php");
+require("classes/pet.php");
 
 Components::pageHeader("All Books", ["style"], ["mobile-nav"]);
 

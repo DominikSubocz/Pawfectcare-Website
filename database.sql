@@ -100,7 +100,7 @@ CREATE TABLE pets.vets(
 );
 
 CREATE TABLE pets.bookings(
-  booking_id INT NOT NULL,
+  booking_id INT NOT NULL AUTO_INCREMENT,
   user_id INT NOT NULL,
   vet_id INT NOT NULL,
   booking_date DATE NOT NULL,

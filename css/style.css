@@ -34,6 +34,10 @@ input.button {
   cursor: pointer;
 }
 
+a{
+  cursor: pointer;
+}
+
 .button:hover {
   background-color: #006855;
   color: white;
@@ -603,10 +607,15 @@ input:not(input.button) {
 
 
   /* TABLES */
-  th,
+  /* th,
   td {
     padding: 8px;
+  } */
+
+  .day-row{
+    padding: 8px 16px;
   }
+
 
   .image-cell {
     width: 250px;

@@ -8,4 +8,4 @@ $_SESSION = [];
 
 session_destroy();
 
-header("Location: " . Utils::$projectFilePath. "/book-list.php");
+header("Location: " . Utils::$projectFilePath. "/pet-list.php");

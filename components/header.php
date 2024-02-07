@@ -43,7 +43,7 @@
         </div>
         <nav class="page-navigation" id="nav-list">
                 <ul class="nav-links">
-                    <li><a href="book-list.php">Books</a></li>
+                    <li><a href="pet-list.php">Pets</a></li>
                     <?php
                     /*
                     An example of conditional rendering.
