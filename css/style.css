@@ -6,6 +6,45 @@ body {
   margin: 0;
 }
 
+
+.row{
+  margin-top:20px;
+  }
+  
+  .today{
+  background:yellow;
+  }
+  
+  .btn-primary{
+      margin:0 15px;
+  }
+  
+  .table-bordered{
+      margin:25px 0;
+  }
+  
+  .day-row, .empty, .day-names{
+      border: 1px solid lightgray;
+  }
+  
+  .btn{
+      padding:5px;
+      border-radius:8px;
+  }
+  
+  .btn-success{
+      background:green;
+      color:#fff;
+  
+  }
+  
+  .btn-danger{
+      background:red;
+      color:#fff;
+  
+  }
+
+
 .page-footer >.footer-container > div > ul > li{
   list-style: none;
 }
@@ -304,6 +343,26 @@ input:not(input.button) {
 
 .inline-inputs input {
   flex: 1;
+}
+
+
+
+@media only screen and (min-device-width:320px) and (max-device-width:480px){
+  body{
+      padding:0;
+      margin:0;
+  }
+}
+
+@media (min-width:641px){
+
+  table{
+table-layout:fixed;
+}
+
+td{
+  width:33%;
+}
 }
 
 /* MOBILE AND TABLET */
@@ -685,3 +744,7 @@ input:not(input.button) {
   }
 
 }
+
+
+
+

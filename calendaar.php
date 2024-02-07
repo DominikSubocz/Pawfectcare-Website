@@ -9,26 +9,26 @@ Components::pageHeader("Book Appointment", ["style"], ["mobile-nav"]);
 function build_calendar($month, $year){
 
 
-    $conn = Connection::connect();
+    // $conn = Connection::connect();
 
-    // Prepare the SQL statement with placeholders
-    $stmt = $conn->prepare(SQL::$test);
+    // // Prepare the SQL statement with placeholders
+    // $stmt = $conn->prepare(SQL::$test);
     
-    // Bind parameters
-    $stmt->bindParam(1, $month, PDO::PARAM_INT);
-    $stmt->bindParam(2, $year, PDO::PARAM_INT);
+    // // Bind parameters
+    // $stmt->bindParam(1, $month, PDO::PARAM_INT);
+    // $stmt->bindParam(2, $year, PDO::PARAM_INT);
     
     $bookings = array();
     
-    // Execute the statement
-    if ($stmt->execute()) {
-        $bookings = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    } else {
-        // Handle errors here if necessary
-        print_r($stmt->errorInfo());
-    }
+    // // Execute the statement
+    // if ($stmt->execute()) {
+    //     $bookings = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    // } else {
+    //     // Handle errors here if necessary
+    //     print_r($stmt->errorInfo());
+    // }
     
-    $stmt->closeCursor(); // Close the statement cursor
+    // $stmt->closeCursor(); // Close the statement cursor
     
     // Further code using $bookings goes here
     
@@ -79,11 +79,14 @@ function build_calendar($month, $year){
 
         $bookedDates = array_column($bookings, 'booking_date'); // Extracting booking dates from $bookings array
 
-        if (in_array($date, $bookedDates)) {
-            $calendar .= "<td class='day-row booked'><h4>$currentDayRel</h4><a class='btn btn-danger btn-xs'>Booked</a></td>";
-        } else {
-            $calendar .= "<td class='day-row'><h4>$currentDayRel</h4><a href='book.php?date=$date' class='btn btn-success btn-xs'>Book</a></td>";
+        if($date<date('Y-m-d')){
+            $calendar .= "<td class='day-row booked'><h4>$currentDay</h4><a class='btn btn-danger btn-xs'>N/A</a></td>";
+        } else{
+            $calendar .= "<td class='day-row'><h4>$currentDay</h4><a href='book.php?date=$date' class='btn btn-success btn-xs'>Book</a></td>";
+
         }
+
+
         $currentDay++;
         $dayOfWeek++;
     }
@@ -102,130 +105,6 @@ function build_calendar($month, $year){
 }
 
 ?>
-
-<style>
-
-    @media only screen and (max-width:760px),
-    (min-device-width:802px) and (max-device-width: 1020px){
-        table,
-        thead,
-        tbody,
-        th,
-        td,
-        tr{
-            display: block;
-        }
-
-        .empty{
-            display:none;
-        }
-
-        .th{
-            position:absolute;
-            top:-9999px;
-            left:-9999px;
-        }
-
-        tr{
-            border: 1px solid #ccc;
-        }
-
-        td{
-            border:none;
-            border-bottom: 1px solid #eee;
-            position:relative;
-        }
-
-        td:nth-of-type(1):before{
-            content:"Sunday";
-        }
-
-        td:nth-of-type(2):before{
-            content:"Monday";
-        }
-
-        td:nth-of-type(3):before{
-            content:"Tuesday";
-        }
-
-        td:nth-of-type(4):before{
-            content:"Wednesday";
-        }
-
-        td:nth-of-type(5):before{
-            content:"Thursday";
-        }
-
-        td:nth-of-type(6):before{
-            content:"Friday";
-        }
-
-        td:nth-of-type(7):before{
-            content:"Saturday";
-        }
-    }
-
-    @media only screen and (min-device-width:320px) and (max-device-width:480px){
-            body{
-                padding:0;
-                margin:0;
-            }
-    }
-
-    @media (min-width:641px){
-
-table{
-    table-layout:fixed;
-}
-
-td{
-    width:33%;
-}
-
-}
-
-.row{
-margin-top:20px;
-}
-
-.today{
-background:yellow;
-}
-
-.btn-primary{
-    margin:0 15px;
-}
-
-.table-bordered{
-    margin:25px 0;
-}
-
-.day-row, .empty, .day-names{
-    border: 1px solid lightgray;
-}
-
-.btn{
-    padding:5px;
-    border-radius:8px;
-}
-
-.btn-success{
-    background:green;
-    color:#fff;
-
-}
-
-.btn-danger{
-    background:red;
-    color:#fff;
-
-}
-
-
-    
-
-
-</style>
 
 <div class="container">
     <div class="row">
