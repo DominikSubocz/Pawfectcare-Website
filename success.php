@@ -10,12 +10,19 @@ if (isset($_SESSION["successMessage"])) {
     $message = $_SESSION["successMessage"];
     unset($_SESSION["successMessage"]); // Remove the session variable
 } else {
+    header("Location: " . Utils::$projectFilePath . "/pet-list.php");
     $message = "Success message not found."; // Default message
 }
 
 // Include success page content
-components::pageHeaderAlt($heading, ["style"], ["mobile-nav"]);
 ?>
+
+<head>
+
+<link rel="stylesheet" href="css/style.css">
+
+
+</head>
 
 <div class="register-success-content">
     <h2><?php echo $message; ?></h2>
@@ -24,5 +31,4 @@ components::pageHeaderAlt($heading, ["style"], ["mobile-nav"]);
 </div>
 
 <?php
-components::pageFooter();
 ?>

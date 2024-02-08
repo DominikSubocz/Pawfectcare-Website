@@ -36,7 +36,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if ($output) {
-        header("Location: " . Utils::$projectFilePath . "/registration-success.php");
+        $_SESSION["successMessage"] = "Registration Successful!";
+        header("Location: " . Utils::$projectFilePath . "/success.php");
     }
 }
 
