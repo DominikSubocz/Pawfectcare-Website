@@ -2,11 +2,11 @@
 
 class Components {
     
-    public static function pageHeader($pageTittle, $stylesheets, $scripts){
+    public static function pageHeader($pageTitle, $stylesheets, $scripts){
         require ("components/header.php");   
     }
 
-    public static function pageHeaderAlt($pageTittle, $stylesheets, $scripts){
+    public static function pageHeaderAlt($pageTitle, $stylesheets, $scripts){
         require ("components/header-alt.php");   
     }
 

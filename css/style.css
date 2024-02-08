@@ -291,6 +291,10 @@ input:not(input.button) {
   width: 100%;
 }
 
+textarea{
+  max-width: 100%;
+}
+
 .form .button {
   border: 0;
   cursor: pointer;
@@ -347,6 +351,14 @@ input:not(input.button) {
 
 .inline-inputs input {
   flex: 1;
+}
+
+/* Home Page Features section */
+
+.feature-card-container{
+  display: flex;
+  background-color: #dadada;
+  justify-content: space-between;
 }
 
 
@@ -409,8 +421,8 @@ td{
 
   }
 
-  .page-header > .header-content > .desktop-header-row >.mobile-top > div > .logo{
-    width: 75px;
+  .page-header .logo{
+    width: 55px;
 
   }
 
@@ -420,7 +432,7 @@ td{
   }
 
   .header-content{
-    padding:50px 0;
+    padding:25px 0;
   }
 
   .header-content > p, .header-content > h2{
@@ -494,6 +506,37 @@ td{
 
   .animated-tick-icon{
     width: 125px;
+  }
+
+  /* Index */
+
+  .feature-card-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:32px;
+    margin:55px 0;
+    padding:25px 0;
+
+  }
+
+  .feature-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 128px;
+    text-align: center;
+
+  }
+
+  .feature-icon{
+    width:75px;
+    height: auto;
+  }
+
+  .membership-feature-card, .appointment-feature-card{
+    width: 150px;
   }
 
 }
@@ -645,6 +688,38 @@ td{
     width: 35%;
   }
 
+
+  /* Home Page Features */
+
+
+  .feature-card-container{
+    margin: 200px 0;
+    width: 100%;
+    height: 200px;
+    padding:0 250px;
+    align-items: center;
+  }
+
+  .feature-card{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap:16px;
+    text-align: center;
+  }
+
+  .membership-feature-card, .appointment-feature-card{
+    width: 150px;
+  }
+
+  .shop-feature-card{
+    width: 100px;
+  }
+
+
+  .index-content{
+    width: 100%;
+  }
 
 
 /* Booking Calendar */

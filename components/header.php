@@ -1,12 +1,3 @@
-<?php
-
-$pageTitle = basename($_SERVER['PHP_SELF'], '.php');
-
-// Optionally, you can capitalize the first letter of the page title
-$pageTitle = ucfirst($pageTitle);
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -91,4 +82,3 @@ $pageTitle = ucfirst($pageTitle);
 
   </header>
 
-  <main class="content-wrapper main-content">

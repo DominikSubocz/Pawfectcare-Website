@@ -37,10 +37,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 
   if (empty($nameErr) && empty($emailErr) && empty($websiteErr) && empty($commentErr)) {
-    // Form is correct, perform further actions (e.g., send email)
+    
+    $_SESSION["successMessage"] = "Your message has been submitted successfully!";
+    header("Location: " . Utils::$projectFilePath . "/success.php");
 
-    // Redirect to success page
-    header("Location: success.php");
     exit(); // Make sure to exit after redirecting to prevent further execution
 }
   
