@@ -362,27 +362,245 @@ textarea{
 }
 
 
+.col-md-2{
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
 
-@media only screen and (min-device-width:320px) and (max-device-width:480px){
-  body{
-      padding:0;
-      margin:0;
+@media screen and (max-width: 471px) {
+  /* 
+    Lets us show elements that may be hidden 
+    (i.e., display: none;) on mobile by default, 
+    such as the page navigation.
+  */
+  .show-on-mobile {
+    display: block;
   }
+
+  /* DIALOGUE BUTTONS */
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+  }
+
+  .button-group > .button {
+    flex: 1;
+    text-align: center;
+  }
+
+  /* TABLE */
+  .buttons-cell {
+    width: 20%;
+  }
+
+  .basket-controls a {
+    padding: 12px 36px;
+  }
+
+
+
+  .page-header > .header-content > .desktop-header-row >.mobile-top > div {
+    display: flex;
+    align-items: center;
+
+  }
+
+  .logo-mobile{
+    padding-left: 25px;
+  }
+
+  .page-header .logo{
+    width: 25px;
+
+  }
+
+  .page-header > .header-content > .desktop-header-row >.mobile-top > .logo-desktop{
+    display: none;
+
+  }
+
+  .header-content{
+    padding:25px 0;
+  }
+
+  .header-content > p, .header-content > h2{
+    margin:0;
+  }
+
+  .header-content-bot h2{
+    font-size: 14px;
+  }
+
+  .header-content-bot p{
+    font-size: 12px;
+  }
+
+  .mobile-top{
+    justify-content: space-between;
+  }
+
+  .page-title{
+    font-size:20px;
+    margin-right:15vw;
+  }
+
+  .nav-button{
+    margin-right:15px;
+    width: 45px;
+  }
+
+  .header-content > h2, .header-content > p {
+    padding: 2% 10%;
+  }
+
+  .footer-container{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .page-footer .logo{
+    width: 125px;
+  }
+
+  .social-container{
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .social{
+    width: 100%;
+  }
+
+  .soc-icon{
+    width: 35px
+  }
+
+  .footer-container hr{
+    margin: 0 auto;
+    width: 85%;
+  }
+
+  .footer-section-one{
+    padding:0 14px;
+  }
+
+  .footer-section-one p{
+    font-size: 14px;
+  }
+
+  .footer-section-one {
+    margin-bottom:25px;
+  }
+
+  .footer-section li{
+    font-size: 14px;
+    padding:15px 0;
+  }
+
+  .copyright{
+    margin:  0 0 55px 0;
+  }
+
+  
+
+
+  .contact-info{
+    padding:0 50px;
+    margin-bottom: 25px;
+  }
+
+  .social-container{
+    margin-bottom:50px;
+  }
+
+  /* Registration */
+
+  .animated-tick-icon{
+    width: 125px;
+  }
+
+  /* Index */
+
+  .feature-card-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:32px;
+    margin:55px 0;
+    padding:25px 0;
+
+  }
+
+  .feature-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 128px;
+    text-align: center;
+
+  }
+
+  .feature-icon{
+    width:75px;
+    height: auto;
+  }
+
+  .membership-feature-card, .appointment-feature-card{
+    width: 150px;
+  }
+
+
+
+  /* Booking Page */
+
+.day-names{
+  font-size:10px;
+  font-weight: 600;
 }
 
-@media (min-width:641px){
-
-  table{
-table-layout:fixed;
+.day-row{
+  padding:16px 2px;
+  font-size: 10px;
 }
 
-td{
-  width:33%;
-}
+.btn-primary{
+  font-size: 10px;
+  padding:2px;
 }
 
-/* MOBILE AND TABLET */
-@media screen and (max-width: 949px) {
+.btn-submit-appt{
+  margin:0 auto;
+  font-size: 14px;
+  padding:6px 15px;
+}
+
+
+
+.day-row small{
+  display: none;
+}
+
+.calendar-content{
+  padding: 32px 16px;
+
+}
+
+.timeslot-row{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.col-md-2 button{
+  width:85vw;
+}
+
+
+}
+
+@media screen and (min-width: 472px) and (max-width: 610px) {
   /* 
     Lets us show elements that may be hidden 
     (i.e., display: none;) on mobile by default, 
@@ -538,6 +756,244 @@ td{
   .membership-feature-card, .appointment-feature-card{
     width: 150px;
   }
+
+  /* Booking Page */
+
+.day-names{
+  font-size:12px;
+  font-weight: 600;
+}
+
+.day-row{
+  padding:16px 4px;
+  font-size: 12px;
+}
+
+.day-row small{
+  display: none;
+}
+
+.calendar-content{
+  padding: 32px 24px;
+
+}
+
+.timeslot-row{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.col-md-2 button{
+  width:85vw;
+}
+
+.btn-submit-appt{
+  margin:0 auto;
+  font-size: 14px;
+  padding:6px 15px;
+}
+
+}
+
+/* MOBILE AND TABLET */
+@media screen and (min-width:611px) and (max-width: 950px) {
+  /* 
+    Lets us show elements that may be hidden 
+    (i.e., display: none;) on mobile by default, 
+    such as the page navigation.
+  */
+  .show-on-mobile {
+    display: block;
+  }
+
+  /* DIALOGUE BUTTONS */
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+  }
+
+  .button-group > .button {
+    flex: 1;
+    text-align: center;
+  }
+
+  /* TABLE */
+  .buttons-cell {
+    width: 20%;
+  }
+
+  .basket-controls a {
+    padding: 12px 36px;
+  }
+
+
+
+  .page-header > .header-content > .desktop-header-row >.mobile-top > div {
+    display: flex;
+    align-items: center;
+
+  }
+
+  .page-header .logo{
+    width: 55px;
+
+  }
+
+  .page-header > .header-content > .desktop-header-row >.mobile-top > .logo-desktop{
+    display: none;
+
+  }
+
+  .header-content{
+    padding:25px 0;
+  }
+
+  .header-content > p, .header-content > h2{
+    margin:0;
+  }
+
+  .mobile-top{
+    justify-content: space-between;
+  }
+
+  .page-title{
+    font-size:24px;
+    margin-right:15vw;
+  }
+
+  .nav-button{
+    width: 75px;
+  }
+
+  .header-content > h2, .header-content > p {
+    padding: 2% 10%;
+  }
+
+  .footer-container{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .page-footer .logo{
+    width: 125px;
+  }
+
+  .social-container{
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .social{
+    width: 100%;
+  }
+
+  .soc-icon{
+    width: 35px
+  }
+
+  .footer-container hr{
+    margin:25px 0;
+  }
+
+  .footer-section-one {
+    margin-bottom:25px;
+  }
+
+  .copyright{
+    margin:  0 0 55px 0;
+  }
+
+  
+
+
+  .contact-info{
+    padding:0 50px;
+    margin-bottom: 25px;
+  }
+
+  .social-container{
+    margin-bottom:50px;
+  }
+
+  /* Registration */
+
+  .animated-tick-icon{
+    width: 125px;
+  }
+
+  /* Index */
+
+  .feature-card-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:32px;
+    margin:55px 0;
+    padding:25px 0;
+
+  }
+
+  .feature-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 128px;
+    text-align: center;
+
+  }
+
+  .feature-icon{
+    width:75px;
+    height: auto;
+  }
+
+  .membership-feature-card, .appointment-feature-card{
+    width: 150px;
+  }
+
+  /* Booking Page */
+
+.day-row{
+  padding:15px;
+  font-size: 12px;
+}
+
+.day-row small{
+  display: none;
+}
+
+.calendar-content{
+  padding: 32px 24px;
+
+}
+
+.timeslot-row{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.col-md-2{
+  width:85px;
+  margin:0 15px;
+}
+
+
+.btn-succes {
+  width: 100%;
+}
+
+.btn-submit-appt{
+  margin:0 auto;
+  font-size: 14px;
+  padding:6px 15px;
+}
 
 }
 
@@ -724,13 +1180,6 @@ td{
 
 /* Booking Calendar */
 
-.btn-success, .btn-danger{
-  font-size:14px;
-}
-
-
-
-
   /* BOOK LIST */
   .book-card {
     max-width: 250px;
@@ -759,8 +1208,19 @@ td{
     padding: 16px 4px;
   }
 
-  .row{
-    padding:200px 0;
+  .timeslot-row{
+    padding:25px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .col-md-2{
+    width: 100px;
+  }
+
+  .btn-succes {
+    width: 100%;
   }
 
   .day-row > h4{
@@ -833,6 +1293,12 @@ td{
   .order-image {
     height: 280px;
     width: 300px;
+  }
+
+  .btn-submit-appt{
+    margin:0 auto;
+    font-size: 14px;
+    padding:6px 15px;
   }
 
 }

