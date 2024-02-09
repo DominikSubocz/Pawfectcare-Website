@@ -125,6 +125,6 @@ INSERT INTO pets.vets (firstname, lastname, contactnumber, emailaddress) VALUES
 ("Benjamin", "Wright", "07761 234 567", "benjamin.wright@petsclinic.co.uk");
 
 UPDATE pets.users
-SET user_role = "Admin";
+SET user_role = "Admin"
 WHERE username = "rektusmaximus";
 
