@@ -7,6 +7,10 @@ body {
 }
 
 
+textarea{
+  width: 500px;
+}
+
 .row{
   margin-top:20px;
   }
