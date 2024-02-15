@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 html{
@@ -17,11 +18,7 @@ html{
 
 body {
   margin: 0;
-}
 
-.pets-content .book-image:hover{
-  filter: brightness(75%);
-  transition: filter 0.2s;
 }
 
 textarea{
@@ -414,12 +411,30 @@ textarea{
 
 @media screen and (min-width:320px) {
   .header-content  h2{
-    font-size: 16px;
+    font-size: 18px;
   }
   
-  .header-content  p{
-    font-size: 10px;
+  .header-content h2{
+    margin:0;
+    width: 95%;
+
   }
+
+  .header-content  p{
+    font-size: 15px;
+    width: 90%;
+
+  }
+
+  .header-img{
+    width: 205px;
+  }
+
+  .header-container2{
+    width: 225px;
+  }
+
+
   
   .page-title{
     font-size: 14px;
@@ -447,13 +462,8 @@ textarea{
     padding: 15px 0;
   }
 
-  .header-content h2{
-    margin:0;
-  }
 
-  .header-content p{
-    width: 75%;
-  }
+
 
   .header-content{
     padding-left:15px;
@@ -464,10 +474,65 @@ textarea{
       width: 75%;
     }
 
-    .header-img{
-      width: 150px;
+
+
+    .show-on-mobile {
+      display: block;
     }
 
+    .nav-links{
+      height: 100vh;
+    }
+
+    .addPet-content{
+      width: 90%;
+    }
+
+    .book-price{
+      font-size: 14px;
+    }
+
+    .book-card h3
+
+    .book-list .book-image{
+      height: 150px;
+      width: 75px;
+    }
+
+
+
+    .login-content{
+      width: 90%;
+      padding:75px 0;
+    }
+
+    .footer-container{
+      padding-top:20px;
+    }
+
+    .footer-container .logo{
+      width: 100px;
+    }
+
+    .footer-section-one p{
+      font-size:14px;
+    }
+
+    .footer-section li{
+      font-size: 14px;
+    }
+
+    .social-container{
+      display: flex;
+      justify-content: center;
+      gap:16px;
+    }
+
+    .social img{
+      width: 50px;
+    }
+    
+    
 
 }
 
