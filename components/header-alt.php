@@ -45,34 +45,34 @@
         </div>
         <nav class="page-navigation" id="nav-list">
         <ul class="nav-links">
-        <ul class="nav-links">
-                    <li><a href='index.php'>Home Page</a></li>
-                    <li><a href='about.php'>About Us</a></li>
-                    <li><a href="pet-list.php">Pets</a></li>
-                    <li><a href='articles.php'>Blog</a></li>
-                    <?php
-                    /// Redirect user from this page if they're already logged in
-                    if (isset($_SESSION['loggedIn'])) {
-                        /// Site administrators can add new books
-                        $username = $_SESSION["username"];
+          <li><a href="pet-list.php">Pets</a></li>
+          <li><a href='index.php'>Home</a></li>
+          <li><a href="pet-list.php">Pets</a></li>
+          <li><a href="contact.php">Contact Us</a></li>                    
+          <?php
 
-                        echo "<li><a href='calendar.php'>Book Appointment</a></li>
-                              <li><a href='basket.php'>Basket</a></li>
-                              <li><a href='contact.php'>Contact Us</a><li>
-                              <li><a href='user.php'>$username's Account</a></li>
-                              <li><a href='logout.php'>Logout</a></li>";
-                    } else {
-                        echo "<li><a href='login.php'>Login</a></li>";
-                    }
-                    ?>
-                </ul>
+          if (isset($_SESSION['loggedIn'])) {
+              $user = $_SESSION['username'];
+              // Site administrators can add new books
+              if ($_SESSION['user_role'] === "Admin") {
+                  echo "<li><a href='add-book.php'>Add Book</a></li>";
+              }
+              echo "<li><a href='basket.php'>Basket</a></li>
+                    <li><a href='user.php'>$user's Account</a></li>
+                    <li><a href='calendar.php'>Book Appointment</a></li>
+                    <li><a href='logout.php'>Logout</a></li>";
+          } else {
+              echo "<li><a href='login.php'>Login</a></li>";
+          }
+          ?>
+          </ul>
         </nav>
       </div>
     </div>
 
     <div class="header-content-bot header-content">
 
-    <div>
+            <div>
               <div>
                 <h2> Pawfect Care Adoption </h2>
                 <p> Find your furry friend: Discover joy through pet adoption today. </p>
@@ -80,31 +80,13 @@
             </div>
 
             <div>
-              <img id="header-img" class="header-img" src="images/dog-with-doctor.png" alt="Pawfect Care logo with green fox">
+              <img class="header-img" src="images/dog-with-doctor.png" alt="Image of dog sitting next to vet.">
             </div>
 
 
     </div>
 
-    <script>
 
-Index = Math.floor(Math.random() * 3) + 1;
-console.log(Index);
-
-if(Index == 1){
-  document.getElementById("header-img").src = "images/black.png";
-  document.getElementById("header-img").style.transform = "translate(50px,10px)";
-}
-
-else if (Index == 2){
-  document.getElementById("header-img").src = "images/dog.png";
-  document.getElementById("header-img").style.transform = "translate(75px,30px)";
-}
-
-else{
-
-}
-
-</script>
 
   </header>
+

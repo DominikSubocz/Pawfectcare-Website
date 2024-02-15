@@ -47,10 +47,9 @@
         </div>
         <nav class="page-navigation" id="nav-list">
                 <ul class="nav-links">
-                    <li><a href='index.php'>Home Page</a></li>
-                    <li><a href='about.php'>About Us</a></li>
+                   <li><a href='index.php'>Home</a></li>
                     <li><a href="pet-list.php">Pets</a></li>
-                    <li><a href='articles.php'>Blog</a></li>
+                    <li><a href="contact.php">Contact Us</a></li>
                     <?php
                     /// Redirect user from this page if they're already logged in
                     if (isset($_SESSION['loggedIn'])) {
