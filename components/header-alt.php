@@ -54,6 +54,7 @@ $pageTitle = ucfirst($pageTitle);
         <nav class="page-navigation" id="nav-list">
         <ul class="nav-links">
             <li><a href="pet-list.php">Pets</a></li>
+            <li><a href="contact.php">Contact Us</a></li>
             <?php
             if(isset($_SESSION["loggedIn"])){
               $user = $_SESSION["username"];
@@ -61,7 +62,7 @@ $pageTitle = ucfirst($pageTitle);
                 echo "<li><a href='add-pet.php'>AddBook</a></li>";
               }
               echo "<li><a href='basket.php'>Basket</a></li>
-                <li><a href='user.php'>$user's Account </a></li>
+                <li><a href='user.php'>Account </a></li>
                 <li><a href='logout.php'>Logout</a></li>";
             }
             else{

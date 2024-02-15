@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 body {
@@ -8,7 +9,13 @@ body {
 
 
 textarea{
-  width: 500px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 100%;
+}
+
+#map{
+  width: 100%;
 }
 
 .row{
@@ -378,245 +385,136 @@ textarea{
 @media screen and (min-width:320px){
 
 
+  .header-content  h2{
+    font-size: 20px;
+  }
+  
+  .header-content h2{
+    margin:0;
+    width: 185px;
+  }
+
+  .header-content  p{
+    font-size: 14px;
+    width: 165px;
+  }
 
   .header-img{
-    width: 200px;
+    width: 205px;
   }
 
-}
-
-@media screen and (max-width: 471px) {
-  /* 
-    Lets us show elements that may be hidden 
-    (i.e., display: none;) on mobile by default, 
-    such as the page navigation.
-  */
-  .show-on-mobile {
-    display: block;
-  }
-
-  /* DIALOGUE BUTTONS */
-  .button-group {
-    display: flex;
-    justify-content: space-between;
-    gap: 32px;
-  }
-
-  .button-group > .button {
-    flex: 1;
-    text-align: center;
-  }
-
-  /* TABLE */
-  .buttons-cell {
-    width: 20%;
-  }
-
-  .basket-controls a {
-    padding: 12px 36px;
+  .header-container2{
+    width: 225px;
   }
 
 
+  
+  .page-title{
+    font-size: 14px;
+  }
 
-  .page-header > .header-content > .desktop-header-row >.mobile-top > div {
-    display: flex;
-    align-items: center;
+  .logo{
+    width: 50px;
+  }
 
+  .logo-desktop{
+    display: none;
   }
 
   .logo-mobile{
-    padding-left: 25px;
-  }
-
-  .page-header .logo{
-    width: 25px;
-
-  }
-
-  .page-header > .header-content > .desktop-header-row >.mobile-top > .logo-desktop{
-    display: none;
-
-  }
-
-  .header-content{
-    padding:25px 0;
-  }
-
-  .header-content > p, .header-content > h2{
-    margin:0;
-  }
-
-  .header-content-bot h2{
-    font-size: 14px;
-  }
-
-  .header-content-bot p{
-    font-size: 12px;
-  }
-
-  .mobile-top{
-    justify-content: space-between;
-  }
-
-  .page-title{
-    font-size:20px;
-    margin-right:15vw;
+    display: flex;
   }
 
   .nav-button{
-    margin-right:15px;
-    width: 45px;
+    width: 65px;
   }
-
-  .header-content > h2, .header-content > p {
-    padding: 2% 10%;
-  }
-
-  .footer-container{
+  .header-content-bot{
     display: flex;
-    flex-direction: column;
-  }
-
-  .page-footer .logo{
-    width: 125px;
-  }
-
-  .social-container{
-    display: flex;
-    justify-content: space-around;
-  }
-
-  .social{
-    width: 100%;
-  }
-
-  .soc-icon{
-    width: 35px
-  }
-
-  .footer-container hr{
-    margin: 0 auto;
-    width: 85%;
-  }
-
-  .footer-section-one{
-    padding:0 14px;
-  }
-
-  .footer-section-one p{
-    font-size: 14px;
-  }
-
-  .footer-section-one {
-    margin-bottom:25px;
-  }
-
-  .footer-section li{
-    font-size: 14px;
-    padding:15px 0;
-  }
-
-  .copyright{
-    margin:  0 0 55px 0;
-  }
-
-  
-
-
-  .contact-info{
-    padding:0 50px;
-    margin-bottom: 25px;
-  }
-
-  .social-container{
-    margin-bottom:50px;
-  }
-
-  /* Registration */
-
-  .animated-tick-icon{
-    width: 125px;
-  }
-
-  /* Index */
-
-  .feature-card-container{
-    display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap:32px;
-    margin:55px 0;
-    padding:25px 0;
-
-  }
-
-  .feature-card{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 128px;
-    text-align: center;
-
-  }
-
-  .feature-icon{
-    width:75px;
-    height: auto;
-  }
-
-  .membership-feature-card, .appointment-feature-card{
-    width: 150px;
   }
 
 
 
-  /* Booking Page */
 
-.day-names{
-  font-size:10px;
-  font-weight: 600;
+  .header-content{
+    padding-left:15px;
+
+    }
+
+    .form-content{
+      width: 75%;
+    }
+
+
+
+    .show-on-mobile {
+      display: block;
+    }
+
+    .nav-links{
+      height: 100vh;
+    }
+
+    .addPet-content{
+      width: 90%;
+    }
+
+    .book-price{
+      font-size: 14px;
+    }
+
+    .book-card h3
+
+    .book-list .book-image{
+      height: 150px;
+      width: 75px;
+    }
+
+
+
+    .login-content{
+      width: 90%;
+      padding:75px 0;
+    }
+
+    .footer-container{
+      padding-top:20px;
+    }
+
+    .footer-container .logo{
+      width: 100px;
+    }
+
+    .footer-section-one p{
+      font-size:14px;
+    }
+
+    .footer-section li{
+      font-size: 14px;
+    }
+
+    .social-container{
+      display: flex;
+      justify-content: center;
+      gap:16px;
+    }
+
+    .social img{
+      width: 50px;
+    }
+
+    .contact-content{
+      width: 90%;
+    }
+    
+    
+
+
 }
 
-.day-row{
-  padding:16px 2px;
-  font-size: 10px;
-}
 
-.btn-primary{
-  font-size: 10px;
-  padding:2px;
-}
-
-.btn-submit-appt{
-  margin:0 auto;
-  font-size: 14px;
-  padding:6px 15px;
-}
-
-
-
-.day-row small{
-  display: none;
-}
-
-.calendar-content{
-  padding: 32px 16px;
-
-}
-
-.timeslot-row{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.col-md-2 button{
-  width:85vw;
-}
-
-
-}
 
 @media screen and (min-width: 472px) and (max-width: 610px) {
   /* 
@@ -673,6 +571,10 @@ textarea{
 
   .header-content > p, .header-content > h2{
     margin:0;
+  }
+
+  .header-img{
+    width: 250px;
   }
 
   .mobile-top{
@@ -872,6 +774,10 @@ textarea{
     margin:0;
   }
 
+  .header-img{
+    width: 300px;
+  }
+
   .mobile-top{
     justify-content: space-between;
   }
@@ -1022,6 +928,11 @@ textarea{
     max-width: 250px;
   }
 
+  .page-navigation{
+    height: 50px;
+    overflow: hidden;
+  }
+
   .page-header > .header-content > .desktop-header-row >.mobile-top > .logo-mobile{
     display: none;
 
@@ -1040,14 +951,9 @@ textarea{
 
   /* HEADER, NAVIGATION, FOOTER */
 
-  .header-content-top{
-
-    height: 15vw;
-
-  }
-
   .header-content-bot{
-    padding:0 0 90px 10%;
+    height: 400px;
+    overflow:hidden;
   }
 
   .header-content-bot > h2,p{
@@ -1055,17 +961,21 @@ textarea{
     padding:0;
   }
 
-  .header-content-bot > p{
+  .header-content-bot  p{
     padding:0.5vw 0 0 0;
     font-size: 16px;
+    width: 250px;
   }
   
-  .header-content-bot > h2{
-    font-size: 48px;
+  .header-content-bot  h2{
+    font-size: 32px;
+    width: 500px;
   }
 
+  .header-img{
+    width: 400px;
+  }
   
-
   .content-wrapper {
     width: 900px;
   }
@@ -1079,7 +989,11 @@ textarea{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 1750px;
+    width: 90%;
+  }
+
+  .nav-links a{
+    font-size: 17px;
   }
   
   .nav-button {
@@ -1317,6 +1231,14 @@ textarea{
     margin:0 auto;
     font-size: 14px;
     padding:6px 15px;
+  }
+
+  .addPet-content{
+    width: 900px;
+  }
+
+  .login-content{
+    width: 900px;
   }
 
 }

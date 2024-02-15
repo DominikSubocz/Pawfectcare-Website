@@ -31,6 +31,9 @@ Components::pageHeader("Add book", ["style"], ["mobile-nav"]);
 
 ?>
 
+<main class="content-wrapper addPet-content">
+
+
 <h2>Add new Book</h2>
 
 <form 

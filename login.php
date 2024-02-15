@@ -45,6 +45,9 @@ Components::pageHeader("Login", ["style"], ["mobile-nav"]);
 
 ?>
 
+<main class="content-wrapper login-content">
+
+
 <h2>Log in to an existing account</h2>
 
 <form method="POST" action="<?php echo $_SERVER["PHP_SELF"]; ?>" class="form">

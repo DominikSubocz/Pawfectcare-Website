@@ -1,7 +1,8 @@
 <?php
 
 class Utils {
-  public static $projectFilePath = "http://localhost/Pawfectcare-Website/";
+  // public static $projectFilePath = "http://localhost/Pawfectcare-Website/"; Uncomment this and comment line below to switch to localhost
+  public static $projectFilePath = "http://192.168.0.14:8080/Pawfectcare-Website/";
   public static $defaultBookCover = "default.png";
 
   /**
