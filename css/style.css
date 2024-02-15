@@ -370,6 +370,20 @@ textarea{
   padding-right: 0 !important;
   padding-left: 0 !important;
 }
+.header-content-bot{
+  display: flex;
+  flex-direction: row;
+}
+
+@media screen and (min-width:320px){
+
+
+
+  .header-img{
+    width: 200px;
+  }
+
+}
 
 @media screen and (max-width: 471px) {
   /* 
