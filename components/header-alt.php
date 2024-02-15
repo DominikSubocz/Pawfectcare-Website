@@ -53,21 +53,26 @@ $pageTitle = ucfirst($pageTitle);
         </div>
         <nav class="page-navigation" id="nav-list">
         <ul class="nav-links">
-            <li><a href="pet-list.php">Pets</a></li>
-            <?php
-            if(isset($_SESSION["loggedIn"])){
-              $user = $_SESSION["username"];
-              if($_SESSION["user_role"] === "Admin"){
-                echo "<li><a href='add-book.php'>AddBook</a></li>";
+          <li><a href="pet-list.php">Pets</a></li>
+          <li><a href='index.php'>Home</a></li>
+          <li><a href="pet-list.php">Pets</a></li>
+          <li><a href="contact.php">Contact Us</a></li>                    
+          <?php
+
+          if (isset($_SESSION['loggedIn'])) {
+              $user = $_SESSION['username'];
+              // Site administrators can add new books
+              if ($_SESSION['user_role'] === "Admin") {
+                  echo "<li><a href='add-book.php'>Add Book</a></li>";
               }
               echo "<li><a href='basket.php'>Basket</a></li>
-                <li><a href='user.php'>$user's Account </a></li>
-                <li><a href='logout.php'>Logout</a></li>";
-            }
-            else{
+                    <li><a href='user.php'>$user's Account</a></li>
+                    <li><a href='calendar.php'>Book Appointment</a></li>
+                    <li><a href='logout.php'>Logout</a></li>";
+          } else {
               echo "<li><a href='login.php'>Login</a></li>";
-            }
-            ?>
+          }
+          ?>
           </ul>
         </nav>
       </div>
@@ -75,13 +80,21 @@ $pageTitle = ucfirst($pageTitle);
 
     <div class="header-content-bot header-content">
 
-            <h2> Pawfect Care Adoption </h2>
+            <div>
+              <div>
+                <h2> Pawfect Care Adoption </h2>
+                <p> Find your furry friend: Discover joy through pet adoption today. </p>
+              </div>
+            </div>
 
-            <p> Find your furry friend: Discover joy through pet adoption today. </p>
+            <div>
+              <img class="header-img" src="images/dog-with-doctor.png" alt="Image of dog sitting next to vet.">
+            </div>
 
 
     </div>
 
+
+
   </header>
 
-  <main class="content-wrapper main-content">

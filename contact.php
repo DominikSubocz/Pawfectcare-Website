@@ -9,8 +9,8 @@ require("components/form-validation.php");
 
 components::pageHeaderAlt("Checkout", ["style"], ["mobile-nav"]);
 ?>
-
-<h2>PHP Form Validation Example</h2>
+<main class="content-wrapper form-content">
+<h2>Contact Form</h2>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
   <label for="name">First name:</label><br>
   <input type="text" name="name" value="<?php echo $name;?>"><br>

@@ -135,7 +135,6 @@ color: #fff;
 
 .content-wrapper {
   margin: auto;
-  width: 100%;
 }
 
 .main-content {
@@ -293,6 +292,8 @@ input:not(input.button) {
 
 textarea{
   max-width: 100%;
+  width: 100%;
+  min-width: 100%;
 }
 
 .form .button {
@@ -361,28 +362,86 @@ textarea{
   justify-content: space-between;
 }
 
+.page-header > .header-content > .desktop-header-row >.mobile-top > div {
+  align-items: center;
 
+}
 
-@media only screen and (min-device-width:320px) and (max-device-width:480px){
-  body{
-      padding:0;
-      margin:0;
+@media screen and (min-width:320px) {
+  .header-content  h2{
+    font-size: 16px;
   }
+  
+  .header-content  p{
+    font-size: 10px;
+  }
+  
+  .page-title{
+    font-size: 14px;
+  }
+
+  .logo{
+    width: 50px;
+  }
+
+  .logo-desktop{
+    display: none;
+  }
+
+  .logo-mobile{
+    display: flex;
+  }
+
+  .nav-button{
+    width: 65px;
+  }
+  .header-content-bot{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 15px 0;
+  }
+
+  .header-content h2{
+    margin:0;
+  }
+
+  .header-content p{
+    width: 75%;
+  }
+
+  .header-content{
+    padding-left:15px;
+
+    }
+
+    .form-content{
+      width: 75%;
+    }
+
+    .header-img{
+      width: 150px;
+    }
+
+
 }
 
-@media (min-width:641px){
-
+@media screen and (min-width:641px){
   table{
-table-layout:fixed;
+    table-layout:fixed;
+    }
+    
+    td{
+      width:33%;
+    }
+
+    
 }
 
-td{
-  width:33%;
-}
-}
+
 
 /* MOBILE AND TABLET */
-@media screen and (max-width: 949px) {
+@media screen and (min-width:642px) and (max-width: 949px) {
   /* 
     Lets us show elements that may be hidden 
     (i.e., display: none;) on mobile by default, 
@@ -413,14 +472,6 @@ td{
     padding: 12px 36px;
   }
 
-
-
-  .page-header > .header-content > .desktop-header-row >.mobile-top > div {
-    display: flex;
-    align-items: center;
-
-  }
-
   .page-header .logo{
     width: 55px;
 
@@ -429,6 +480,10 @@ td{
   .page-header > .header-content > .desktop-header-row >.mobile-top > .logo-desktop{
     display: none;
 
+  }
+
+  .form-content {
+    width: 85%;
   }
 
   .header-content{
@@ -605,7 +660,7 @@ td{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 1750px;
+    width: 85%;
   }
   
   .nav-button {

@@ -43,7 +43,9 @@
         </div>
         <nav class="page-navigation" id="nav-list">
                 <ul class="nav-links">
+                   <li><a href='index.php'>Home</a></li>
                     <li><a href="pet-list.php">Pets</a></li>
+                    <li><a href="contact.php">Contact Us</a></li>
                     <?php
                     /*
                     An example of conditional rendering.
