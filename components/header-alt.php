@@ -80,8 +80,8 @@ $pageTitle = ucfirst($pageTitle);
 
     <div class="header-content-bot header-content">
 
-            <div>
-              <div>
+            <div class="header-container1">
+              <div class="header-container2">
                 <h2> Pawfect Care Adoption </h2>
                 <p> Find your furry friend: Discover joy through pet adoption today. </p>
               </div>
