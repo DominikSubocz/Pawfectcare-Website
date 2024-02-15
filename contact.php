@@ -19,10 +19,12 @@ components::pageHeaderAlt("Checkout", ["style"], ["mobile-nav"]);
   <label for="website">Website:</label><br>
   <input type="text" name="website" value="<?php echo $website;?>">
   <label for="comment">Comment:</label><br>
-  <textarea name="comment" rows="5" cols="40"><?php echo $comment;?></textarea>
+  <textarea name="comment" rows="5"><?php echo $comment;?></textarea>
   <br><br>
   <input type="submit" name="submit" value="Submit">  
 </form>
+
+<iframe width="425" height="350" src="https://www.openstreetmap.org/export/embed.html?bbox=-2.993334531784058%2C56.49000188262805%2C-2.9796874523162846%2C56.49539753638916&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/#map=17/56.49270/-2.98651">View Larger Map</a></small>
 
 <?php
 

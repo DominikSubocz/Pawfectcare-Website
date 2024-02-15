@@ -21,8 +21,6 @@ if (isset($_GET['date'])) {
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         $bookings[] = $row['booking_time']; // Adjust 'booking_time' as needed to match your DB column
     }
-
-    var_dump($bookings);
 }
 
 if (isset($_POST['submit'])) {
@@ -46,6 +44,8 @@ if (isset($_POST['submit'])) {
             $msg = "<div class='alert alert-success'>Booking Successful</div>";
             echo $msg;
             // Redirect after 5 seconds
+            $_SESSION["successMessage"] = "Appointment Booked!";
+
             echo '<script src="js\script.js"></script>';
         } else {
             $msg = "<div class='alert alert-danger'>Booking Failed</div>";
@@ -100,15 +100,20 @@ function timeslots($duration, $cleanup, $start, $end) {
     <div class="container">
         <h1 class="text-center">Book for Date: <?php echo date('m/d/Y', strtotime($date)); ?></h1>
         <hr>
-        <div class="row">
+        <div class= "row msg-row">
             <div class="col-md-12">
                 <?php echo(isset($msg))?$msg:"";?>
             </div>
+        </div>
+
+
+        <div class="row timeslot-row">
+
             <?php 
             $timeslots = timeslots($duration, $cleanup, $start, $end);
             foreach($timeslots as $ts): ?>
-                <div class="col-md-2">
-                    <div class="form-group">
+                <div class="col-md-2 col-test">
+                    <div class="form-group group-test">
                         <?php $isBooked = in_array($ts, $bookings); ?>
                         <button class="btn <?php echo $isBooked ? 'btn-danger' : 'btn-success book'; ?>" data-timeslot="<?php echo $ts; ?>">
                             <?php echo $ts; ?>
@@ -142,7 +147,7 @@ function timeslots($duration, $cleanup, $start, $end) {
                                     <input required type="email" readonly name="email" class="form-control">
                                 </div>
                                 <div class="form-group pull-right">
-                                    <button class="btn btn-primary" type="submit" name="submit">Submit</button>
+                                    <button class="btn btn-submit-appt btn-primary" type="submit" name="submit">Submit</button>
                                 </div>
                             </form>
                         </div>
@@ -164,6 +169,3 @@ function timeslots($duration, $cleanup, $start, $end) {
 </body>
 
 </html>
-
-<?php var_dump($ts, $bookings); ?>
-

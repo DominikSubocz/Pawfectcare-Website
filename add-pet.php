@@ -12,13 +12,13 @@ require("classes/utils.php");
 $output = "";
 
 if ($_SERVER["REQUEST_METHOD"] ==="POST" && isset($_POST["addSubmit"])) {
-    require("classes/book.php");
+    require("classes/pet.php");
 
     $output = Book::validate();
 
     if(!$output){
         $bookId = Book::create();
-        header("Location: " . Utils::$projectFilePath . "/book.php?id=$bookId");
+        header("Location: " . Utils::$projectFilePath . "/pet.php?id=$bookId");
 
     }
 }

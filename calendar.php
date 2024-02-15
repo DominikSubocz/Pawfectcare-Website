@@ -34,7 +34,7 @@ function build_calendar($month, $year){
     // Further code using $bookings goes here
     
 
-    $daysOfWeek = array('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday','Sunday');
+    $daysOfWeek = array('Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat','Sun');
     $firstDayOfMonth = mktime(0,0,0,$month,1,$year);
     $numberDays = date('t',$firstDayOfMonth);
     $dateComponents = getdate($firstDayOfMonth);
@@ -139,26 +139,26 @@ function checkSlots($date){
 }
 
 ?>
+<main class="content-wrapper calendar-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+            <?php
+            $dateComponents = getdate();
+            if(isset($_GET['month'])&&($_GET['year'])){
+                $month = $_GET['month'];
+                $year = $_GET['year'];
+            } else {
+                $month = $dateComponents['mon'];
+                $year = $dateComponents['year'];
+            }
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-        <?php
-        $dateComponents = getdate();
-        if(isset($_GET['month'])&&($_GET['year'])){
-            $month = $_GET['month'];
-            $year = $_GET['year'];
-        } else {
-            $month = $dateComponents['mon'];
-            $year = $dateComponents['year'];
-        }
-
-        echo build_calendar($month, $year);
-        ?>
+            echo build_calendar($month, $year);
+            ?>
+            </div>
         </div>
     </div>
-</div>
-
+</main>
 <?php
 
 Components::pageFooter();
