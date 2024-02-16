@@ -1,5 +1,8 @@
 * {
   box-sizing: border-box;
+}
+
+html{
   overflow-x: hidden;
 }
 
@@ -320,7 +323,7 @@ textarea{
   text-align: center;
 }
 
-.register-success-content{
+.success-content{
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -391,7 +394,7 @@ textarea{
   
   .header-content h2{
     margin:0;
-    width: 185px;
+    width: 190px;
   }
 
   .header-content  p{
@@ -404,7 +407,7 @@ textarea{
   }
 
   .header-container2{
-    width: 225px;
+    width: 250px;
   }
 
 
@@ -509,7 +512,103 @@ textarea{
       width: 90%;
     }
     
-    
+    .pet-content{
+      width: 350px;
+    }
+
+    .day-row small{
+      display: none;
+    }
+
+    .day-row h4{
+    font-size: 14px;
+    }
+
+    .day-row a{
+      font-size: 12px;
+    }
+
+    .timeslot-row{
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .form-group button{
+      width: 200px;
+      margin:10px 0;
+    }
+
+    .success-content{
+      display: flex;
+      justify-content: center;
+      height: 100%;
+    }
+
+    .success-content h2{
+      font-size: 48px;
+    }
+
+    .success-content p{
+      font-size: 36px;
+    }
+
+    .animated-tick-icon{
+      width: 300px;
+    }
+
+    .feature-card-container{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .feature-card{
+      text-align: center;
+    }
+
+    .membership-feature-card{
+      order: 2;
+    }
+
+    .story-container{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .blob-img{
+      width: 350px;
+    }
+
+    .story-paragraph{
+      width: 300px;
+      margin:0 auto;
+    }
+
+    .services-container{
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .services-img{
+      position: relative;
+      border-radius: 100%;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      margin-bottom:-210px;
+      margin-left:15px;
+      z-index: 99;
+    }
+
+    .blob-img2{
+      width: 225px;
+      z-index: -1;
+      margin-left:75px;
+    }
 
 
 }
@@ -712,6 +811,11 @@ textarea{
   margin:0 auto;
   font-size: 14px;
   padding:6px 15px;
+}
+
+.form-group button{
+  width: 200px;
+  margin:10px 0;
 }
 
 }
@@ -917,6 +1021,11 @@ textarea{
   margin:0 auto;
   font-size: 14px;
   padding:6px 15px;
+}
+
+.form-group button{
+  width: 100px;
+  margin:10px 0;
 }
 
 }
@@ -1141,10 +1250,11 @@ textarea{
   }
 
   .timeslot-row{
-    padding:25px 0;
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    align-items: center;
+    justify-content: center;  
   }
 
   .col-md-2{
@@ -1240,8 +1350,44 @@ textarea{
   .login-content{
     width: 900px;
   }
+  
+  .pets-content{
+    width: 900px;
+  }
 
+  .pet-content{
+    width: 950px;
+  }
+
+  .col-md-2{
+    width:85px;
+    margin:0 15px;
+  }
+  
+  
+  .btn-succes {
+    width: 100%;
+  }
+
+  .form-group button{
+    width: 100px;
+  }
+
+  .day-row small{
+    margin-top:15px;
+    display: block;
+  }
+
+  .day-row h4{
+  font-size: 16px;
+  }
+
+  .day-row a{
+    font-size: 14px;
+  }
 }
+
+
 
 
 

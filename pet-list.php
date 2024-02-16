@@ -8,7 +8,7 @@ require("classes/pet.php");
 Components::pageHeader("All Books", ["style"], ["mobile-nav"]);
 
 ?>
-<main class="content-wrapper main-content">
+<main class="content-wrapper pets-content">
     <div class="pet-list-container">
         <h1>Find a Pet</h1>
         

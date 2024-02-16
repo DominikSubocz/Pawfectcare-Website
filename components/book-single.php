@@ -1,4 +1,7 @@
 
+
+<main class="content-wrapper pet-content">
+
 <div class="book-container">
   <img src="images/<?php echo $filename; ?>" alt="Cover of <?php echo $name; ?>" class="book-image">
 

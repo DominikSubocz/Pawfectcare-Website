@@ -24,10 +24,11 @@ if (isset($_SESSION["successMessage"])) {
 
 </head>
 
-<div class="register-success-content">
+<div class="success-content">
+    <img src="images/tick.gif" alt="Animated green tick" class="animated-tick-icon">
     <h2><?php echo $message; ?></h2>
     <p>Return to <a href="pet-list.php">home page</a>.</p>
-    <p>Submit another message <a href="contact.php">here</a>.</p>
+
 </div>
 
 <?php
