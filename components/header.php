@@ -69,7 +69,6 @@
             </nav>
       </div>
     </div>
-    <div class="waves">
 
     <div class="header-content-bot header-content">
 
@@ -80,14 +79,20 @@
               </div>
             </div>
 
-            <div>
-              <img class="header-img" src="images/dog-with-doctor.png" alt="Pawfect Care logo with green fox">
-            </div>
-
-
-
     </div>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#00A385" fill-opacity="1" d="M0,320L60,293.3C120,267,240,213,360,186.7C480,160,600,160,720,170.7C840,181,960,203,1080,197.3C1200,192,1320,160,1380,144L1440,128L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>    </div>
+
+    <div class="demo">
+    <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+        <defs>  
+            <clipPath id="blob">
+            <path fill="#00cba9" d="M0,160L48,186.7C96,213,192,267,288,277.3C384,288,480,256,576,218.7C672,181,768,139,864,138.7C960,139,1056,181,1152,208C1248,235,1344,245,1392,250.7L1440,256L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+            </clipPath>
+        </defs>
+        <image xlink:href="images/healthcare-gigapixel.png" x="0" y="0" height="100%" width="500px" clip-path="url(#blob)"/>
+      </svg>
+</div>
+
+  
 
   </header>
 
