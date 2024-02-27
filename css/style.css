@@ -380,19 +380,13 @@ textarea{
   padding-right: 0 !important;
   padding-left: 0 !important;
 }
-.header-content-bot{
-  display: flex;
-  flex-direction: row;
-}
 
-.wrap {
-  max-width: 1170px;
-  margin: 0 auto;
+/* Header svg wave */
 
-}
 
-.spotlight-container {
-  background: #143256;
+.header-content-bot {
+  background: #00A385;
+  height: 300px;
   position: relative;
     &:before {
     content: '';
@@ -400,8 +394,7 @@ textarea{
     bottom: 0;
     left: 0;
     right: 0;
-    height: 44px;
-    background: #fff;
+    background: #00A385;
     z-index: 1;
   }
   &:after {
@@ -410,23 +403,30 @@ textarea{
     bottom: 25px;
     left: 0;
     right: 0;
-    height: 44px;
-    background: #e1d0bc;
+    background: #00A385;
     z-index: 1;
   }
+
   .wrap {
     position: relative;
     z-index: 10;
   }
 }
+
+.wrap {
+  max-width: 100%;
+  margin: 0 auto;
+
+}
 .spotlight {
-  height: 500px;
+  display: flex;
+  height: 250px;
   width: 100%;
-  background: #31598a url(https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?crop=entropy&fit=crop&fm=jpg&h=1325&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=2025) center center / cover no-repeat;
 }
 
 .wave-container {
   position: relative;
+  bottom:48px;
   z-index: 100;
   
 
@@ -457,6 +457,8 @@ textarea{
     stroke: black;
     fill: red;
   }
+
+
 }
 
 @media screen and (min-width:320px){
@@ -688,6 +690,91 @@ textarea{
       margin:0 auto;
     }
 
+    /* Header svg wave */
+
+
+.header-content-bot {
+  background: #00A385;
+  height: 300px;
+  position: relative;
+    &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #00A385;
+    z-index: 1;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+    right: 0;
+    background: #00A385;
+    z-index: 1;
+  }
+
+  .wrap {
+    position: relative;
+    z-index: 10;
+  }
+}
+
+.wrap {
+  max-width: 100%;
+  margin: 0 auto;
+
+}
+.spotlight {
+  display: flex;
+  height: 250px;
+  width: 100%;
+}
+
+.spotlight:nth-child(1) img{
+  margin-top:-50px;
+}
+
+
+
+.wave-container {
+  position: relative;
+  bottom:48px;
+  z-index: 100;
+  padding-bottom:150px;
+  
+
+  .wrap {
+    position: relative;
+  }
+  
+  .wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    svg {
+      position: absolute;
+      bottom: 50px;
+      left: 50%;
+      height: auto;
+      width: 100%;
+      transform: translateY(50%) translateX(-50%);
+      min-height: 190px;
+      min-width: 420px;
+    }
+  }
+
+  path {
+    stroke-width: 20px;
+    stroke: black;
+    fill: red;
+  }
+}
+
 }
 
 
@@ -894,6 +981,8 @@ textarea{
   width: 200px;
   margin:10px 0;
 }
+
+
 
 }
 
@@ -1175,7 +1264,9 @@ textarea{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 90%;
+    width: 98%;
+    position: relative;
+    z-index:999;
   }
 
   .nav-links a{
@@ -1461,6 +1552,100 @@ textarea{
 
   .day-row a{
     font-size: 14px;
+  }
+
+  .header-content-bot {
+    background: #00A385;
+    height: 350px;
+    position: relative;
+      &:before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #00A385;
+      z-index: 1;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 25px;
+      left: 0;
+      right: 0;
+      background: #00A385;
+      z-index: 1;
+    }
+  
+    .wrap {
+      position: relative;
+      z-index: 10;
+    }
+  }
+  
+  .wrap {
+    max-width: 100%;
+  
+  }
+  .spotlight {
+    display: flex;
+    height: 250px;
+    width: 100%;
+    margin-right:600px;
+  }
+  
+  .spotlight:nth-child(1) img{
+    margin-top:-75px;
+    margin-left:75px;
+  }
+  
+  
+  
+  .wave-container {
+    position: relative;
+    bottom:53px;
+    z-index: 100;
+    padding-bottom:350px;
+    
+  
+    .wrap {
+      position: relative;
+    }
+    
+    .wave {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 200px;
+      svg {
+        position: absolute;
+        bottom: 50px;
+        left: 50%;
+        height: auto;
+        width: 100%;
+        transform: translateY(50%) translateX(-50%);
+        min-height: 190px;
+        min-width: 420px;
+      }
+    }
+
+    .wave svg{
+      z-index: 1;
+    }
+  
+    path {
+      stroke-width: 20px;
+      stroke: black;
+      fill: red;
+    }
+  }
+}
+
+@media screen and (min-width:1200px){
+  .spotlight:nth-child(1) img{
+    margin-top:-75px;
+    margin-left:170px;
   }
 }
 

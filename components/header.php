@@ -69,28 +69,31 @@
             </nav>
       </div>
     </div>
-
-    <div class="header-content-bot header-content">
-
-            <div>
-              <div>
-                <h2> Pawfect Care Adoption </h2>
-                <p> Find your furry friend: Discover joy through pet adoption today. </p>
-              </div>
-            </div>
-
+    
+    <div class='header-content-bot header-content'>
+      <div class='wrap'>
+        <div class='spotlight'>
+          <div>
+            <h2> Pawfect Care Adoption </h2>
+            <p> Find your furry friend: Discover joy through pet adoption today. </p>
+          </div>
+          <div>
+            <img class="header-img" src="images/dog-with-doctor.png" alt="Pawfect Care logo with green fox">
+          </div>
+        </div>
+      </div>
     </div>
+    <div class='wave-container'>
+      <div class='wrap'>
+        <div class='wave'>
+          
+            <svg viewBox="0 0 450 200" preserveAspectRatio="none meet">
+              <path d="M-50,100 L-1,100 C150,200 300,0 450,102 L600,100 L600,300 L-250,300 L-250,Z" style="fill:white;stroke:#dfe1ff;stroke-width:8;"></path>
+            </svg>
 
-    <div class="demo">
-    <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
-        <defs>  
-            <clipPath id="blob">
-            <path fill="#00cba9" d="M0,160L48,186.7C96,213,192,267,288,277.3C384,288,480,256,576,218.7C672,181,768,139,864,138.7C960,139,1056,181,1152,208C1248,235,1344,245,1392,250.7L1440,256L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
-            </clipPath>
-        </defs>
-        <image xlink:href="images/healthcare-gigapixel.png" x="0" y="0" height="100%" width="500px" clip-path="url(#blob)"/>
-      </svg>
-</div>
+        </div>
+      </div>
+    </div>
 
   
 
