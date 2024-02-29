@@ -463,6 +463,10 @@ textarea{
 
 @media screen and (min-width:320px){
 
+  body{
+    overflow-x: hidden;
+  }
+
 
   .header-content  h2{
     font-size: 20px;
@@ -695,7 +699,7 @@ textarea{
 
 .header-content-bot {
   background: #00A385;
-  height: 300px;
+  height: 400px;
   position: relative;
     &:before {
     content: '';
@@ -735,13 +739,14 @@ textarea{
 
 .spotlight:nth-child(1) img{
   margin-top:-50px;
+  margin-right:20px
 }
 
 
 
 .wave-container {
   position: relative;
-  bottom:48px;
+  bottom:44px;
   z-index: 100;
   padding-bottom:150px;
   
@@ -774,6 +779,40 @@ textarea{
     fill: red;
   }
 }
+
+.testimonial-container{
+  width: 375px;
+  height: 600px;
+}
+
+.testimonial-svg svg image{
+  width: 100%;
+}
+
+text{
+  font-size:12px;
+
+
+}
+
+.testimonial-container h2{
+  position: relative;
+  z-index: 9;
+}
+
+.testimonial-card p {
+  width:300px;
+  margin:0 auto;
+}
+
+
+.testimonial-card{
+  position: relative;
+  z-index: 9;
+  margin-bottom:-225px;
+  width: 100%;
+}
+
 
 }
 

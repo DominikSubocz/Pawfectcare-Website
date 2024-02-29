@@ -25,7 +25,22 @@
       action="<?php echo $_SERVER["PHP_SELF"]; ?>?id=<?php echo $petId; ?>&action=add"
       class="button-form"
     >
-      <input class="button" type="submit" name="addToBasketButton" value="Adopt <?php echo $name; ?>">  
+      <?php
+      
+      if (isset($_SESSION['loggedIn'])) {
+
+        // Site administrators can add new books
+        if ($_SESSION['user_role'] === "Admin") {
+            echo "<input class='button' type='submit' name='updateButton' value='Update $name info'> 
+            <input class='danger' type='submit' name='addToBasketButton' value='Delete $name '>"; 
+        }
+
+        else if ($_SESSION['user_role'] === "Member"){
+          echo "<input class='button' type='submit' name='addToBasketButton' value='Adopt $name '>"; 
+        }
+    }
+
+        ?>
     </form>
   </div>
 </div>

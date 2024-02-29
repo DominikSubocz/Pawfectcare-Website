@@ -94,7 +94,7 @@ CREATE TABLE pets.vets(
     firstname VARCHAR(32) NOT NULL,
     lastname VARCHAR(32) NOT NULL,
     contactnumber VARCHAR(25) NOT NULL,
-    emailaddress VARCHAR(25) NOT NULL
+    emailaddress VARCHAR(45) NOT NULL
 
 
 );
