@@ -30,7 +30,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST" &&
         header("Location: " . $_SERVER["PHP_SELF"]);
     }
 
-    Components::pageHeader($_SESSION["username"] . "'s basket", ["style"], ["mobile-nav"]);
+    Components::pageHeader("Basket", ["style"], ["mobile-nav"]);
 
     ?>
 

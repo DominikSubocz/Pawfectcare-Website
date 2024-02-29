@@ -52,7 +52,6 @@
                     If the user is logged in, replace the login link with a logout link.
                     */
                     if (isset($_SESSION['loggedIn'])) {
-                        $user = $_SESSION['username'];
                         // Site administrators can add new books
                         if ($_SESSION['user_role'] === "Admin") {
                             echo "<li><a href='add-pet.php'>Add Book</a></li>";

@@ -11,15 +11,14 @@ if (!isset($_SESSION["loggedIn"])){
     
 }
 
-$username = Utils::escape($_SESSION["username"]);
 $userId = Utils::escape($_SESSION["user_id"]);
 
 
-Components::pageHeader("$username's orders", ["style"], ["mobile-nav"]);
+Components::pageHeader("Your Orders", ["style"], ["mobile-nav"]);
 
 ?>
 
-<h2><?php echo $username; ?>'s Orders</h2>
+<h2>Your Orders</h2>
 
 
 <?php
