@@ -952,12 +952,26 @@ textarea{
 }
 
 .book-container input.button{
-  max-width: 250px;
+  width: fit-content;
+}
+
+.modal-confirmation-container input.button{
+  max-height: 38px;
+  margin-left: 10px;
+
+}
+
+.modal-confirmation-container{
+  display: flex;
+  flex-direction: row;
+}
+
+.book-container .danger{
+  width: fit-content;
 }
 
 .modal-content input.button, .modal-content .danger{
-  width: 50px;
-  max-width: 250px;
+  width: fit-content;
 }
 
 }

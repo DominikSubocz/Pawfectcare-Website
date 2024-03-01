@@ -107,27 +107,17 @@ class Book{
         return $insertedId;
     }
 
-    public static function update(){
+    public static function update($petId){
         $conn = Connection::connect();
 
-        if(!empty($_FILES["coverImage"]["name"])){
-            $stmt = $conn->prepare(SQL::$updateBook);
-            $stmt->execute([
-                $_POST["title"],
-                $_POST["author"],
-                $_POST["price"],
-                $_POST["coverImage"]["name"],
-                $_GET["id"]
-            ]);
-        } else {
-            $stmt = $conn->prepare(SQL::$updateBookNoFile);
-            $stmt->execute([
-                $_POST["title"],
-                $_POST["author"],
-                $_POST["price"],
-                $_GET["id"]
-            ]);
-        }
+        $stmt = $conn->prepare(SQL::$updateBook);
+        $stmt->execute([
+            $_POST["name"],
+            $_POST["species"],
+            $_POST["age"],
+            $filename = $_FILES["coverImage"]["name"],
+            $petId
+        ]);
 
         $conn = null;
     }

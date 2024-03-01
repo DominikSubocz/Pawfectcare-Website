@@ -14,14 +14,8 @@ class SQL {
   public static $getUser = "SELECT user_id, username, password, user_role FROM users WHERE username = ?";
   public static $createUser = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
   public static $createBook = "INSERT INTO petsinfo (name_, species, age, filename) VALUES (?,?,?,?)";
-  public static $updateBook = "UPDATE petsinfo
-        SET name_ = ?, species = ?, age = ?, filename = ?
-        WHERE pet_id = ?";
+  public static $updateBook = "UPDATE petsinfo SET name_ = ?, species = ?, age = ?, filename = ? WHERE pet_id = ?";
       
-  public static $updateBookNoFile = "UPDATE petsinfo
-      SET name_ = ?, species = ?, age = ?
-      WHERE pet_id = ?";
-
   public static $deleteBook = "DELETE petstories, petsinfo
   FROM petstories
   LEFT JOIN petsinfo ON petstories.pet_id = petsinfo.pet_id

@@ -1,7 +1,11 @@
 <?php
 
 if (isset($_POST["removeSubmit"])){
-  Pet::delete($bookId);
+  Book::delete($petId);
+}
+
+if(isset($_POST["updateSubmit"])){
+  Book::update($petId);
 }
 
 ?>
@@ -37,7 +41,7 @@ if (isset($_POST["removeSubmit"])){
 
         // Site administrators can add new books
         if ($_SESSION['user_role'] === "Admin") {
-            echo "<a class='button' href='update-book.php'>Update $name info</a>
+            echo "<input class='button' id='updateBtn' type='button' value='Update $name info'>
             <input class='danger' id='deleteBtn' type='button' name='addToBasketButton' value='Delete $name '>"; 
         }
 
@@ -59,8 +63,39 @@ if (isset($_POST["removeSubmit"])){
     <span class="close">&times;</span>
     <p>Are you sure you want to remove <?php echo $name ?>?</p>
     <br>
-    <input class="danger" type="submit" name="removeSubmit" value="Yes">
-    <input class="button" type="button" id="cancelBtn" value="No">
+    <div class="modal-confirmation-container">
+      <form action="" method="POST">
+        <input class="danger" type="submit" name="removeSubmit" value="Yes">
+      </form>
+      <input class="button" type="button" id="cancelBtn" value="No">
+    </div>
+
+  </div>
+
+</div>
+
+<!-- The Modal -->
+<div id="updateModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+  <span class="close">&times;</span>
+
+  <form method="POST" action="" enctype="multipart/form-data" class="form">
+    <label>Name</label>
+    <input type="text" name="name" value="<?php echo $name; ?>">
+
+    <label>Species</label>
+    <input type="text" name="species" value="<?php echo $species; ?>">
+
+    <label>Age</label>
+    <input type="text" name="age" value="<?php echo $age; ?>">
+
+    <label>Cover image</label>
+    <input type="file" name="coverImage" value="<?php echo $filename; ?>">
+
+    <input class="button" type="submit" name="updateSubmit" value="Update Book Details">
+  </form>
 
   </div>
 
@@ -73,7 +108,7 @@ var modal = document.getElementById("myModal");
 // Get the button that opens the modal
 var btn = document.getElementById("deleteBtn");
 var cancelBtn = document.getElementById("cancelBtn");
-
+var updateBtn = document.getElementById("updateBtn");
 
 
 // Get the <span> element that closes the modal
@@ -87,10 +122,15 @@ btn.onclick = function() {
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
   modal.style.display = "none";
+  updateModal.style.display = "none";
 }
 
 cancelBtn.onclick = function() {
   modal.style.display = "none";
+}
+
+updateBtn.onclick = function(){
+  updateModal.style.display = "block";
 }
 
 
