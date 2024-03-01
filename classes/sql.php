@@ -17,11 +17,16 @@ class SQL {
   public static $updateBook = "UPDATE petsinfo
         SET name_ = ?, species = ?, age = ?, filename = ?
         WHERE pet_id = ?";
-        
+      
   public static $updateBookNoFile = "UPDATE petsinfo
       SET name_ = ?, species = ?, age = ?
       WHERE pet_id = ?";
-  public static $deleteBook = "DELETE FROM petsinfo WHERE pet_id = ?";
+
+  public static $deleteBook = "DELETE petstories, petsinfo
+  FROM petstories
+  LEFT JOIN petsinfo ON petstories.pet_id = petsinfo.pet_id
+  WHERE petstories.pet_id = ?";
+
   public static $createOrder = "INSERT INTO orders
       (order_id, book_id, user_id, quantity, order_date, address_line, postcode) VALUES
       (?, ?, ?, ?, ?, ?, ?)";

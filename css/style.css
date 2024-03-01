@@ -317,6 +317,8 @@ input:not(input.button) {
   width: 100%;
 }
 
+
+
 textarea{
   max-width: 100%;
 }
@@ -910,8 +912,55 @@ textarea{
   align-items: center;
   margin: 0 25px;
 }
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.book-container input.button{
+  max-width: 250px;
+}
+
+.modal-content input.button, .modal-content .danger{
+  width: 50px;
+  max-width: 250px;
+}
+
+}
 
 
 
@@ -1116,6 +1165,19 @@ textarea{
 .form-group button{
   width: 200px;
   margin:10px 0;
+}
+
+.book-container input.button{
+  max-width: 250px;
+}
+
+.modal-content input.button, .modal-content .danger{
+  width: 100px;
+  max-width: 250px;
+}
+
+.modal-content{
+  width: 300px;
 }
 
 }
@@ -1357,6 +1419,19 @@ textarea{
 
 .meet-team-container{
   margin:0 150px;
+}
+
+.book-container input.button{
+  max-width: 250px;
+}
+
+.modal-content input.button, .modal-content .danger{
+  width: 200px;
+  max-width: 250px;
+}
+
+.modal-content{
+  width: 500px;
 }
 
 
@@ -1841,6 +1916,19 @@ textarea{
 
   .meet-team-container{
     margin:0 250px;
+  }
+
+  .book-container input.button, .book-container .danger{
+    max-width: 250px;
+  }
+  
+  .modal-content input.button, .modal-content .danger{
+    width: 200px;
+    max-width: 250px;
+  }
+
+  .modal-content{
+    width: 600px;
   }
 }
 

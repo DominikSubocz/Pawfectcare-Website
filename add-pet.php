@@ -43,13 +43,13 @@ Components::pageHeader("Add book", ["style"], ["mobile-nav"]);
   class="form"
 >
   <label>Title</label>
-  <input type="text" name="title">
+  <input type="text" name="name">
 
   <label>Author</label>
-  <input type="text" name="author">
+  <input type="text" name="species">
 
   <label>Price</label>
-  <input type="text" name="price">
+  <input type="text" name="age">
   
   <label>Cover image</label>
   <input type="file" name="coverImage" value="">

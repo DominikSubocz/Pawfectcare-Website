@@ -45,24 +45,22 @@ class Book{
     }
 
     public static function validate(){
-        if (Utils::postValuesAreEmpty(["title", "author", "price"])){
+        if (Utils::postValuesAreEmpty(["name", "species", "age"])){
             return "<p class='error'>ERROR: One or more inputs are empty</p>";
         }
 
         $output = "";
 
-        if(strlen($_POST["title"]) < 4 || strlen ($_POST["title"]) > 128){
-            $output .= "<p class='error'>ERROR: Title must be between 4 and 128 characters long </p>";
+        if(strlen($_POST["name"]) < 4 || strlen ($_POST["name"]) > 128){
+            $output .= "<p class='error'>ERROR: Name must be between 4 and 128 characters long </p>";
         }
 
-        if(strlen($_POST["title"]) < 4 || strlen ($_POST["author"]) > 48){
-            $output .= "<p class='error'>ERROR: Author must be between 4 and 48 characters long </p>";
+        if(strlen($_POST["species"]) < 2 || strlen ($_POST["species"]) > 48){
+            $output .= "<p class='error'>ERROR: Spiecies must be between 4 and 48 characters long </p>";
         }
 
-        $filteredPrice = filter_var($_POST["price"], FILTER_VALIDATE_FLOAT);
-
-        if(!$filteredPrice){
-            $output .= "<p class='error'>ERROR: Price is invalid</p>";
+        if (!is_numeric($_POST["age"])) {
+            $output .= "<p class='error'>ERROR: Age must be a numeric value</p>";
         }
 
         if ($output){
@@ -100,7 +98,7 @@ class Book{
         $conn = Connection::connect();
 
         $stmt = $conn->prepare(SQL::$createBook);
-        $stmt->execute([$_POST["title"], $_POST["author"], $_POST["price"], $filename]);
+        $stmt->execute([$_POST["name"], $_POST["species"], $_POST["age"], $filename]);
 
         $insertedId = $conn->lastInsertId();
 
