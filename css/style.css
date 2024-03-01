@@ -58,6 +58,10 @@ textarea{
   
   }
 
+  .error:empty{
+    display: none;
+  }
+
   .closed{
     background:#dadada;
   }

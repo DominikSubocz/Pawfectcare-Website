@@ -29,12 +29,9 @@ $pet = Book::getPet($_GET["id"]);
 
 
 
-$pageTitle = "Book not found";
+$pageTitle = $pet["name_"];
 
-if (!empty($pet)) {
-    $pageTitle = $pet["name_"] . " - " . $pet["species"];
-}
-
+var_dump($pageTitle);
 
 Components::pageHeaderAlt($pageTitle, ["style"], ["mobile-nav"]);
 Components::singleBook($pet);

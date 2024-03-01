@@ -31,7 +31,7 @@
 
         // Site administrators can add new books
         if ($_SESSION['user_role'] === "Admin") {
-            echo "<input class='button' type='submit' name='updateButton' value='Update $name info'> 
+            echo "<a class='button' href='update-book.php'>Update $name info</a>
             <input class='danger' type='submit' name='addToBasketButton' value='Delete $name '>"; 
         }
 
