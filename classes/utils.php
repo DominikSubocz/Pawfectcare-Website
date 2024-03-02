@@ -5,9 +5,9 @@ class Utils {
   // public static $projectFilePath = "http://localhost/Pawfectcare-Website/";
 
   // for my chromebook
-  // public static $projectFilePath = "http://localhost:8080/Pawfectcare-Website/"; 
+  public static $projectFilePath = "http://localhost:8080/Pawfectcare-Website/"; 
 
-  public static $projectFilePath = "http://192.168.0.14:8080/Pawfectcare-Website/";
+  // public static $projectFilePath = "http://192.168.0.14:8080/Pawfectcare-Website/";
   public static $defaultBookCover = "default.png";
 
   /**
