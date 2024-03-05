@@ -1,8 +1,8 @@
 <?php
 
 // define variables and set to empty values
-$nameErr = $emailErr = $websiteErr = $commentErr = "";
-$name = $email = $website = $comment = $gender = "";
+$nameErr = $emailErr = $contactNoErr = $messageErr = "";
+$name = $email = $contactNo = $message = "";
 
 $message = "";
 
@@ -29,14 +29,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
   }
 
-  if (empty($_POST["comment"])) {
-    $commentErr = "Comment is required";
+  if (empty($_POST["message"])) {
+    $messageErr = "message is required";
   } else {
-    $comment = test_input($_POST["comment"]);
-    $message .= $comment . "\n";
+    $message = test_input($_POST["message"]);
+    $message .= $message . "\n";
   }
 
-  if (empty($nameErr) && empty($emailErr) && empty($websiteErr) && empty($commentErr)) {
+  if (empty($_POST["contactNo"])){
+    $contactNoErr = "Contact number is required";
+  }
+  else{
+    $contactNo = test_input($_POST["contactNo"]);
+    if (!preg_match("/^\d+$/", $contactNo)) {
+      $contactNoErr = "Only digits allowed";
+  }
+  }
+
+  if (empty($nameErr) && empty($emailErr) && empty($contactNoErr) && empty($messageErr)) {
     
     $_SESSION["successMessage"] = "Your message has been submitted successfully!";
     header("Location: " . Utils::$projectFilePath . "/success.php");

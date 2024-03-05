@@ -22,9 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     require("classes/user.php");
 
     // Determine which form to work with using the submit button's name
-    if (isset($_POST["loginSubmit"])) {
-        $output = User::login();
-    } elseif (isset($_POST["registerSubmit"])) {
+    if (isset($_POST["registerSubmit"])) {
         $output = User::register();
     }
 

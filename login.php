@@ -25,20 +25,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Determine which form to work with using the submit button's name
     if (isset($_POST["loginSubmit"])) {
         $output = User::login();
-    } elseif (isset($_POST["registerSubmit"])) {
-        $output = User::register();
     }
-
-    if ($output) {
-        header("Location: " . Utils::$projectFilePath . "/book-list.php");
-    } else if (isset($_POST["registerSubmit"])) {
-        $output = User::register();
-    }
-
-    if ($output) {
+    
+    if(stripos($output, "error") != true){
         $_SESSION["successMessage"] = "Registration Successful!";
         header("Location: " . Utils::$projectFilePath . "/success.php");
     }
+
 }
 
 Components::pageHeader("Login", ["style"], ["mobile-nav"]);
@@ -77,7 +70,7 @@ Components::pageHeader("Login", ["style"], ["mobile-nav"]);
         <label>Password</label>
         <input type="password" name="password">
 
-        <input class="button" type="submit" name="loginSubmit" value="Log in">
+        <input class="button" type="submit" onclick="return validateLogin()" name="loginSubmit" value="Log in">
 
         <!-- Only output if there is an error in the registration form -->
         <?php if ($output && isset($_POST["loginSubmit"])) { echo $output; } ?>
@@ -85,6 +78,30 @@ Components::pageHeader("Login", ["style"], ["mobile-nav"]);
 
     <a href="register.php">Register New Account</a>
 </main> 
+
+<script>
+    function validateLogin() {
+        let formName = document.forms[0]["username"].value.trim();
+        let formPassword = document.forms[0]["password"].value.trim();
+
+
+
+
+        if (formName === "") {
+            alert("Username must be filled out");
+            return false;
+        }
+
+        if (formPassword === "") {
+            alert("Password must be filled out");
+            return false;
+        }
+
+
+        
+        return true;
+    }
+</script>
 
 <?php
 
