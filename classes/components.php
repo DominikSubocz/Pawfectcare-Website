@@ -94,11 +94,12 @@ public static function orderList($userId, $orders){
 
     foreach($orders as $order){
         $orderId = Utils::escape($order["order_id"]);
-        $bookId = Utils::escape($order["book_id"]);
+        $bookId = Utils::escape($order["pet_id"]);
         $quantity = Utils::escape($order["quantity"]);
         $orderDate = Utils::escape($order["order_date"]);
-        $title = Utils::escape($order["title"]);
-        $author = Utils::escape($order["author"]);
+        $name = Utils::escape($order["name_"]);
+        $species = Utils::escape($order["species"]);
+        $age = Utils::escape($order["age"]);
         $price = Utils::escape($order["price"]);
         $filename = Utils::escape($order["filename"]);
 
