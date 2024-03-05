@@ -6,29 +6,31 @@ CREATE TABLE pets.petsinfo (
   name_ VARCHAR(128) NOT NULL,
   species VARCHAR(48) NOT NULL,
   age int NOT NULL,
+  price int NOT NULL,
   filename VARCHAR(64)
 );
 
-INSERT INTO pets.petsinfo (name_, species, age, filename) VALUES
-("Alfred", "Dog", 5, "alfred.jpg"),
-("Rose", "Dog", 3, "rose.jpg"),
-("Charlie", "Dog", 4, "charlie.jpg"),
-("Rose's Travels", "Dog", 6, "rose.jpg"),
-("Charlie", "Dog", 8, "charlie.jpg"),
-("Duke", "Dog", 9, "duke.jpg"),
-("Bella", "Dog", 5, "bella.jpg"),
-("Bear", "Dog", 10, "bear.jpg"),
-("Milo", "Dog", 7, "milo.jpg"),
-("Leo", "Dog", 8, "leo.jpg"),
-("Rocky", "Dog", 11, "rocky.jpg"),
-("Bruno", "Dog", 6, "bruno.jpg"),
-("Max", "Dog", 9, "max.jpg"),
-("Sadie", "Dog", 12, "sadie.jpg"),
-("Lucy", "Dog", 10, "lucy.jpg"),
-("Cleo", "Cat", 13, "cleo.jpg"),
-("Oliver", "Cat", 3, "oliver.jpg"),
-("Luna", "Cat", 4, "luna.jpg"),
-("Whiskers", "Cat", 3, "whiskers.jpg");
+INSERT INTO pets (name, type, age, price, image)
+VALUES
+("Alfred", "Dog", 5, 63.78, "alfred.jpg"),
+("Rose", "Dog", 3, 77.22, "rose.jpg"),
+("Charlie", "Dog", 4, 89.50, "charlie.jpg"),
+("Rose's Travels", "Dog", 6, 64.33, "rose.jpg"),
+("Charlie", "Dog", 8, 57.12, "charlie.jpg"),
+("Duke", "Dog", 9, 71.92, "duke.jpg"),
+("Bella", "Dog", 5, 76.88, "bella.jpg"),
+("Bear", "Dog", 10, 67.41, "bear.jpg"),
+("Milo", "Dog", 7, 51.65, "milo.jpg"),
+("Leo", "Dog", 8, 95.76, "leo.jpg"),
+("Rocky", "Dog", 11, 64.28, "rocky.jpg"),
+("Bruno", "Dog", 6, 51.23, "bruno.jpg"),
+("Max", "Dog", 9, 88.55, "max.jpg"),
+("Sadie", "Dog", 12, 59.12, "sadie.jpg"),
+("Lucy", "Dog", 10, 93.47, "lucy.jpg"),
+("Cleo", "Cat", 13, 86.17, "cleo.jpg"),
+("Oliver", "Cat", 3, 80.99, "oliver.jpg"),
+("Luna", "Cat", 4, 53.44, "luna.jpg"),
+("Whiskers", "Cat", 3, 60.78, "whiskers.jpg");
 
 CREATE TABLE pets.users (
   user_id INT PRIMARY KEY AUTO_INCREMENT,

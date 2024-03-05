@@ -8,9 +8,9 @@ require("classes/basket.php");
 
 $basket = Basket::getBasketArray();
 
-if(!isset($session["loggedIn"])) {
-    header("Location: " . Utils::$projectFilePath . "/login.php");
-}
+// if(!isset($session["loggedIn"])) {
+//     header("Location: " . Utils::$projectFilePath . "/login.php");
+// }
 
 $output = "";
 
@@ -28,6 +28,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
 components::pageHeader("Checkout", ["style"], ["mobile-nav"]);
 
 ?>
+
+<main class="content-wrapper home-content">
+
 
 <h2>Checokout</h2>
 
@@ -79,6 +82,7 @@ components::pageHeader("Checkout", ["style"], ["mobile-nav"]);
         <?php if($oputput) { echo $output;} ?>
 </form>
 
+</main>
 <?php
 
 Components::pageFooter();

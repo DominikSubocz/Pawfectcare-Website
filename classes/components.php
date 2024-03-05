@@ -65,9 +65,10 @@ class Components {
             require("components/basket-header.php");
 
             foreach ($booksArray as $book){
-                $currentId = Utils::escape($book["book_id"]);
-                $title = Utils::escape($book["title"]);
-                $author = Utils::escape($book["author"]);
+                $currentId = Utils::escape($book["pet_id"]);
+                $name = Utils::escape($book["name_"]);
+                $species = Utils::escape($book["species"]);
+                $age = Utils::escape($book["age"]);
                 $price = Utils::escape($book["price"]);
 
             $quantity = Utils::escape($book["quantity"]);

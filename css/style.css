@@ -58,9 +58,7 @@ textarea{
   
   }
 
-  .error:empty{
-    display: none;
-  }
+
 
   .closed{
     background:#dadada;
@@ -329,6 +327,10 @@ textarea{
   width: 100%;
 }
 
+.error:empty{
+  display: none;
+}
+
 .error {
   background-color: crimson;
   color: white;
@@ -336,6 +338,8 @@ textarea{
   padding: 8px;
   text-align: center;
 }
+
+
 
 .success-content{
   display: flex;

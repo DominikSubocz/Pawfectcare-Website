@@ -2,6 +2,7 @@
 require("classes/components.php");
 require("classes/utils.php");
 require("classes/pet.php");
+require("classes/basket.php");
 
 session_start();
 

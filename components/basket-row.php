@@ -1,7 +1,7 @@
 <tr>
   <td>
-    <b><a href="book.php?id=<?php echo $currentId; ?>"><?php echo $title; ?></a></b>
-    <br>By <?php echo $author; ?>
+    <b><a href="pet.php?id=<?php echo $currentId; ?>"><?php echo $name; ?></a></b>
+    <br><?php echo $species; ?>
   </td>
   <td><?php echo $quantity; ?></td>
   <td>£<?php echo $price * $quantity ?></td>

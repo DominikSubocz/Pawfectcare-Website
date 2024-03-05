@@ -34,11 +34,21 @@ if($_SERVER["REQUEST_METHOD"] === "POST" &&
 
     ?>
 
+<main class="content-wrapper home-content">
+
     <h2>Basket</h2>
 
     <?php
 
-    Components::basketTable(Basket::getFullBasketArray());
+Components::basketTable(Basket::getFullBasketArray());
+
+
+?>
+
+</main>
+
+    <?php
+
     Components::pageFooter();
 
     ?>

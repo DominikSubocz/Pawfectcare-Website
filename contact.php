@@ -16,16 +16,16 @@ components::pageHeaderAlt("Checkout", ["style"], ["mobile-nav"]);
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
   <label for="name">Full name:</label><br>
   <input type="text" name="name" value="<?php echo $name;?>"><br>
-  <p class="error"> <?php echo $nameErr ?> </p>
+  <p class="error"><?php echo $nameErr ?></p>
   <label for="email">Email:</label><br>
   <input type="text" name="email" value="<?php echo $email;?>"><br>
-  <p class="error"> <?php echo $emailErr ?> </p>
+  <p class="error"><?php echo $emailErr ?></p>
   <label for="contactNo">Contact Number:</label><br>
   <input type="text" name="contactNo" value="<?php echo $contactNo;?>">
-  <p class="error"> <?php echo $contactNoErr ?> </p>
+  <p class="error"><?php echo $contactNoErr ?></p>
   <label for="message">Message:</label><br>
   <textarea name="message" rows="5"><?php echo $message;?></textarea>
-  <p class="error"> <?php echo $messageErr ?> </p>
+  <p class="error"><?php echo $messageErr ?></p>
   <br><br>
   <input type="submit" onclick="return validateForm()" name="submit" value="Submit">  
 </form>

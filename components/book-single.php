@@ -8,6 +8,9 @@ if(isset($_POST["updateSubmit"])){
   Book::update($petId);
 }
 
+if(isset($_POST["addToBasketButton"])){
+  Basket::add($petId);
+}
 ?>
 
 <main class="content-wrapper pet-content">

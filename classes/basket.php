@@ -27,7 +27,7 @@ class Basket{
             $conn = Connection::connect();
 
             foreach ($bookIds as $id){
-                $stmt = $conn->prepare(SQL::$getBook);
+                $stmt = $conn->prepare(SQL::$getPet);
                 $stmt->execute([$id]);
                 $result = $stmt->fetch();
         
