@@ -10,7 +10,7 @@ CREATE TABLE pets.petsinfo (
   filename VARCHAR(64)
 );
 
-INSERT INTO pets (name, type, age, price, image)
+INSERT INTO pets.petsinfo (name_, species, age, price, filename)
 VALUES
 ("Alfred", "Dog", 5, 63.78, "alfred.jpg"),
 ("Rose", "Dog", 3, 77.22, "rose.jpg"),

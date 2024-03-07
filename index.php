@@ -193,8 +193,5 @@ components::pageHeader("Home Page", ["style"], ["mobile-nav"]);
 Components::pageFooter();
 ?>
 <!-- 
-//1.update
-//2.deletion
-//3.js form validation
 // 4.testing -->
 
