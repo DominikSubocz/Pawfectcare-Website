@@ -43,6 +43,7 @@
         </div>
         <nav class="page-navigation" id="nav-list">
                 <ul class="nav-links">
+                    <li><a href='index.php'>Home Page</a>
                     <li><a href="pet-list.php">Pets</a></li>
                     <li><a href="contact.php">Contact Us</a></li>
                     <?php
@@ -77,7 +78,7 @@
             <p> Find your furry friend: Discover joy through pet adoption today. </p>
           </div>
           <div>
-            <img class="header-img" src="images/dog-with-doctor.png" alt="Pawfect Care logo with green fox">
+            <img id='header-img' class='header-img' src='images/dog-with-doctor.png' alt='Pawfect Care logo with green fox'>
           </div>
         </div>
       </div>
@@ -94,7 +95,25 @@
       </div>
     </div>
 
-  
+    <script>
 
+    Index = Math.floor(Math.random() * 3) + 1;
+    console.log(Index);
+
+    if(Index == 1){
+      document.getElementById("header-img").src = "images/black.png";
+      document.getElementById("header-img").style.transform = "translate(50px,10px)";
+    }
+
+    else if (Index == 2){
+      document.getElementById("header-img").src = "images/dog.png";
+      document.getElementById("header-img").style.transform = "translate(75px,30px)";
+    }
+
+    else{
+
+    }
+
+    </script>
   </header>
 

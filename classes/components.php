@@ -86,47 +86,48 @@ class Components {
 
     }
 
-}
+    }
 
-public static function orderList($userId, $orders){
-    if(!empty($orders)){
-    $previousOrderid = -1;
 
-    foreach($orders as $order){
-        $orderId = Utils::escape($order["order_id"]);
-        $bookId = Utils::escape($order["pet_id"]);
-        $quantity = Utils::escape($order["quantity"]);
-        $orderDate = Utils::escape($order["order_date"]);
-        $name = Utils::escape($order["name_"]);
-        $species = Utils::escape($order["species"]);
-        $age = Utils::escape($order["age"]);
-        $price = Utils::escape($order["price"]);
-        $filename = Utils::escape($order["filename"]);
+    public static function orderList($userId, $orders){
+        if(!empty($orders)){
+        $previousOrderid = -1;
 
-        if($orderId === $previousOrderid){
-            require("components/order-row.php");
+        foreach($orders as $order){
+            $orderId = Utils::escape($order["order_id"]);
+            $bookId = Utils::escape($order["pet_id"]);
+            $quantity = Utils::escape($order["quantity"]);
+            $orderDate = Utils::escape($order["order_date"]);
+            $name = Utils::escape($order["name_"]);
+            $species = Utils::escape($order["species"]);
+            $age = Utils::escape($order["age"]);
+            $price = Utils::escape($order["price"]);
+            $filename = Utils::escape($order["filename"]);
+
+            if($orderId === $previousOrderid){
+                require("components/order-row.php");
+
+            } else {
+                if ($previousOrderid > -1){
+                    echo "</div>";
+                }
+
+                echo "<div class='order-group'>";
+
+                $previousOrderid = $orderId;
+
+                $totalPrice = User::getTotalOrderPrice($userId, $orderId);
+
+                require("components/order-head.php");
+                require("components/order-row.php");
+
+            }
+        }
+
+        echo "</div>";
 
         } else {
-            if ($previousOrderid > -1){
-                echo "</div>";
-            }
-
-            echo "<div class='order-group'>";
-
-            $previousOrderid = $orderId;
-
-            $totalPrice = User::getTotalOrderPrice($userId, $orderId);
-
-            require("components/order-head.php");
-            require("components/order-row.php");
-
+            require("components/no-orders-found.php");
         }
     }
-
-    echo "</div>";
-
-    } else {
-        require("components/no-orders-found.php");
-    }
-}
 }

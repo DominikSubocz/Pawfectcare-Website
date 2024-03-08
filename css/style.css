@@ -10,6 +10,10 @@ body {
   margin: 0;
 }
 
+.pets-content .book-image:hover{
+  filter: brightness(75%);
+  transition: filter 0.2s;
+}
 
 textarea{
   width: 100%;
@@ -978,6 +982,24 @@ textarea{
   width: fit-content;
 }
 
+.about-content{
+  width: 400px;
+}
+
+.staff-card-container, .about-container, .community-container{
+  margin:0 20px;
+}
+
+.staff-card{
+  margin:30px 0;
+}
+
+.staff-img{
+  width: 200px;
+  object-fit: cover;
+  height: 300px;
+}
+
 }
 
 
@@ -1197,6 +1219,26 @@ textarea{
 .modal-content{
   width: 300px;
 }
+
+.about-content{
+  width: 500px;
+}
+
+.staff-card-container, .about-container, .community-container{
+  margin:0 20px;
+}
+
+.staff-card{
+  margin:30px 0;
+}
+
+.staff-img{
+  width: 200px;
+  object-fit: cover;
+  height: 300px;
+}
+
+
 
 }
 
@@ -1450,6 +1492,60 @@ textarea{
 
 .modal-content{
   width: 500px;
+}
+
+.story-container{
+  flex-direction: column;
+  align-items: center;
+}
+
+.story-paragraph{
+  width: 40%;
+  margin:0;
+  margin-right:20px;
+
+}
+
+.blob-img{
+  width: 300px;
+}
+
+.story-container{
+  flex-direction: column;
+}
+
+.story-card, .team-card{
+  display: flex;
+  
+}
+
+.about-content{
+  width: 600px;
+}
+
+.staff-card-container, .about-container, .community-container{
+  margin:0 20px;
+}
+
+.staff-card-container{
+  display: flex;
+  flex-direction: column;
+}
+
+
+.staff-card{
+  display: flex;
+  margin:30px 0;
+}
+
+.staff-card div{
+  margin-left:35px;
+}
+
+.staff-img{
+  width: 200px;
+  object-fit: cover;
+  height: 300px;
 }
 
 
@@ -1948,12 +2044,71 @@ textarea{
   .modal-content{
     width: 600px;
   }
+
+  .story-container {
+    max-width: 1367px;   
+    margin: 0 auto;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .story-paragraph{
+    width: 400px;
+    margin:0;  
+  }
+
+  .blob-img{
+    width: 400px;
+  }
+
+  .about-content{
+    width: 600px;
+  }
+  
+  .staff-card-container, .about-container, .community-container{
+    margin:0 20px;
+  }
+  
+  .staff-card-container{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  
+  .staff-card{
+    display: flex;
+    margin:30px 0;
+  }
+  
+  .staff-card div{
+    margin-left:35px;
+  }
+  
+  .staff-img{
+    width: 200px;
+    object-fit: cover;
+    height: 300px;
+  }
 }
 
 @media screen and (min-width:1000px){
   .meet-team-container{
     margin:0 350px;
   }
+
+  .blob-img{
+    width: 300px;
+  }
+  .pets-content{
+    width: 1172px;
+  }
+
+  .about-content{
+    width: 700px;
+  }
+
+
+
 }
 
 @media screen and (min-width:1200px){
@@ -1961,9 +2116,16 @@ textarea{
     margin-top:-75px;
     margin-left:170px;
   }
-
   .gtco-testimonials {
     margin-top: 20px;
+  }
+
+  .story-card{
+    display: flex;
+  }
+
+  .team-card{
+    display: flex;
   }
 
   .page-header{
@@ -1973,6 +2135,10 @@ textarea{
 
   .meet-team-container{
     margin:0 450px;
+  }
+
+  .blob-img{
+    width: 300px;
   }
 }
 

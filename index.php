@@ -57,23 +57,46 @@ components::pageHeader("Home Page", ["style"], ["mobile-nav"]);
     </div>
 
     <div class="story-container">
-        <div>
-            <img src="images/blob1.png" alt="Image of vet with doctor" class="blob-img">
+        <div class="story-card">
+            <div>
+                <img src="images/blob1.png" alt="Image of vet with doctor" class="blob-img">
+            </div>
+            <div class="story-paragraph">
+                <h2>Our Story</h2>
+                <p>
+                    From a love for animals to a passion for their well-being, our journey began
+                    with a simple mission: providing top-notch care and knowledge to enrich the
+                    lives of pets and their owners. Join us in celebrating the joy of companionship
+                    and the art of responsible pet ownership. This is Our Story, a tale woven with
+                    dedication, compassion, and countless furry friends.
+                </p>
+                <a class="button" href='about.php'>About Us</a>
+            </div>
         </div>
 
-        <div class="story-paragraph">
-            <h2>Our Story</h2>
-
-            <p> 
-                From a love for animals to a passion for their well-being, our journey began
-                with a simple mission: providing top-notch care and knowledge to enrich the
-                lives of pets and their owners. Join us in celebrating the joy of companionship
-                and the art of responsible pet ownership. This is Our Story, a tale woven with 
-                dedication, compassion, and countless furry friends.
-            </p>
-
-            <a class="button" href='about.php'>About Us</a>
+        <div class="team-card">
+            <div>
+                <img src="images/magicpattern-blob-1709222087209.png" alt="Image of three vet doctors cut in a sphere shape." class="blob-img">
+            </div>
+            <div class="story-paragraph">
+                <h2>MEET OUR TEAM</h2>
+                <p>
+                    Meet our passionate team - veterinary experts, content creators, and tech
+                    enthusiasts united by a love for pets. Commited to providing you with
+                    top-notch resources and support, we're here to enhance the well-being of your
+                    furry companions. Get to know the faces behind the care.
+                </p>
+                <a class="button" href="login.php"> MEET THE TEAM </a>
+            </div>
         </div>
+    </div>
+
+    <div class="meet-team-container">
+
+
+
+
+
     </div>
     
 
@@ -117,6 +140,7 @@ components::pageHeader("Home Page", ["style"], ["mobile-nav"]);
 
     <div class="gtco-testimonials">
 
+        <h2> Client Reviews </h2>
         <div class="owl-carousel owl-carousel1 owl-theme">
             <div>
             <div class="card text-center"><img class="card-img-top" src="https://images.unsplash.com/photo-1572561300743-2dd367ed0c9a?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=300&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=50&w=300" alt="">
@@ -167,24 +191,7 @@ components::pageHeader("Home Page", ["style"], ["mobile-nav"]);
 
     </div>
 
-    <div class="meet-team-container">
-        <div>
-            <img src="images/magicpattern-blob-1709222087209.png" alt="Image of three vet doctors cut in a sphere shape." class="blob-img">
-        </div>
 
-
-        <div>
-            <h2>MEET OUR TEAM</h2>
-            <p>
-                Meet our passionate team - veterinary experts, content creators, and tech
-                enthusiasts united by a love for pets. Commited to providing you with
-                top-notch resources and support, we're here to enhance the well-being of your
-                furry companions. Get to know the faces behind the care.
-            </p>
-            <a class="button" href="login.php"> MEET THE TEAM </a>
-        </div>
-
-    </div>
 
 </main>
 
