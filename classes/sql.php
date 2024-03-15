@@ -42,4 +42,6 @@ class SQL {
   public static $test2 = "SELECT * FROM bookings WHERE booking_date = ?";
   public static $test3 = "SELECT * FROM bookings WHERE booking_date = ? AND booking_time = ?";
 
+  public static $getAllArticles = "SELECT * FROM pets.articles";
+
 }

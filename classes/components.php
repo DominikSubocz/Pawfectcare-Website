@@ -25,15 +25,10 @@ class Components {
                 $filename = Utils::escape($pet["filename"]);
 
                 require("components/book-card.php");
-
-
             }
-
-
         }
 
-        else{
-                
+        else{     
             require("components/no-books-found.php");
         }
 
@@ -86,6 +81,24 @@ class Components {
 
     }
 
+    }
+
+    public static function allArticles($articles){
+        if(!empty($articles)){
+            foreach($articles as $article){
+                $articleId = Utils::escape($article["article_id"]);
+                $articleTitle = Utils::escape($article["article_title"]);
+                $articleCaption = Utils::escape($article["article_caption"]);
+                $articleText = Utils::escape($article["article_text"]);
+                $filename = Utils::escape($article["filename"]);
+
+                require("components/article-slide.php");
+            }
+        }
+
+        else{     
+            require("components/no-books-found.php");
+        }
     }
 
 
