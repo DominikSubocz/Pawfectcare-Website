@@ -6,6 +6,11 @@ html{
   overflow-x: hidden;
 }
 
+.modal-backdrop{
+  z-index:0 !important;
+} 
+
+
 body {
   margin: 0;
 }
