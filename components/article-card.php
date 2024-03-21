@@ -2,7 +2,7 @@
     <img src="images/<?php echo $filename; ?>" alt="Cover for <?php echo $title; ?>" class="book-image article-image">
 
     <div class="book-info">
-        <h3><?php echo $title; ?> </h3>
+        <h4><?php echo $title; ?> </h4>
         <p><?php echo $subTitle; ?></p>
     </div>
 

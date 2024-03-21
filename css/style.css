@@ -1008,22 +1008,42 @@ textarea{
 .article-card{
   display: flex;
   text-align: left;
+  width: 75vw;
+  max-width: 75vw;
+  margin:0 auto;
 }
 
 .article-image{
-  width: 125px !important;
+  width: 175px !important;
   height: 175px !important;
   object-fit: cover;
   margin-right:20px;
 }
 
 .article-card p {
-  width: 50vw;
+  width: 35vw;
 }
 
 .header-img{
   transform: translate(1px, 1px);
   margin-left: -20px;
+}
+
+.trending-articles{
+  background-color: #dfe1ff;
+}
+.articles-buttons-container{
+  display: none;
+}
+
+.articles-section .book-list{
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.article-heading{
+  margin:0 auto;
+  padding-left: 11vw;
 }
 
 }
@@ -1263,6 +1283,26 @@ textarea{
   object-fit: cover;
   height: 300px;
 }
+
+.article-image{
+  width: 200px !important;
+  height: 200px !important;
+  object-fit: cover;
+  margin-right:20px;
+}
+
+.article-card{
+  margin: 0 auto;
+  width: 75vw;
+  max-width: 75vw;
+}
+
+.article-card p{
+  width: 35vw;
+  max-width: 40vw;
+}
+
+
 
 
 
@@ -1573,6 +1613,14 @@ textarea{
   object-fit: cover;
   height: 300px;
 }
+
+.article-card{
+  width: 75vw;
+  max-width: 75vw !important;
+  margin: 0 auto;
+}
+
+
 
 
 }
@@ -2115,6 +2163,20 @@ textarea{
     object-fit: cover;
     height: 300px;
   }
+
+  .article-card{
+    width: 55vw;
+  }
+
+  .article-card p{
+    width: 20vw;
+    max-width: 25vw;
+  }
+
+  .article-heading{
+    margin:0 auto;
+    padding-left: 36vw;
+  }
 }
 
 @media screen and (min-width:1000px){
@@ -2132,6 +2194,38 @@ textarea{
   .about-content{
     width: 700px;
   }
+
+  .articles-section .book-list{
+    width: 100vw;
+  }
+
+  .articles-section .book-list{
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .book-card{
+    flex-direction: column;
+  }
+
+  .article-card .article-image{
+    width: 270px !important;
+    height: 245px !important;
+    object-fit: cover;
+  }
+
+  .article-list-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .article-heading{
+    margin:0 auto;
+    padding:0
+  }
+
+
 
 
 
