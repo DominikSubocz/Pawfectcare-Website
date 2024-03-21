@@ -143,4 +143,31 @@ class Components {
             require("components/no-orders-found.php");
         }
     }
+
+    public static function latestArticles($articles){
+        $count = 0; // Initialize a counter to keep track of the number of books displayed
+
+        if(!empty($articles)){
+            foreach($articles as $article){
+                if ($count >= 6) {
+                    break; // Exit the loop once three books have been displayed
+                }
+                
+                $postId = Utils::escape($article["article_id"]);
+                $title = Utils::escape($article["title"]);
+                $subTitle = Utils::escape($article["sub_title"]);
+                $articleText = Utils::escape($article["article_text"]);
+                $filename = Utils::escape($article["filename"]);
+        
+                require("components/article-card.php");
+                
+                $count++; // Increment the counter after displaying each book
+
+            }
+        }
+
+        else{
+            require("components/no-books-found.php");
+        }
+    }
 }

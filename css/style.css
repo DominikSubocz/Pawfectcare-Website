@@ -1005,6 +1005,27 @@ textarea{
   height: 300px;
 }
 
+.article-card{
+  display: flex;
+  text-align: left;
+}
+
+.article-image{
+  width: 125px !important;
+  height: 175px !important;
+  object-fit: cover;
+  margin-right:20px;
+}
+
+.article-card p {
+  width: 50vw;
+}
+
+.header-img{
+  transform: translate(1px, 1px);
+  margin-left: -20px;
+}
+
 }
 
 

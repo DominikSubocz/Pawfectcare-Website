@@ -6,17 +6,31 @@ require_once("classes/utils.php");
 
 class Article{
 
-    public static function getAllArticles(){
-
+    public static function getAllArticles()
+    {
         $conn = Connection::connect();
 
         $stmt = $conn->prepare(SQL::$getAllArticles);
         $stmt-> execute();
-        $articles = $stmt-> fetchAll();
+        $pets = $stmt-> fetchAll();
 
         $conn = null;
 
-        return $articles;
+        return $pets;
     }
+
+    public static function getPet($petId)
+    {
+        $conn = Connection::connect();
+
+        $stmt = $conn->prepare(SQL::$getPet);
+        $stmt->execute([$petId]);
+        $pet = $stmt->fetch();
+
+        $conn = null;
+
+        return $pet;
+    }
+
 
 }

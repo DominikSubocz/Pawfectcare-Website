@@ -2,7 +2,6 @@
 
 class SQL {
   public static $getAllPets = "SELECT * FROM petsinfo";
-
   /**
    * Get the book with the id given in the URL parameter.
    * 
