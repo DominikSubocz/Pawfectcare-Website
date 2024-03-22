@@ -126,7 +126,7 @@ class User {
     public static function getTotalOrderPrice($userId, $orderId) {
         $conn = Connection::connect();
 
-        $stmt = $conn->prepare($SQL::getTotalOrderPrice);
+        $stmt = $conn->prepare(SQL::$getTotalOrderPrice);
         $stmt->execute([$userId, $orderId]);
         $result = $stmt->fetch();
 

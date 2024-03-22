@@ -31,10 +31,10 @@ class SQL {
     WHERE user_id = ?
     ORDER BY orders.order_date DESC";
 
-  public static $getTotalOrderPrice = "SELECT SUM(orders.quantity * books.price)
+  public static $getTotalOrderPrice = "SELECT SUM(orders.quantity * petsinfo.price)
       FROM orders
-      INNER JOIN books
-      ON orders.pet_id = books.pet_id
+      INNER JOIN petsinfo
+      ON orders.pet_id = petsinfo.pet_id
       WHERE orders.user_id = ? AND orders.order_id = ?";
   public static $createBooking = "INSERT INTO bookings (user_id, vet_id, booking_date, booking_time) VALUES (?,?,?,?)";
   public static $test = "SELECT * FROM bookings WHERE month(booking_date) = ? AND year(booking_date) = ?";
