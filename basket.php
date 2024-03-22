@@ -6,7 +6,7 @@ require("classes/components.php");
 require("classes/utils.php");
 require("classes/basket.php");
 
-if (!isset($_SESSION["loggedIn"])){
+if(!isset($_SESSION["loggedIn"])){
     header("Location: " . Utils::$projectFilePath . "/login.php");
 }
 
@@ -15,40 +15,31 @@ if($_SERVER["REQUEST_METHOD"] === "POST" &&
     is_numeric($_GET["id"]) &&
     isset($_GET["action"])){
 
-        switch($_GET["action"]){
+        switch ($_GET["action"]){
             case "remove":
-                Basket::remove($_get["id"]);
+                Basket::remove($_GET["id"]);
                 break;
+            
             case "increase":
-                Basket::increaseQuantity($_get["id"]);
+                Basket::increaseQuantity($_GET["id"]);
                 break;
+            
             case "decrease":
-                Basket::decreaseQuantity($_get["id"]);
-                break;
+                Basket::decreaseQuantity($_GET["id"]);
+                break;        
         }
-
         header("Location: " . $_SERVER["PHP_SELF"]);
     }
 
-    Components::pageHeader("Basket", ["style"], ["mobile-nav"]);
+    Components::pageHeader($_SESSION["username"] . "'s basket", ["style"], ["mobile-nav"]);
 
     ?>
-
-<main class="content-wrapper home-content">
 
     <h2>Basket</h2>
 
     <?php
 
-Components::basketTable(Basket::getFullBasketArray());
-
-
-?>
-
-</main>
-
-    <?php
-
+    Components::basketTable(Basket::getFullBasketArray());
     Components::pageFooter();
 
     ?>

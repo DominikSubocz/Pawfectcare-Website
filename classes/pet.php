@@ -122,11 +122,11 @@ class Book{
         $conn = null;
     }
 
-    public static function delete($bookId){
+    public static function delete($petId){
         $conn = Connection::connect();
 
         $stmt = $conn->prepare(SQL::$deleteBook);
-        $stmt->execute([$bookId]);
+        $stmt->execute([$petId]);
 
         $conn = null;
     }

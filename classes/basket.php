@@ -20,13 +20,13 @@ class Basket{
     public static function getFullBasketArray(){
         $basket = self::getBasketArray();
         if (!empty($basket)){
-            $bookIds = array_keys($basket);
+            $petIds = array_keys($basket);
 
             $booksArray = [];
 
             $conn = Connection::connect();
 
-            foreach ($bookIds as $id){
+            foreach ($petIds as $id){
                 $stmt = $conn->prepare(SQL::$getPet);
                 $stmt->execute([$id]);
                 $result = $stmt->fetch();
@@ -95,7 +95,7 @@ class Basket{
         if(!empty($basket[$id])){
             $basket[$id]["quantity"] -= 1;
 
-            if($basket[$id][quantity] < 1){
+            if($basket[$id]["quantity"] < 1){
                 unset($basket[$id]);
             }
 

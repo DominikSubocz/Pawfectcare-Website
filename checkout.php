@@ -6,73 +6,84 @@ require("classes/components.php");
 require("classes/utils.php");
 require("classes/basket.php");
 
+
 $basket = Basket::getBasketArray();
 
-// if(!isset($session["loggedIn"])) {
-//     header("Location: " . Utils::$projectFilePath . "/login.php");
-// }
+if(!isset($_SESSION["loggedIn"])){
+    header("Location: " . Utils::$projectFilePath . "/login.php");
+}
+
+if(empty($basket)){
+    header("Location: " . Utils::$projectFilePath . "/book-list.php");
+}
 
 $output = "";
 
-if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submitOrder"])) {
+if($_SERVER["REQUEST_METHOD"] === "POST"){
     require("classes/order.php");
 
     $output = Order::validate();
 
-    if (!$output) {
+    if(!$output){
         Order::create($basket);
         header("Location: " . Utils::$projectFilePath . "/user.php");
-        exit; // Add exit after header redirection
     }
 }
 
-components::pageHeader("Checkout", ["style"], ["mobile-nav"]);
+Components::pageHeader("Checkout", ["style"], ["mobile-nav"]);
 
 ?>
 
-<main class="content-wrapper home-content">
+<h2>Checkout</h2>
 
-    <h2>Checkout</h2>
+<form method="POST" action="<?php echo $_SERVER["PHP_SELF"]; ?>" enctype="multipart/form-data" class="form">
+  <h3>Shipping Address</h3>
 
-    <form
-        method="POST"
-        action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>"
-        enctype="multipart/form-data"
-        class="form"
-    >
-        <h3>Shipping Address</h3>
-        <label>Address Line</label>
-        <input type="text" name="address_line" value="<?php echo htmlspecialchars($_POST["address_line"] ?? ''); ?>"> 
-        <input type="text" name="town" value="<?php echo htmlspecialchars($_POST["town"] ?? ''); ?>"> 
-        <input type="text" name="county" value="<?php echo htmlspecialchars($_POST["county"] ?? ''); ?>"> 
-        <input type="text" name="postcode" value="<?php echo htmlspecialchars($_POST["postcode"] ?? ''); ?>"> 
+  <label>Address Line</label>
+  <input type="text" name="address_line" value="<?php if ($output) {
+    echo $_POST["address_line"];
+  } ?>">
 
-        <h3>Payment Details</h3>
+  <label>Town</label>
+  <input type="text" name="town" value="<?php if ($output) {
+    echo $_POST["town"];
+  } ?>">
 
-        <label>Card Number</label>
-        <input type="text" name="card_number">
+  <label>County</label>
+  <input type="text" name="county" value="<?php if ($output) {
+    echo $_POST["county"];
+  } ?>">
 
-        <div class="form-row">
-            <div>
-                <label>Expiry</label>
+  <label>Postcode</label>
+  <input type="text" name="postcode" value="<?php if ($output) {
+    echo $_POST["postcode"];
+  } ?>">
 
-                <div class="inline-inputs">
-                    <input type="text" name="month" placeholder="month">
-                    <input type="text" name="year" placeholder="year">
-                </div>
-            </div>
+  <h3>Payment Details</h3>
 
-            <div>
-                <label>Security Number</label>
-                <input type="text" name="security_number">
-            </div>
-        </div>
+  <label>Card Number</label>
+  <input type="text" name="card_number">
 
-        <input class="button" type="submit" name="submitOrder" value="Complete order"> <!-- Fix type attribute -->
-        <?php if($output) { echo htmlspecialchars($output); } ?> <!-- Sanitize output -->
-    </form>
+  <div class="form-row">
+    <div>
+      <label>Expiry</label>
 
-</main>
+      <div class="inline-inputs">
+        <input type="text" name="month" placeholder="month">
+        <input type="text" name="year" placeholder="year">
+      </div>
+    </div>
+
+    <div>
+      <label>Security Number</label>
+      <input type="text" name="security_number">
+    </div>
+  </div>
+
+  <input class="button" type="submit" value="Complete order">
+
+  <?php if ($output) { echo $output; } ?>
+</form>
 
 <?php
 

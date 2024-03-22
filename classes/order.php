@@ -14,44 +14,41 @@ class Order{
 
         $output = "";
 
-        if(strlen($_POST["address_line"]) < 4 || strlen($_POST["address_line"]) > 64){
-            $output .= "<p class='error'>Address line must be between 4 and 64 characters long</p>";
+        if(strlen($_POST["address_line"]) < 4 || strlen($_POST["address_line"]) > 64 ){
+            $output .= "<p class='error'>ERROR: Address line must be between 4 and 64 characters long</p>";
         }
 
-        if(strlen($_POST["town"]) < 3 || strlen($_POST["town"]) > 32){
-            $output .= "<p class='error'>Town must be between 3 and 32 characters long</p>";
-        }
+        if(strlen($_POST["town"]) < 3 || strlen($_POST["town"]) > 32 ){
+            $output .= "<p class='error'>ERROR: Town must be between 3 and 32 characters long</p>";
+        }    
 
-        if(strlen($_POST["county"]) < 3 || strlen($_POST["address_line"]) > 32){
-            $output .= "<p class='error'>County must be between 3 and 32 characters long</p>";
-        }
+        if(strlen($_POST["county"]) < 3 || strlen($_POST["town"]) > 32 ){
+            $output .= "<p class='error'>ERROR: County must be between 3 and 32 characters long</p>";
+        }    
 
-        if(strlen($_POST["postcode"]) < 7 || strlen($_POST["postcode"]) > 8){
-            $output .= "<p class='error'>Postcode must be between 7 and 8 characters long</p>";
-        }
+        if(strlen($_POST["postcode"]) < 7 || strlen($_POST["postcode"]) > 8 ){
+            $output .= "<p class='error'>ERROR: Postcode must be between 3 and 32 characters long</p>";
+        }    
 
         $cardNumber = filter_var($_POST["card_number"], FILTER_VALIDATE_INT);
-        $month = filter_var($_POST["card_number"], FILTER_VALIDATE_INT);
-        $year = filter_var($_POST["card_number"], FILTER_VALIDATE_INT);
-        $securityNumber = filter_var($_POST["card_number"], FILTER_VALIDATE_INT);
+        $month = filter_var($_POST["month"], FILTER_VALIDATE_INT);
+        $year = filter_var($_POST["year"], FILTER_VALIDATE_INT);
+        $securityNumber = filter_var($_POST["security_number"], FILTER_VALIDATE_INT);
 
-        if(!$cardNumber || strlen(strval($cardNumber)) !== 16){
-            $output .= "<p class='error'>Card number is invalid</p>";
-
+        if(!$cardNumber || strlen(strval($cardNumber)) > 16){
+            $output .= "<p class='error'>ERROR: Card number is invalid</p>";
         }
 
         if(!$month || $month < 1 || $month > 12){
-            $output .= "<p class='error'>Month is invalid</p>";
-
+            $output .= "<p class='error'>ERROR: Month is invalid</p>";
         }
 
-        if(!$year || strlen(strval($year)) !== 2 || $year < date ("y")){
-            $output .= "<p class='error'>Year is invalid</p>";
-
+        if(!$year || strlen(strval($year)) !== 2 || $year < date("y")){
+            $output .= "<p class='error'>ERROR: Year is invalid</p>";
         }
-        if(!$securityNumber || strlen(strval($securityNumber)) !== 3){
-            $output .= "<p class='error'>Month is invalid</p>";
 
+        if(!$securityNumber || strlen(strval($securityNumber)) !== 3 ){
+            $output .= "<p class='error'>ERROR: Security number is invalid</p>";
         }
 
         return $output;
@@ -60,7 +57,7 @@ class Order{
     public static function create($basket){
         date_default_timezone_set('UTC');
         $date = date("Y-m-d H:i:s");
-        $bookIds = array_keys($basket);
+        $petIds = array_keys($basket);
         $orderId = 1;
 
         $conn = Connection::connect();
@@ -83,15 +80,15 @@ class Order{
             $orderId = $result[0] + 1;
         }
 
-        for ($i = 0; $i < count($basket); $si++){
-            $bookId = $bookIds[$i];
+        for ($i = 0; $i < count($basket); $i++){
+            $petId = $petIds[$i];
 
-            $quantity = $basket[$bookId]["quantity"];
+            $quantity = $basket[$petId]["quantity"];
 
             $stmt = $conn->prepare(SQL::$createOrder);
             $stmt->execute([
                 $orderId,
-                $bookId,
+                $petId,
                 $_SESSION["user_id"],
                 $quantity,
                 $date,

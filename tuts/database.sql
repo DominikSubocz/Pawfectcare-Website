@@ -2,7 +2,7 @@ DROP DATABASE IF EXISTS bookstore;
 CREATE DATABASE bookstore;
 
 CREATE TABLE bookstore.books (
-  book_id INT PRIMARY KEY AUTO_INCREMENT,
+  pet_id INT PRIMARY KEY AUTO_INCREMENT,
   title VARCHAR(128) NOT NULL,
   author VARCHAR(48) NOT NULL,
   price DECIMAL(8, 2) NOT NULL,
@@ -46,16 +46,16 @@ CREATE TABLE bookstore.postcodes (
 
 CREATE TABLE bookstore.orders (
   order_id INT NOT NULL,
-  book_id INT NOT NULL,
+  pet_id INT NOT NULL,
   user_id INT NOT NULL,
   quantity INT NOT NULL,
   order_date DATETIME NOT NULL,
   address_line VARCHAR(64) NOT NULL,
   postcode VARCHAR(8) NOT NULL,
 
-  PRIMARY KEY(order_id, book_id, user_id),
+  PRIMARY KEY(order_id, pet_id, user_id),
 
-  FOREIGN KEY (book_id) REFERENCES books(book_id),
+  FOREIGN KEY (pet_id) REFERENCES books(pet_id),
   FOREIGN KEY (user_id) REFERENCES users(user_id),
   FOREIGN KEY (postcode) REFERENCES postcodes(postcode)
 );

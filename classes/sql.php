@@ -21,11 +21,11 @@ class SQL {
   WHERE petstories.pet_id = ?";
 
   public static $createOrder = "INSERT INTO orders
-      (order_id, book_id, user_id, quantity, order_date, address_line, postcode) VALUES
+      (order_id, pet_id, user_id, quantity, order_date, address_line, postcode) VALUES
       (?, ?, ?, ?, ?, ?, ?)";
   public static $getMaxOrderID = "SELECT MAX(order_id) FROM orders";
   public static $getPostcode = "SELECT * FROM postcodes WHERE postcode = ?";
-  public static $createPostcode = "INSERT INTO postcodes (postcode, town, county) VALUES (?, ?, ?,)";
+  public static $createPostcode = "INSERT INTO postcodes (postcode, town, county) VALUES (?, ?, ?)";
   public static $getUserOrders = "SELECT * FROM orders INNER JOIN petsinfo
     ON orders.pet_id = petsinfo.pet_id
     WHERE user_id = ?
@@ -34,7 +34,7 @@ class SQL {
   public static $getTotalOrderPrice = "SELECT SUM(orders.quantity * books.price)
       FROM orders
       INNER JOIN books
-      ON orders.book_id = books.book_id
+      ON orders.pet_id = books.pet_id
       WHERE orders.user_id = ? AND orders.order_id = ?";
   public static $createBooking = "INSERT INTO bookings (user_id, vet_id, booking_date, booking_time) VALUES (?,?,?,?)";
   public static $test = "SELECT * FROM bookings WHERE month(booking_date) = ? AND year(booking_date) = ?";

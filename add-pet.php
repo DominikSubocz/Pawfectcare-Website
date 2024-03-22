@@ -17,8 +17,8 @@ if ($_SERVER["REQUEST_METHOD"] ==="POST" && isset($_POST["addSubmit"])) {
     $output = Book::validate();
 
     if(!$output){
-        $bookId = Book::create();
-        header("Location: " . Utils::$projectFilePath . "/pet.php?id=$bookId");
+        $petId = Book::create();
+        header("Location: " . Utils::$projectFilePath . "/pet.php?id=$petId");
 
     }
 }

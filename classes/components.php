@@ -108,7 +108,7 @@ class Components {
 
         foreach($orders as $order){
             $orderId = Utils::escape($order["order_id"]);
-            $bookId = Utils::escape($order["pet_id"]);
+            $petId = Utils::escape($order["pet_id"]);
             $quantity = Utils::escape($order["quantity"]);
             $orderDate = Utils::escape($order["order_date"]);
             $name = Utils::escape($order["name_"]);
