@@ -11,27 +11,7 @@ Components::pageHeaderAlt("Book Appointment", ["style"], ["mobile-nav"]);
 function build_calendar($month, $year){
 
 
-
-    // // Prepare the SQL statement with placeholders
-    // $stmt = $conn->prepare(SQL::$test);
-    
-    // // Bind parameters
-    // $stmt->bindParam(1, $month, PDO::PARAM_INT);
-    // $stmt->bindParam(2, $year, PDO::PARAM_INT);
-    
     $bookings = array();
-    
-    // // Execute the statement
-    // if ($stmt->execute()) {
-    //     $bookings = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    // } else {
-    //     // Handle errors here if necessary
-    //     print_r($stmt->errorInfo());
-    // }
-    
-    // $stmt->closeCursor(); // Close the statement cursor
-    
-    // Further code using $bookings goes here
     
 
     $daysOfWeek = array('Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat','Sun');
