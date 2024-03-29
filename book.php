@@ -12,7 +12,7 @@ if (isset($_GET['date'])) {
     $date = $_GET['date'];
 
     // Prepare the SQL statement to fetch existing bookings for the given date
-    $stmt = $conn->prepare(SQL::$test2);
+    $stmt = $conn->prepare(SQL::$getBookingsByDate);
     $stmt->bindParam(1, $date, PDO::PARAM_STR);
     $stmt->execute();
 
@@ -27,7 +27,7 @@ if (isset($_POST['submit'])) {
     $timeslot = $_POST['timeslot'];
 
     // Check if the selected timeslot is available
-    $stmt = $conn->prepare(SQL::$test3);
+    $stmt = $conn->prepare(SQL::$getBookingsByDateAndTime);
     $stmt->bindParam(1, $date, PDO::PARAM_STR);
     $stmt->bindParam(2, $timeslot, PDO::PARAM_STR);
     $stmt->execute();

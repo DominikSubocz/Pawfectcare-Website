@@ -34,7 +34,7 @@ class Components {
 
     }
 
-    public static function singleBook($pet){
+    public static function singlePet($pet){
         if(!empty($pet)){
             $petId = Utils::escape($pet["pet_id"]);
             $name = Utils::escape($pet["name_"]);
@@ -51,22 +51,22 @@ class Components {
         }
     }
 
-    public static function basketTable($booksArray){
+    public static function basketTable($petsArray){
         $userId = $_SESSION["user_id"];
 
-        if(!empty($booksArray)){
+        if(!empty($petsArray)){
             $totalPrice = 0;
 
             require("components/basket-header.php");
 
-            foreach ($booksArray as $book){
-                $currentId = Utils::escape($book["pet_id"]);
-                $name = Utils::escape($book["name_"]);
-                $species = Utils::escape($book["species"]);
-                $age = Utils::escape($book["age"]);
-                $price = Utils::escape($book["price"]);
+            foreach ($petsArray as $pet){
+                $currentId = Utils::escape($pet["pet_id"]);
+                $name = Utils::escape($pet["name_"]);
+                $species = Utils::escape($pet["species"]);
+                $age = Utils::escape($pet["age"]);
+                $price = Utils::escape($pet["price"]);
 
-            $quantity = Utils::escape($book["quantity"]);
+            $quantity = Utils::escape($pet["quantity"]);
 
             $totalPrice += $price * $quantity;
 
@@ -92,7 +92,7 @@ class Components {
                 $articleText = Utils::escape($article["article_text"]);
                 $filename = Utils::escape($article["filename"]);
 
-                require("components/article-slide.php");
+                require("components/article-card.php");
             }
         }
 

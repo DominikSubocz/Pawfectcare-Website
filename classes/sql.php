@@ -12,10 +12,10 @@ class SQL {
   public static $getPet = "SELECT p.*, s.story_text FROM petsinfo p LEFT JOIN petstories s ON p.pet_id = s.pet_id WHERE p.pet_id = ?";
   public static $getUser = "SELECT user_id, username, password, user_role FROM users WHERE username = ?";
   public static $createUser = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
-  public static $createBook = "INSERT INTO petsinfo (name_, species, age, filename) VALUES (?,?,?,?)";
-  public static $updateBook = "UPDATE petsinfo SET name_ = ?, species = ?, age = ?, filename = ? WHERE pet_id = ?";
+  public static $createPet = "INSERT INTO petsinfo (name_, species, age, filename) VALUES (?,?,?,?)";
+  public static $updatePet = "UPDATE petsinfo SET name_ = ?, species = ?, age = ?, filename = ? WHERE pet_id = ?";
       
-  public static $deleteBook = "DELETE petstories, petsinfo
+  public static $deletePet = "DELETE petstories, petsinfo
   FROM petstories
   LEFT JOIN petsinfo ON petstories.pet_id = petsinfo.pet_id
   WHERE petstories.pet_id = ?";
@@ -37,9 +37,9 @@ class SQL {
       ON orders.pet_id = petsinfo.pet_id
       WHERE orders.user_id = ? AND orders.order_id = ?";
   public static $createBooking = "INSERT INTO bookings (user_id, vet_id, booking_date, booking_time) VALUES (?,?,?,?)";
-  public static $test = "SELECT * FROM bookings WHERE month(booking_date) = ? AND year(booking_date) = ?";
-  public static $test2 = "SELECT * FROM bookings WHERE booking_date = ?";
-  public static $test3 = "SELECT * FROM bookings WHERE booking_date = ? AND booking_time = ?";
+  public static $getBookingsByMonthAndYear = "SELECT * FROM bookings WHERE month(booking_date) = ? AND year(booking_date) = ?";
+  public static $getBookingsByDate = "SELECT * FROM bookings WHERE booking_date = ?";
+  public static $getBookingsByDateAndTime = "SELECT * FROM bookings WHERE booking_date = ? AND booking_time = ?";
 
   public static $getAllArticles = "SELECT * FROM pets.articles";
 

@@ -26,7 +26,7 @@ if(
     header("Location: " . Utils::$projectFilePath . "/basket.php");
 }
 
-$pet = Book::getPet($_GET["id"]);
+$pet = Pet::getPet($_GET["id"]);
 
 
 
@@ -35,7 +35,7 @@ $pageTitle = $pet["name_"];
 var_dump($pageTitle);
 
 Components::pageHeaderAlt($pageTitle, ["style"], ["mobile-nav"]);
-Components::singleBook($pet);
+Components::singlePet($pet);
 Components::pageFooter();
 
 ?>

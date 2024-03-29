@@ -105,7 +105,7 @@ function checkSlots($date){
     $conn = Connection::connect();
 
 
-    $stmt = $conn->prepare(SQL::$test2);
+    $stmt = $conn->prepare(SQL::$getBookingsByDate);
     $stmt->bindParam(1, $date, PDO::PARAM_STR);
     
     $totalbookings = 0;

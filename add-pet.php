@@ -14,10 +14,10 @@ $output = "";
 if ($_SERVER["REQUEST_METHOD"] ==="POST" && isset($_POST["addSubmit"])) {
     require("classes/pet.php");
 
-    $output = Book::validate();
+    $output = Pet::validate();
 
     if(!$output){
-        $petId = Book::create();
+        $petId = Pet::create();
         header("Location: " . Utils::$projectFilePath . "/pet.php?id=$petId");
 
     }
@@ -42,10 +42,10 @@ Components::pageHeader("Add book", ["style"], ["mobile-nav"]);
   enctype="multipart/form-data" 
   class="form"
 >
-  <label>Title</label>
+  <label>Name</label>
   <input type="text" name="name">
 
-  <label>Author</label>
+  <label>Species</label>
   <input type="text" name="species">
 
   <label>Price</label>

@@ -1,11 +1,11 @@
 <?php
 
 if (isset($_POST["removeSubmit"])){
-  Book::delete($petId);
+  Pet::delete($petId);
 }
 
 if(isset($_POST["updateSubmit"])){
-  Book::update($petId);
+  Pet::update($petId);
 }
 
 if(isset($_POST["addToBasketButton"])){

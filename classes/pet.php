@@ -3,7 +3,7 @@ require_once("connection.php");
 require_once("sql.php");
 require_once("utils.php");
 
-class Book{
+class Pet{
 
     public static function getAllPets()
     {
@@ -63,9 +63,7 @@ class Book{
             $output .= "<p class='error'>ERROR: Age must be a numeric value</p>";
         }
 
-        if ($output){
-            return $output;
-        }
+
 
         if(!empty($_FILES["coverImage"]["name"])){
             $filename = $_FILES["coverImage"]["name"];
@@ -83,13 +81,19 @@ class Book{
             if(!move_uploaded_file($tmpname, "images/$filename")){
                 return "<p class='error'>ERROR: File was not uploaded</p>";
             }
+        } else {
+            $output .= "<p class='error'>ERROR: Please upload a valid image.</p>";
+        }
+
+        if ($output){
+            return $output;
         }
 
         return "";
     }
 
     public static function create(){
-        $filename = Utils::$defaultBookCover;
+        $filename = Utils::$defaultPetCover;
 
         if(!empty($_FILES["coverImage"]["name"])){
             $filename = $_FILES["coverImage"]["name"];
@@ -97,7 +101,7 @@ class Book{
 
         $conn = Connection::connect();
 
-        $stmt = $conn->prepare(SQL::$createBook);
+        $stmt = $conn->prepare(SQL::$createPet);
         $stmt->execute([$_POST["name"], $_POST["species"], $_POST["age"], $filename]);
 
         $insertedId = $conn->lastInsertId();
@@ -110,7 +114,7 @@ class Book{
     public static function update($petId){
         $conn = Connection::connect();
 
-        $stmt = $conn->prepare(SQL::$updateBook);
+        $stmt = $conn->prepare(SQL::$updatePet);
         $stmt->execute([
             $_POST["name"],
             $_POST["species"],
@@ -125,7 +129,7 @@ class Book{
     public static function delete($petId){
         $conn = Connection::connect();
 
-        $stmt = $conn->prepare(SQL::$deleteBook);
+        $stmt = $conn->prepare(SQL::$deletePet);
         $stmt->execute([$petId]);
 
         $conn = null;

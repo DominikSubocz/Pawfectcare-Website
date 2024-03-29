@@ -44,14 +44,6 @@ Components::pageHeader("Home Page", ["style"], ["mobile-nav"]);
     
         <div class="book-list ">
     
-            <!-- <div class="articles-buttons-container">
-                <span class="material-symbols-outlined">
-                chevron_left
-                </span>
-                <span class="material-symbols-outlined">
-                chevron_right
-                </span>
-            </div> -->
             <?php
     
                 $articles = Article::getAllArticles();
