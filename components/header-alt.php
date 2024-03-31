@@ -44,12 +44,11 @@
         </div>
         <nav class="page-navigation" id="nav-list">
         <ul class="nav-links">
+        <ul class="nav-links">
                     <li><a href='index.php'>Home Page</a></li>
                     <li><a href='about.php'>About Us</a></li>
-                    <li><a href='articles.php'>Blog</a></li>
                     <li><a href="pet-list.php">Pets</a></li>
-                    <li><a href="contact.php">Contact Us</a></li>
-                    
+                    <li><a href='articles.php'>Blog</a></li>
                     <?php
                     /*
                     An example of conditional rendering.
@@ -58,15 +57,15 @@
                     */
                     if (isset($_SESSION['loggedIn'])) {
                         // Site administrators can add new books
-                        if ($_SESSION['user_role'] === "Admin") {
-                          echo "<li><a href='add-pet.php'>Add Book</a></li>";
-                        }
-                        echo "<li><a href='basket.php'>Basket</a></li>
-                              <li><a href='user.php'>Account</a></li>
-                              <li><a href='calendar.php'>Book Appointment</a></li>
+                        $username = $_SESSION["username"];
+
+                        echo "<li><a href='calendar.php'>Book Appointment</a></li>
+                              <li><a href='basket.php'>Basket</a></li>
+                              <li><a href='contact.php'>Contact Us</a><li>
+                              <li><a href='user.php'>$username's Account</a></li>
                               <li><a href='logout.php'>Logout</a></li>";
                     } else {
-                      echo "<li><a href='login.php'>Login</a></li>";
+                        echo "<li><a href='login.php'>Login</a></li>";
                     }
                     ?>
                 </ul>

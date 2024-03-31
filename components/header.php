@@ -22,6 +22,7 @@
     }
   }
 
+
   ?>
 
 </head>
@@ -47,9 +48,8 @@
                 <ul class="nav-links">
                     <li><a href='index.php'>Home Page</a></li>
                     <li><a href='about.php'>About Us</a></li>
-                    <li><a href='articles.php'>Blog</a></li>
                     <li><a href="pet-list.php">Pets</a></li>
-                    <li><a href="contact.php">Contact Us</a></li>
+                    <li><a href='articles.php'>Blog</a></li>
                     <?php
                     /*
                     An example of conditional rendering.
@@ -58,12 +58,12 @@
                     */
                     if (isset($_SESSION['loggedIn'])) {
                         // Site administrators can add new books
-                        if ($_SESSION['user_role'] === "Admin") {
-                            echo "<li><a href='add-pet.php'>Add Book</a></li>";
-                        }
-                        echo "<li><a href='basket.php'>Basket</a></li>
-                              <li><a href='user.php'>Account</a></li>
-                              <li><a href='calendar.php'>Book Appointment</a></li>
+                        $username = $_SESSION["username"];
+
+                        echo "<li><a href='calendar.php'>Book Appointment</a></li>
+                              <li><a href='basket.php'>Basket</a></li>
+                              <li><a href='contact.php'>Contact Us</a><li>
+                              <li><a href='user.php'>$username's Account</a></li>
                               <li><a href='logout.php'>Logout</a></li>";
                     } else {
                         echo "<li><a href='login.php'>Login</a></li>";
@@ -73,7 +73,6 @@
             </nav>
       </div>
     </div>
-    
     <div class='header-content-bot header-content'>
       <div class='wrap'>
         <div class='spotlight'>
@@ -90,14 +89,17 @@
     <div class='wave-container'>
       <div class='wrap'>
         <div class='wave'>
-          
+
             <svg viewBox="0 0 450 200" preserveAspectRatio="none meet">
               <path d="M-50,100 L-1,100 C150,200 300,0 450,102 L600,100 L600,300 L-250,300 L-250,Z" style="fill:white;stroke:#dfe1ff;stroke-width:8;"></path>
             </svg>
-
         </div>
       </div>
+
+
     </div>
+
+
 
     <script>
 

@@ -34,6 +34,11 @@ components::pageHeader("Home Page", ["style"], ["mobile-nav"]);
   });
 </script>
 
+    <div class="headline">
+        <h1>Discover the Joy of Pet Companionship Today...</h1>
+    </div>
+
+
     <div class="feature-card-container">
         <div class="feature-card membership-feature-card">
             <img class="feature-icon" src="icons/icons8-smartphone-approve-96.png" alt="Black and white icon of mobile phone with approval tick mark on screen">
