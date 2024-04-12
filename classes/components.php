@@ -2,18 +2,36 @@
 
 class Components {
     
+    /**
+     * Display the page header with the specified title, stylesheets, and scripts.
+     *
+     * @param string $pageTitle The title of the page
+     * @param array $stylesheets An array of stylesheet URLs
+     * @param array $scripts An array of script URLs
+     */
     public static function pageHeader($pageTitle, $stylesheets, $scripts){
         require ("components/header.php");   
     }
 
+    /**
+     * Display an alternative page header with custom stylesheets and scripts.
+     */
     public static function pageHeaderAlt($pageTitle, $stylesheets, $scripts){
         require ("components/header-alt.php");   
     }
 
+    /**
+     * Display the page footer by including the footer.php file.
+     */
     public static function pageFooter(){
         require ("components/footer.php");   
     }
 
+    /**
+     * Display all pets by iterating through the given array of pets and including a template for each pet.
+     *
+     * @param array $pets An array containing information about pets
+     */
     public static function allPets($pets){
 
         if(!empty($pets)){
@@ -34,6 +52,11 @@ class Components {
 
     }
 
+    /**
+     * Display information about a single pet.
+     *
+     * @param array $pet An array containing information about the pet.
+     */
     public static function singlePet($pet){
         if(!empty($pet)){
             $petId = Utils::escape($pet["pet_id"]);
@@ -51,6 +74,11 @@ class Components {
         }
     }
 
+    /**
+     * Generates a table displaying the items in the basket for the current user.
+     *
+     * @param array $petsArray An array containing the pets in the basket
+     */
     public static function basketTable($petsArray){
         $userId = $_SESSION["user_id"];
 
@@ -66,23 +94,30 @@ class Components {
                 $age = Utils::escape($pet["age"]);
                 $price = Utils::escape($pet["price"]);
 
-            $quantity = Utils::escape($pet["quantity"]);
+                $quantity = Utils::escape($pet["quantity"]);
 
-            $totalPrice += $price * $quantity;
+                $totalPrice += $price * $quantity;
 
-            require("components/basket-row.php");
+                require("components/basket-row.php");
+            }
+    
+
+            require("components/basket-footer.php");
+        } else{
+            require("components/basket-empty.php");
         }
-    
-
-        require("components/basket-footer.php");
-    } else{
-        require("components/basket-empty.php");
-    
 
     }
 
-    }
-
+    /**
+     * Display all the articles passed in the $articles array.
+     *
+     * This function loops through each article in the $articles array, escapes the necessary fields,
+     * and includes the "article-card.php" component to display the article information.
+     * If the $articles array is empty, it includes the "no-books-found.php" component.
+     *
+     * @param array $articles An array containing articles to be displayed
+     */
     public static function allArticles($articles){
         if(!empty($articles)){
             foreach($articles as $article){
@@ -102,6 +137,16 @@ class Components {
     }
 
 
+    /**
+     * Orders and displays a list of orders for a specific user.
+     *
+     * This method takes a user ID and an array of orders, loops through each order, and displays the order details.
+     * If multiple orders have the same ID, they are grouped together. The total price for each order is calculated
+     * and displayed. If no orders are found, a message indicating so is displayed.
+     *
+     * @param int $userId The ID of the user for whom the orders are being displayed.
+     * @param array $orders An array of orders containing order details.
+     */
     public static function orderList($userId, $orders){
         if(!empty($orders)){
         $previousOrderid = -1;
@@ -144,6 +189,13 @@ class Components {
         }
     }
 
+    /**
+     * Display the latest articles from the given array of articles.
+     *
+     * This method takes an array of articles and displays the latest 6 articles. If there are no articles, it displays a message indicating no articles found.
+     *
+     * @param array $articles An array of articles to display
+     */
     public static function latestArticles($articles){
         $count = 0; // Initialize a counter to keep track of the number of books displayed
 

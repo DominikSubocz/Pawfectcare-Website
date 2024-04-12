@@ -4,7 +4,18 @@ require_once("classes/connection.php");
 require_once("classes/sql.php");
 require_once("classes/utils.php");
 
+/**
+ * Class Order
+ * 
+ * Represents an order with validation and creation methods.
+ */
 class Order{
+    /**
+     * Validates the form input fields for address, card details, and security number.
+     * Returns an error message if any input is invalid or empty.
+     *
+     * @return string $output Error message if any input is invalid or empty.
+     */
     public static function validate(){
         if(Utils::postValuesAreEmpty(
             ["address_line", "town", "county", "postcode", "card_number", "month", "year", "security_number"]
@@ -54,6 +65,11 @@ class Order{
         return $output;
     }
 
+    /**
+     * Creates a new order based on the provided basket items.
+     *
+     * @param array $basket An array containing the items in the basket.
+     */
     public static function create($basket){
         date_default_timezone_set('UTC');
         $date = date("Y-m-d H:i:s");
