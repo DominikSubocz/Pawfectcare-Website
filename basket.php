@@ -7,20 +7,27 @@ require("classes/components.php");
 require("classes/utils.php");
 require("classes/basket.php");
 
-/// Redirect user from this page if they're already logged in
-if(!isset($_SESSION["loggedIn"])){
+/**
+ * Check if the user is logged in.
+ * If the user is not logged in, redirect to the login page.
+ */
+if (!isset($_SESSION["loggedIn"])){
     header("Location: " . Utils::$projectFilePath . "/login.php");
 }
 
 /**
- * Process the POST request to perform actions like removing, increasing, or decreasing quantity of items in the basket.
+ * Checks if the request method is POST, and if the 'id' and 'action' parameters are set in the GET request.
+ * Validates if the 'id' parameter is numeric.
  */
 if($_SERVER["REQUEST_METHOD"] === "POST" &&
     isset($_GET["id"]) &&
     is_numeric($_GET["id"]) &&
     isset($_GET["action"])){
 
-        switch ($_GET["action"]){
+        /**
+         * Perform actions based on the value of the 'action' parameter.
+         */
+        switch($_GET["action"]){
             case "remove":
                 Basket::remove($_GET["id"]);
                 break;
