@@ -5,12 +5,12 @@ session_start();
 require("classes/components.php");
 require("classes/utils.php");
 
-// if (!isset($_SESSION["user_role"]) || $_SESSION["user_role"] !== "Admin"){
-//     header("Location: " . Utils::$projectFilePath . "/book-list.php");
-// }
-
 $output = "";
 
+/**
+ * Validates the form submission and creates a new book entry if validation passes.
+ * If successful, redirects to the pet.php page with the newly created book's ID.
+ */
 if ($_SERVER["REQUEST_METHOD"] ==="POST" && isset($_POST["addSubmit"])) {
     require("classes/pet.php");
 
@@ -22,10 +22,6 @@ if ($_SERVER["REQUEST_METHOD"] ==="POST" && isset($_POST["addSubmit"])) {
 
     }
 }
-
-
-
-
 
 Components::pageHeader("Add book", ["style"], ["mobile-nav"]);
 
