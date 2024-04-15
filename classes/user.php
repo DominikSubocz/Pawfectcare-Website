@@ -1,6 +1,6 @@
 <?php
 
-// If a file has already been included, do not do so again
+/// If a file has already been included, do not do so again
 require_once("classes/connection.php");
 require_once("classes/sql.php");
 require_once("classes/utils.php");

@@ -1,5 +1,6 @@
 <?php
 
+/// This must come first when we need access to the current session
 session_start();
 
 require("classes/components.php");
@@ -11,6 +12,12 @@ if (!isset($_SESSION["loggedIn"])){
     
 }
 
+
+/**
+ * Escape and sanitize the username retrieved from the session.
+ *
+ * @var string $username
+ */
 $username = Utils::escape($_SESSION["username"]);
 $userId = Utils::escape($_SESSION["user_id"]);
 
@@ -19,7 +26,7 @@ Components::pageHeader("$username's orders", ["style"], ["mobile-nav"]);
 
 ?>
 
-<h2><?php echo $username; ?>'s Orders</h2>
+<h2><?php echo $username; ?>'s Orders</h2> 
 
 
 <?php

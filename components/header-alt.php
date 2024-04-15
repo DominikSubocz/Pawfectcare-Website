@@ -2,7 +2,7 @@
 
 $pageTitle = basename($_SERVER['PHP_SELF'], '.php');
 
-// Optionally, you can capitalize the first letter of the page title
+/// Optionally, you can capitalize the first letter of the page title
 $pageTitle = ucfirst($pageTitle);
 
 ?>

@@ -1,6 +1,6 @@
 <?php
 
-// define variables and set to empty values
+/// define variables and set to empty values
 $nameErr = $emailErr = $websiteErr = $commentErr = "";
 $name = $email = $website = $comment = $gender = "";
 
@@ -47,13 +47,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   // Sending mails doesn't work yet.
 
-//   $emailMessage = $message;
+///   $emailMessage = $message;
 
-//   // use wordwrap() if lines are longer than 70 characters
-//   $emailMessage = wordwrap($emailMessage,70);
+///   // use wordwrap() if lines are longer than 70 characters
+///   $emailMessage = wordwrap($emailMessage,70);
   
-//   // send email
-//   mail("thrusosfilms@gmail.com", "Ticket Submited!", $emailMessage);
+///   // send email
+///   mail("thrusosfilms@gmail.com", "Ticket Submited!", $emailMessage);
   
 }
 

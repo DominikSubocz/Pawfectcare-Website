@@ -1,6 +1,6 @@
 <?php
 
-// This must come first when we need access to the current session
+/// This must come first when we need access to the current session
 session_start();
 
 require("classes/components.php");
@@ -11,14 +11,14 @@ require("classes/components.php");
  */
 require("classes/utils.php");
 
-// Redirect user from this page if they're already logged in
+/// Redirect user from this page if they're already logged in
 if (isset($_SESSION["loggedIn"])) {
     header("Location: " . Utils::$projectFilePath . "/pet-list.php");
 }
 
 $output = "";
 
-// Detect if this page has received a POST request
+/// Detect if this page has received a POST request
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     require("classes/user.php");
 

@@ -1,4 +1,4 @@
-// Set a timeout function to redirect the user after 5 seconds
+/// Set a timeout function to redirect the user after 5 seconds
 setTimeout(function() {
     // Redirect the user to the success.php page
     window.location.href = "success.php";

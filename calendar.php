@@ -1,13 +1,19 @@
 <?php
+/// This must come first when we need access to the current session
+session_start();
+
 require_once("classes/connection.php");
 require_once("classes/sql.php");
 require_once("classes/utils.php");
 require("classes/components.php");
 
-session_start();
+
 
 Components::pageHeaderAlt("Book Appointment", ["style"], ["mobile-nav"]);
 
+/**
+ * Function to build a calendar for a given month and year, displaying available appointment slots.
+ */
 function build_calendar($month, $year){
 
 
@@ -19,7 +25,7 @@ function build_calendar($month, $year){
     // $stmt->bindParam(1, $month, PDO::PARAM_INT);
     // $stmt->bindParam(2, $year, PDO::PARAM_INT);
     
-    $bookings = array();
+    $bookings = array(); ///< Initialize an empty array to store bookings.
     
     // // Execute the statement
     // if ($stmt->execute()) {
@@ -34,6 +40,9 @@ function build_calendar($month, $year){
     // Further code using $bookings goes here
     
 
+    /**
+     * This function calculates the number of days in the month, the month name, and the day of the week for the first day of the month.
+     */
     $daysOfWeek = array('Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat','Sun');
     $firstDayOfMonth = mktime(0,0,0,$month,1,$year);
     $numberDays = date('t',$firstDayOfMonth);
@@ -46,6 +55,10 @@ function build_calendar($month, $year){
     }else{
         $dayOfWeek = $dayOfWeek-1;
     }
+
+    /**
+     * Generates a calendar for booking appointments with navigation links to previous and next months.
+     */
     $dateToday = date('Y-m-d');
     $calendar = "<center>Book Appointment</center>";
     $prev_month = date('m', mktime(0,0,0,$month-1,1,$year));
@@ -53,6 +66,9 @@ function build_calendar($month, $year){
     $next_month = date('m', mktime(0,0,0,$month+1,1,$year));
     $next_year = date('y', mktime(0,0,0,$month+1,1,$year));
 
+    /**
+     * Generates a calendar HTML string for the specified month and year.
+     */
     $calendar .= "<center><h2>$monthName $year</h2>";
     $calendar .= "<a class='btn btn-primary btn-xs' href='?month=".$prev_month."&year=".$prev_year."'>Prev Month</a>";
     $calendar .= "<a class='btn btn-primary btn-xs' href='?month=".date('m')."&year=".date('Y')."'>Current Month</a>";
@@ -60,10 +76,16 @@ function build_calendar($month, $year){
     $calendar .= "<br><table class='table table-bordered'>";
     $calendar .= "<tr>";
 
+    /**
+     * Generates table header cells for each day of the week.
+     */
     foreach($daysOfWeek as $day){
         $calendar .= "<th class='day-names'>$day</th>";
     }
 
+    /**
+     * Generates the HTML code for empty cells in the calendar table before the start of the current month.
+     */
     $calendar .= "</tr><tr>";
     $currentDay = 1;
     if($dayOfWeek > 0){
@@ -72,6 +94,9 @@ function build_calendar($month, $year){
         }
     }
 
+    /**
+     * Generates a calendar HTML table for a given month and year, with booking information for each day.
+     */
     $month = str_pad($month, 2, "0", STR_PAD_LEFT);
     while($currentDay <= $numberDays){
         if($dayOfWeek == 7){
@@ -107,6 +132,9 @@ function build_calendar($month, $year){
         $dayOfWeek++;
     }
 
+    /**
+     * Add empty table cells to the calendar for the remaining days in the week after a given day.
+     */
     if($dayOfWeek < 7){
         $remainingDays =  7 - $dayOfWeek;
         for($i=0; $i < $remainingDays; $i++){
@@ -120,6 +148,12 @@ function build_calendar($month, $year){
     return $calendar;
 }
 
+/**
+ * Check the total number of bookings for a given date.
+ *
+ * @param string $date The date for which bookings need to be checked
+ * @return int The total number of bookings for the given date
+ */
 function checkSlots($date){
 
     $conn = Connection::connect();
@@ -144,6 +178,9 @@ function checkSlots($date){
         <div class="row">
             <div class="col-md-12">
             <?php
+            /**
+             * Generates a calendar for the specified month and year, or the current month and year if not provided.
+             */
             $dateComponents = getdate();
             if(isset($_GET['month'])&&($_GET['year'])){
                 $month = $_GET['month'];

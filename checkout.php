@@ -1,19 +1,30 @@
 <?php
 
+/// This must come first when we need access to the current session
 session_start();
 
 require("classes/components.php");
 require("classes/utils.php");
 require("classes/basket.php");
 
+/**
+ * Retrieve the basket array from the Basket class.
+ */
 $basket = Basket::getBasketArray();
 
+/**
+ * Check if the user is logged in.
+ * If the user is not logged in, redirect to the login page.
+ */
 if(!isset($session["loggedIn"])) {
     header("Location: " . Utils::$projectFilePath . "/login.php");
 }
 
-$output = "";
+$output = ""; ///< Variable to store an empty string.
 
+/**
+ * Validates the order and creates a new order if validation passes.
+ */
 if ($_SERVER["REQUEST_METHOD"] === "POST"){
     require("classes/order.php");
 

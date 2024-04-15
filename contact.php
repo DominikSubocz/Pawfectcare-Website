@@ -1,4 +1,5 @@
 <?php
+/// This must come first when we need access to the current session
 session_start();
 
 require("classes/components.php");
@@ -7,7 +8,7 @@ require("components/form-validation.php");
 
 
 
-components::pageHeaderAlt("Checkout", ["style"], ["mobile-nav"]);
+components::pageHeaderAlt("Checkout", ["style"], ["mobile-nav"]); ///< Alternative page header (no wave)
 ?>
 <main class="content-wrapper form-content">
 <h2>Contact Form</h2>
@@ -32,11 +33,11 @@ components::pageHeaderAlt("Checkout", ["style"], ["mobile-nav"]);
 
 
 
-//Testing if it works
+///Testing if it works
 
-// echo "<h2>Your Input:</h2>";
-// echo "<pre>";
-// echo $message;
-// echo "</pre>";
+/// echo "<h2>Your Input:</h2>";
+/// echo "<pre>";
+/// echo $message;
+/// echo "</pre>";
 
 ?>

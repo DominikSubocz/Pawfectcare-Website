@@ -1,9 +1,12 @@
 <?php
+
+/// This must come first when we need access to the current session
 session_start();
+
 require("classes/components.php");
 require("classes/utils.php");
 
-// Default heading
+/// Default heading
 $heading = "Success!"; 
 
 if (isset($_SESSION["successMessage"])) {
@@ -14,7 +17,7 @@ if (isset($_SESSION["successMessage"])) {
     $message = "Success message not found."; // Default message
 }
 
-// Include success page content
+/// Include success page content
 ?>
 
 <head>
