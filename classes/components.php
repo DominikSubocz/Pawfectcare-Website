@@ -197,12 +197,12 @@ class Components {
      * @param array $articles An array of articles to display
      */
     public static function latestArticles($articles){
-        $count = 0; // Initialize a counter to keep track of the number of books displayed
+        $count = 0; /// Initialize a counter to keep track of the number of books displayed
 
         if(!empty($articles)){
             foreach($articles as $article){
                 if ($count >= 6) {
-                    break; // Exit the loop once three books have been displayed
+                    break; /// Exit the loop once three books have been displayed
                 }
                 
                 $postId = Utils::escape($article["article_id"]);
@@ -213,7 +213,7 @@ class Components {
         
                 require("components/article-card.php");
                 
-                $count++; // Increment the counter after displaying each book
+                $count++; /// Increment the counter after displaying each book
 
             }
         }

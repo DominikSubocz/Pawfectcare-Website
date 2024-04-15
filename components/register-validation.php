@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $emailErr = "Email is required";
     } else {
         $email = test_input($_POST["email"]);
-        // check if e-mail address is well-formed
+        /// check if e-mail address is well-formed
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $emailErr = "Invalid email format";
         }
@@ -32,11 +32,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if (empty($usernameErr) && empty($emailErr) && empty($passwordErr) && empty($passwordMatchErr)) {
-        // Proceed with the registration logic here
+        /// Proceed with the registration logic here
 
         $_SESSION["successMessage"] = "Registration Successful!";
         header("Location: " . Utils::$projectFilePath . "/success.php");
 
-        exit(); // Make sure to exit after redirecting to prevent further execution
+        exit(); /// Make sure to exit after redirecting to prevent further execution
     }
 }

@@ -1,6 +1,7 @@
 <?php
 
-session_start();
+/// This must come first when we need access to the current session
+session_start();;
 
 require("classes/components.php");
 require("classes/pet.php");
@@ -14,8 +15,12 @@ Components::pageHeader("All Books", ["style"], ["mobile-nav"]);
 
         <div class="admin-buttonc-container">
             <?php
+            /// Redirect user from this page if they're already logged in
                 if (isset($_SESSION['loggedIn'])) {
 
+                    /**
+                     * Display a button to add a new pet if the user role is Admin.
+                     */
                     if ($_SESSION['user_role'] === "Admin") {
                         echo "<a class='button add-button' href='add-pet.php'>Add New Pet</a>";
                     }
@@ -28,9 +33,11 @@ Components::pageHeader("All Books", ["style"], ["mobile-nav"]);
         
         <div class="book-list">
 
-        
             <?php
         
+            /**
+             * Retrieves all pets from the database and passes them to the 'allPets' method in the 'Components' class.
+             */
             $pets = Pet::getAllPets();
             Components::allPets($pets);
         

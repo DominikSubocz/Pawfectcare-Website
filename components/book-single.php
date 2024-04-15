@@ -39,10 +39,10 @@ if(isset($_POST["addToBasketButton"])){
       class="button-form"
     >
       <?php
-      
+      /// Redirect user from this page if they're already logged in
       if (isset($_SESSION['loggedIn'])) {
 
-        // Site administrators can add new books
+        /// Site administrators can add new books
         if ($_SESSION['user_role'] === "Admin") {
             echo "<input class='button' id='updateBtn' type='button' value='Update $name info'>
             <input class='danger' id='deleteBtn' type='button' name='addToBasketButton' value='Delete $name '>"; 
@@ -105,24 +105,24 @@ if(isset($_POST["addToBasketButton"])){
 </div>
 
 <script>
-// Get the modal
+/// Get the modal
 var modal = document.getElementById("myModal");
 
-// Get the button that opens the modal
+/// Get the button that opens the modal
 var btn = document.getElementById("deleteBtn");
 var cancelBtn = document.getElementById("cancelBtn");
 var updateBtn = document.getElementById("updateBtn");
 
 
-// Get the <span> element that closes the modal
+/// Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks the button, open the modal 
+/// When the user clicks the button, open the modal 
 btn.onclick = function() {
   modal.style.display = "block";
 }
 
-// When the user clicks on <span> (x), close the modal
+/// When the user clicks on <span> (x), close the modal
 span.onclick = function() {
   modal.style.display = "none";
   updateModal.style.display = "none";
@@ -137,7 +137,7 @@ updateBtn.onclick = function(){
 }
 
 
-// When the user clicks anywhere outside of the modal, close it
+/// When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";

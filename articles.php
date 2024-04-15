@@ -1,6 +1,7 @@
 <?php
 
-session_start();
+/// This must come first when we need access to the current session
+session_start();;
 
 require("classes/components.php");
 require("classes/article.php");
@@ -30,6 +31,9 @@ Components::pageHeader("Home Page", ["style"], ["mobile-nav"]);
     
         <?php
     
+        /**
+         * Retrieves all articles from the database
+         */
         $articles = Article::getAllArticles();
         Components::latestArticles($articles);
     

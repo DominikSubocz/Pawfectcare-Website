@@ -1,5 +1,6 @@
 <?php
-session_start();
+/// This must come first when we need access to the current session
+session_start();;
 
 require("classes/user.php");
 
@@ -11,28 +12,28 @@ $conn = Connection::connect();
 if (isset($_GET['date'])) {
     $date = $_GET['date'];
 
-    // Prepare the SQL statement to fetch existing bookings for the given date
+    /// Prepare the SQL statement to fetch existing bookings for the given date
     $stmt = $conn->prepare(SQL::$getBookingsByDate);
     $stmt->bindParam(1, $date, PDO::PARAM_STR);
     $stmt->execute();
 
-    // Fetch the existing bookings and populate the $bookings array
+    /// Fetch the existing bookings and populate the $bookings array
     $bookings = [];
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-        $bookings[] = $row['booking_time']; // Adjust 'booking_time' as needed to match your DB column
+        $bookings[] = $row['booking_time']; /// Adjust 'booking_time' as needed to match your DB column
     }
 }
 
 if (isset($_POST['submit'])) {
     $timeslot = $_POST['timeslot'];
 
-    // Check if the selected timeslot is available
+    /// Check if the selected timeslot is available
     $stmt = $conn->prepare(SQL::$getBookingsByDateAndTime);
     $stmt->bindParam(1, $date, PDO::PARAM_STR);
     $stmt->bindParam(2, $timeslot, PDO::PARAM_STR);
     $stmt->execute();
     
-    // If the timeslot is available, proceed with creating the booking
+    /// If the timeslot is available, proceed with creating the booking
     if (!$stmt->fetch(PDO::FETCH_ASSOC)) {
         $stmt = $conn->prepare(SQL::$createBooking);
         $stmt->bindParam(1, $userId, PDO::PARAM_INT);
@@ -43,7 +44,7 @@ if (isset($_POST['submit'])) {
         if ($stmt->execute()) {
             $msg = "<div class='alert alert-success'>Booking Successful</div>";
             echo $msg;
-            // Redirect after 5 seconds
+            /// Redirect after 5 seconds
             $_SESSION["successMessage"] = "Appointment Booked!";
 
             echo '<script src="js\script.js"></script>';
@@ -62,6 +63,15 @@ $cleanup = 0;
 $start = "09:00";
 $end = "18:00";
 
+/**
+ * Generate timeslots based on the given duration, cleanup time, start, and end time.
+ *
+ * @param int $duration The duration of each timeslot in minutes.
+ * @param int $cleanup The cleanup time between each timeslot in minutes.
+ * @param string $start The start time in "Y-m-d H:i:s" format.
+ * @param string $end The end time in "Y-m-d H:i:s" format.
+ * @return array An array of timeslots formatted as "start-end".
+ */
 function timeslots($duration, $cleanup, $start, $end) {
     $start = new DateTime($start);
     $end = new DateTime($end);
@@ -92,7 +102,7 @@ function timeslots($duration, $cleanup, $start, $end) {
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Booking System</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https:///maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -110,6 +120,9 @@ function timeslots($duration, $cleanup, $start, $end) {
         <div class="row timeslot-row">
 
             <?php 
+            /**
+             * Display each timeslot as a button with a specific color based on whether it is booked or not.
+             */
             $timeslots = timeslots($duration, $cleanup, $start, $end);
             foreach($timeslots as $ts): ?>
                 <div class="col-md-2 col-test">
@@ -156,8 +169,8 @@ function timeslots($duration, $cleanup, $start, $end) {
             </div>
         </div>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https:///ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https:///maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script>
         $(".book").click(function() {
             var timeslot = $(this).attr('data-timeslot');

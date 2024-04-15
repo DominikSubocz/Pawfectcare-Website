@@ -1,10 +1,10 @@
 <?php
 
 class Utils {
-  // Uncomment this and comment line below to switch to localhost
-  // public static $projectFilePath = "http://localhost/Pawfectcare-Website/";
+  /// Uncomment this and comment line below to switch to localhost
+  /// public static $projectFilePath = "http:///localhost/Pawfectcare-Website/";
 
-  public static $projectFilePath = "http://192.168.0.14:8080/Pawfectcare-Website/";
+  public static $projectFilePath = "http:///192.168.0.14:8080/Pawfectcare-Website/";
 
 
   public static $defaultPetCover = "default.png";
@@ -32,10 +32,10 @@ class Utils {
     return trim(htmlspecialchars($input));
   }
 
-  // Get the file extension of a given file
+  /// Get the file extension of a given file
   public static function getFileExtension($filename) {
     $parts = explode(".", $filename);
-    // end() must receive a variable
+    /// end() must receive a variable
     return end($parts);
   }
 }

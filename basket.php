@@ -1,15 +1,20 @@
 <?php
 
-session_start();
+/// This must come first when we need access to the current session
+session_start();;
 
 require("classes/components.php");
 require("classes/utils.php");
 require("classes/basket.php");
 
+/// Redirect user from this page if they're already logged in
 if(!isset($_SESSION["loggedIn"])){
     header("Location: " . Utils::$projectFilePath . "/login.php");
 }
 
+/**
+ * Process the POST request to perform actions like removing, increasing, or decreasing quantity of items in the basket.
+ */
 if($_SERVER["REQUEST_METHOD"] === "POST" &&
     isset($_GET["id"]) &&
     is_numeric($_GET["id"]) &&

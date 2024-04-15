@@ -1,5 +1,6 @@
 <?php
-session_start();
+/// This must come first when we need access to the current session
+session_start();;
 
 require("classes/components.php");
 require("classes/utils.php");
@@ -30,9 +31,13 @@ components::pageHeaderAlt("Checkout", ["style"], ["mobile-nav"]);
   <input type="submit" onclick="return validateForm()" name="submit" value="Submit">  
 </form>
 
-<iframe width="425" height="350" src="https://www.openstreetmap.org/export/embed.html?bbox=-2.993334531784058%2C56.49000188262805%2C-2.9796874523162846%2C56.49539753638916&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/#map=17/56.49270/-2.98651">View Larger Map</a></small>
+<iframe width="425" height="350" src="https:///www.openstreetmap.org/export/embed.html?bbox=-2.993334531784058%2C56.49000188262805%2C-2.9796874523162846%2C56.49539753638916&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small><a href="https:///www.openstreetmap.org/#map=17/56.49270/-2.98651">View Larger Map</a></small>
 </main>
 <script>
+    /**
+     * Validates the form by checking if the required fields are filled out.
+     * If any of the fields are empty, an alert message is displayed.
+     */
     function validateForm() {
         let formName = document.forms[0]["name"].value.trim();
         let formEmail = document.forms[0]["email"].value.trim();

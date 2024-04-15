@@ -1,7 +1,7 @@
 const navButton = document.querySelector("#nav-button");
 const navList = document.querySelector("#nav-list");
 
-// Show/hide navigation on mobile if button is clicked
+/// Show/hide navigation on mobile if button is clicked
 navButton.addEventListener("click", function() {
   navList.classList.toggle("show-on-mobile");
 });

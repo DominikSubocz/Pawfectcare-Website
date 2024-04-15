@@ -1,7 +1,7 @@
 <?php
 
-// This must come first when we need access to the current session
-session_start();
+/// This must come first when we need access to the current session
+session_start();;
 
 require("classes/components.php");
 
@@ -11,21 +11,24 @@ require("classes/components.php");
  */
 require("classes/utils.php");
 
-// Redirect user from this page if they're already logged in
+/// Redirect user from this page if they're already logged in
 if (isset($_SESSION["loggedIn"])) {
     header("Location: " . Utils::$projectFilePath . "/pet-list.php");
 }
 
 $output = "";
-// Detect if this page has received a POST request
+/// Detect if this page has received a POST request
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     require("classes/user.php");
 
-    // Determine which form to work with using the submit button's name
+    /// Determine which form to work with using the submit button's name
     if (isset($_POST["registerSubmit"])) {
         $output = User::register();
     }
 
+    /**
+     * Check if the given string contains the word "error" and redirect to success page if not found.
+     */
     if(stripos($output, "error") != true){
         $_SESSION["successMessage"] = "Registration Successful!";
         header("Location: " . Utils::$projectFilePath . "/success.php");
@@ -83,6 +86,10 @@ Components::pageHeader("Register", ["style"], ["mobile-nav"]);
 </main>
 
 <script>
+    /**
+     * Validates the registration form by checking if the username, email, and passwords are filled out and meet certain criteria.
+     * 
+     */
     function validateRegister() {
         let formName = document.forms[0]["username"].value.trim();
         let formEmail = document.forms[0]["email"].value.trim();

@@ -51,13 +51,9 @@
                     <li><a href="pet-list.php">Pets</a></li>
                     <li><a href='articles.php'>Blog</a></li>
                     <?php
-                    /*
-                    An example of conditional rendering.
-
-                    If the user is logged in, replace the login link with a logout link.
-                    */
+                    /// Redirect user from this page if they're already logged in
                     if (isset($_SESSION['loggedIn'])) {
-                        // Site administrators can add new books
+                        /// Site administrators can add new books
                         $username = $_SESSION["username"];
 
                         echo "<li><a href='calendar.php'>Book Appointment</a></li>

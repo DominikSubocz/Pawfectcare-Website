@@ -4,16 +4,23 @@ require_once("classes/sql.php");
 require_once("classes/utils.php");
 require("classes/components.php");
 
-session_start();
+/// This must come first when we need access to the current session
+session_start();;
 
 Components::pageHeaderAlt("Book Appointment", ["style"], ["mobile-nav"]);
 
+/**
+ * Function to build a calendar for a given month and year, displaying available appointment slots.
+ */
 function build_calendar($month, $year){
 
 
     $bookings = array();
     
 
+    /**
+     * Set up information about the days of the week and the first day of the month.
+     */
     $daysOfWeek = array('Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat','Sun');
     $firstDayOfMonth = mktime(0,0,0,$month,1,$year);
     $numberDays = date('t',$firstDayOfMonth);
@@ -26,6 +33,10 @@ function build_calendar($month, $year){
     }else{
         $dayOfWeek = $dayOfWeek-1;
     }
+    
+    /**
+     * Generates a calendar for booking appointments centered around the current date.
+     */
     $dateToday = date('Y-m-d');
     $calendar = "<center>Book Appointment</center>";
     $prev_month = date('m', mktime(0,0,0,$month-1,1,$year));
@@ -33,6 +44,9 @@ function build_calendar($month, $year){
     $next_month = date('m', mktime(0,0,0,$month+1,1,$year));
     $next_year = date('y', mktime(0,0,0,$month+1,1,$year));
 
+    /**
+     * Generate a calendar HTML string for the specified month and year.
+     */
     $calendar .= "<center><h2>$monthName $year</h2>";
     $calendar .= "<a class='btn btn-primary btn-xs' href='?month=".$prev_month."&year=".$prev_year."'>Prev Month</a>";
     $calendar .= "<a class='btn btn-primary btn-xs' href='?month=".date('m')."&year=".date('Y')."'>Current Month</a>";
@@ -40,10 +54,16 @@ function build_calendar($month, $year){
     $calendar .= "<br><table class='table table-bordered'>";
     $calendar .= "<tr>";
 
+    /**
+     * Generate table header cells for each day of the week.
+     */
     foreach($daysOfWeek as $day){
         $calendar .= "<th class='day-names'>$day</th>";
     }
 
+    /**
+     * Generates a calendar table row with empty cells for days before the first day of the month.
+     */
     $calendar .= "</tr><tr>";
     $currentDay = 1;
     if($dayOfWeek > 0){
@@ -52,6 +72,9 @@ function build_calendar($month, $year){
         }
     }
 
+    /**
+     * Pads a string to a certain length with another string on the left.
+     */
     $month = str_pad($month, 2, "0", STR_PAD_LEFT);
     while($currentDay <= $numberDays){
         if($dayOfWeek == 7){
@@ -61,13 +84,13 @@ function build_calendar($month, $year){
     
         $currentDayRel = str_pad($currentDay,2,"0", STR_PAD_LEFT);
         $date = "$year-$month-$currentDayRel";
-        $dayName = strtolower(date('l',strtotime($date))); // Get the day name in lowercase
+        $dayName = strtolower(date('l',strtotime($date))); /// Get the day name in lowercase
     
-        // Check if the current day is Sunday
+        /// Check if the current day is Sunday
         if($dayName == 'sunday'){
             $calendar .= "<td class='day-row closed'><h4>$currentDay</h4><a class='btn btn-danger btn-xs'>Closed</a></td>";
         } else {
-            // Otherwise, normal cell
+            /// Otherwise, normal cell
             if($date < date('Y-m-d')){
                 $calendar .= "<td class='day-row booked'><h4>$currentDay</h4><a class='btn btn-danger btn-xs'>N/A</a></td>";
             } else {
@@ -87,6 +110,9 @@ function build_calendar($month, $year){
         $dayOfWeek++;
     }
 
+    /**
+     * Generate empty table cells for the remaining days in the week after a given day.
+     */
     if($dayOfWeek < 7){
         $remainingDays =  7 - $dayOfWeek;
         for($i=0; $i < $remainingDays; $i++){
@@ -100,6 +126,12 @@ function build_calendar($month, $year){
     return $calendar;
 }
 
+/**
+ * Check the total number of bookings for a given date.
+ *
+ * @param string $date The date for which bookings need to be checked.
+ * @return int The total number of bookings for the given date.
+ */
 function checkSlots($date){
 
     $conn = Connection::connect();

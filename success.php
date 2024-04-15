@@ -1,20 +1,24 @@
 <?php
-session_start();
+/// This must come first when we need access to the current session
+session_start();;
 require("classes/components.php");
 require("classes/utils.php");
 
-// Default heading
+/// Default heading
 $heading = "Success!"; 
 
+/**
+ * Check if a success message is set in the session.
+ */
 if (isset($_SESSION["successMessage"])) {
     $message = $_SESSION["successMessage"];
-    unset($_SESSION["successMessage"]); // Remove the session variable
+    unset($_SESSION["successMessage"]); /// Remove the session variable
 } else {
     header("Location: " . Utils::$projectFilePath . "/pet-list.php");
-    $message = "Success message not found."; // Default message
+    $message = "Success message not found."; /// Default message
 }
 
-// Include success page content
+/// Include success page content
 ?>
 
 <head>

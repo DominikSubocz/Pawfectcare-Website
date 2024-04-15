@@ -1,6 +1,7 @@
 <?php
 
-session_start();
+/// This must come first when we need access to the current session
+session_start();;
 
 require("classes/components.php");
 require("classes/utils.php");
@@ -9,16 +10,25 @@ require("classes/basket.php");
 
 $basket = Basket::getBasketArray();
 
+/// Redirect user from this page if they're already logged in
 if(!isset($_SESSION["loggedIn"])){
     header("Location: " . Utils::$projectFilePath . "/login.php");
 }
 
+/**
+ * Redirects to the book list page if the basket is empty.
+ *
+ * @param array $basket The basket containing items
+ */
 if(empty($basket)){
     header("Location: " . Utils::$projectFilePath . "/book-list.php");
 }
 
-$output = "";
+$output = ""; ///< Variable to store output as a string.
 
+/**
+ * Validates and processes the order when the HTTP request method is POST.
+ */
 if($_SERVER["REQUEST_METHOD"] === "POST"){
     require("classes/order.php");
 
