@@ -1,8 +1,8 @@
 <?php
 
 /// define variables and set to empty values
-$nameErr = $emailErr = $contactNoErr = $messageErr = "";
-$name = $email = $contactNo = $message = "";
+$nameErr = $emailErr = $websiteErr = $commentErr = "";
+$name = $email = $website = $comment = $gender = "";
 
 $message = "";
 
@@ -59,10 +59,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 ///   $emailMessage = $message;
 
-///   /// use wordwrap() if lines are longer than 70 characters
+///   // use wordwrap() if lines are longer than 70 characters
 ///   $emailMessage = wordwrap($emailMessage,70);
   
-///   /// send email
+///   // send email
 ///   mail("thrusosfilms@gmail.com", "Ticket Submited!", $emailMessage);
   
 }

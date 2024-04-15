@@ -1,13 +1,14 @@
 <?php
 /// This must come first when we need access to the current session
-session_start();;
+session_start();
 
 require("classes/components.php");
 require("classes/utils.php");
 require("components/form-validation.php");
 
 
-components::pageHeaderAlt("Checkout", ["style"], ["mobile-nav"]);
+
+components::pageHeaderAlt("Checkout", ["style"], ["mobile-nav"]); ///< Alternative page header (no wave)
 ?>
 <main class="content-wrapper form-content">
 <h2>Contact Form</h2>
@@ -49,15 +50,12 @@ components::pageHeaderAlt("Checkout", ["style"], ["mobile-nav"]);
             return false;
         }
 
-        if (formEmail === "") {
-            alert("Email must be filled out");
-            return false;
-        }
+///Testing if it works
 
-        if (formContactNo === "") {
-            alert("Username must be filled out");
-            return false;
-        }
+/// echo "<h2>Your Input:</h2>";
+/// echo "<pre>";
+/// echo $message;
+/// echo "</pre>";
 
         if (formMessage === "") {
             alert("Message must be filled out");
