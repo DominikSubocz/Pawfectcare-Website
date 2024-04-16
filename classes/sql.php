@@ -1,8 +1,9 @@
 <?php
 
+/// Contains static SQL queries for various database operations.
 class SQL {
   /**
-   * SQL query to retrieve all records from the 'petsinfo' table.
+   * Retrieve all records from the 'petsinfo' table.
    */
   public static $getAllPets = "SELECT * FROM petsinfo";
   

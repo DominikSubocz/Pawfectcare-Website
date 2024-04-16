@@ -1,5 +1,6 @@
 <?php
 
+/// A class containing static methods to generate different components for a web page.
 class Components {
     
     /**

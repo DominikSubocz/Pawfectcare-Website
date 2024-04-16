@@ -1,5 +1,5 @@
 <?php
-
+/// Represents a database connection class that connects to a MySQL database using PDO.
 class Connection {
   /**
    * Return a new PDO database connection object.

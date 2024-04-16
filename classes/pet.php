@@ -1,14 +1,11 @@
 <?php
+
 require_once("connection.php");
 require_once("sql.php");
 require_once("utils.php");
 
 
-/**
- * Class Pet
- * 
- * Represents a pet with with methods to interact with the database.
- */
+/// Represents a pet with with methods to interact with the database.
 class Pet{
 
     /**

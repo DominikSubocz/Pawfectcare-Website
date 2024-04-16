@@ -4,11 +4,8 @@ require_once("classes/connection.php");
 require_once("classes/sql.php");
 require_once("classes/utils.php");
 
-/**
- * Class Article
- * 
- * Represents an Article object with methods to interact with the database.
- */
+
+/// Represents an Article object with methods to interact with the database.
 class Article{
 
     /**

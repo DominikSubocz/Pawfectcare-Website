@@ -4,11 +4,7 @@ require_once("classes/connection.php");
 require_once("classes/sql.php");
 require_once("classes/utils.php");
 
-/**
- * Class Basket
- * 
- * Represents a basket for storing items related to a user's shopping cart.
- */
+/// Represents a basket for storing items related to a user's shopping cart.
 class Basket{
     /**
      * Retrieve the basket array for the current user from the session and cookies.

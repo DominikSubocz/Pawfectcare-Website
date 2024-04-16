@@ -1,5 +1,6 @@
 <?php
 
+/// A collection of utility functions for common tasks.
 class Utils {
   /// Uncomment this and comment line below to switch to localhost
   /// public static $projectFilePath = "http:///localhost/Pawfectcare-Website/";

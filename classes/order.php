@@ -4,11 +4,7 @@ require_once("classes/connection.php");
 require_once("classes/sql.php");
 require_once("classes/utils.php");
 
-/**
- * Class Order
- * 
- * Represents an order with validation and creation methods.
- */
+/// Represents an order with validation and creation methods.
 class Order{
     /**
      * Validates the form input fields for address, card details, and security number.

@@ -1,15 +1,11 @@
 <?php
 
-/// If a file has already been included, do not do so again
+
 require_once("classes/connection.php");
 require_once("classes/sql.php");
 require_once("classes/utils.php");
 
-/**
- * Class User
- * 
- * Represents a user with login, registration, and order-related functionalities.
- */
+/// Represents a user with login, registration, and order-related functionalities.
 class User {
     /**
      * Logs in the user by verifying the username and password.
