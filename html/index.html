@@ -17,6 +17,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -85,6 +86,306 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
   <div class="headertitle"><div class="title">Multiplatform Websites | Pawfect Care Website Documentation</div></div>
 </div><!--header-->
 <div class="contents">
+  <p><strong>Project Version: </strong>1.0.0</p>
+  <p id="date"></p>
+  <script>
+    const d = new Date();
+
+    const day = String(d.getDate()).padStart(2, '0');
+    const month = String(d.getMonth() + 1).padStart(2, '0');
+    const year = d.getFullYear();
+
+    const formattedDate = `${day}/${month}/${year}`;
+    document.getElementById("date").innerHTML = "<strong>Current Date:</strong> " + formattedDate;
+
+  </script>
+
+  <p><strong>Project Overview:</strong> Pawfect Care is a website created as a part of the Multiplatform Websites 
+    assessment for the HND Software Development (Year 2) course.</p>
+  <p>
+    Pawfect Care is a veterinary practice dedicated to providing compassionate and comprehensive care for pets of 
+    all shapes and sizes. It is of course a fictional practice created by me. I have designed and created this website
+    from scratch. Some parts of the website aren't fully finished yet and may not function properly.
+  </p>
+  
+    <div class="memitem" id="table-section">
+      <div class="memproto">
+      <table class="mlabels">
+        <tr>
+        <td class="mlabels-left">
+            <table class="memname">
+              <tr>
+                <td class="memname">Table of Contents</td>
+              </tr>
+            </table>
+        </td>
+        <td class="mlabels-right">
+        </tr>
+      </table>
+      </div><div class="memdoc">
+      <ol>
+        <li><a href="#install-section">Installation Guide</a></li>
+        <li><a href="#docs-section">Documentation Overview</a></li>
+        <li><a href="#code-section">Codebase Overview</a> </li>
+        <li><a href="#bug-section">Known Bugs</a></li>
+        <li><a href="#contribution-section">How to Contribute</a></li>
+        <li><a href="#contact-section">Contact Information</a></li>
+      </ol> 
+      </div>
+    </div>
+
+    <div class="memitem" id="install-section">
+      <div class="memproto">
+      <table class="mlabels">
+        <tr>
+        <td class="mlabels-left">
+            <table class="memname">
+              <tr>
+                <td class="memname">1. Installation Guide</td>
+              </tr>
+            </table>
+        </td>
+        <td class="mlabels-right">
+          <a href="#table-section">Go Back <i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>
+        </tr>
+        </tr>
+      </table>
+    </td>
+      </div><div class="memdoc">
+        <ol>
+          <li>Download the latest version of the web app from the GitHub Releases page.</li>
+          <li>Extract the 'Pawfectcare-Website' folder from the downloaded .zip file into the 'xampp/htdocs' folder on your local machine.</li>
+          <li>Open XAMPP control panel and start both Apache and MySQL services.</li>
+          <li>Open a web browser and navigate to the localhost URL (or the URL you configured for XAMPP)</li>
+          <li>From the list of websites, locate and click on 'Pawfectcare-Website' to access the web application.</li>
+          <li>That's it! You can now use the website.</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="memitem" id="docs-section">
+      <div class="memproto">
+      <table class="mlabels">
+        <tr>
+        <td class="mlabels-left">
+            <table class="memname">
+              <tr>
+                <td class="memname">2. Documentation Overview</td>
+              </tr>
+            </table>
+        </td>
+        <td class="mlabels-right">
+          <a href="#table-section">Go Back <i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>
+        </tr>
+        </tr>
+      </table>
+      </div><div class="memdoc">
+        <p>
+          This section focuses on briefly explaining and showcasing some 
+          testing that I did for my web app.
+        </p>
+
+        <dl class="note"><dt><b>Note:</b></dt><dd>
+          After working so hard for so long on Graded Unit it feels like like my brain's fried with thoughts on I should fix this right now, I missed out this and this, so apologies if something's slightly off or missing.
+          </dd>
+        </dl>
+        <ol>
+
+          <li><b>Functionality Testing:</b><br>
+            Functionality testing verifies that each web page operates as intended, ensuring proper functionality. Identifying and addressing any functionality issues during testing allows for their resolution before deployment.<br>
+            <b>File download: </b><a href="../testing documentation/Functionality testing.xlsx">Functionality testing.xlsx</a>
+            <img class="docs-img" src="./imgs/functionality.png" alt="Screenshot of functionality testing excel file">
+
+          </li>
+          <br>
+          <li><b>Scenario Testing</b><br>
+            Scenario testing involves simulating real-world usage scenarios to assess how well a system performs under various conditions and user interactions. <br>
+            <b>File download: </b><a href="../testing documentation/Scenario Testing Forms.docx">Scenario Testing Forms.docx</a><br>
+            <img class="docs-img" src="./imgs/scenario.png" alt="Screenshot of journal excel file">
+
+          </li>
+          <br>
+          <li><b>Usability Testing</b><br>
+            Usability testing evaluates the ease of use and intuitiveness of the web application's interface, ensuring a smooth and user-friendly experience.<br>
+            <b>File download: </b><a href="../testing documentation/Usability Test Forms.docx">Usability Test Forms.docx</a>
+            <img class="docs-img" src="./imgs/usability.png" alt="Screenshot of usability testing excel file">
+
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="memitem" id="code-section">
+      <div class="memproto">
+      <table class="mlabels">
+        <tr>
+        <td class="mlabels-left">
+            <table class="memname">
+              <tr>
+                <td class="memname">3. Codebase Overview</td>
+              </tr>
+            </table>
+        </td>
+        <td class="mlabels-right">
+          <a href="#table-section">Go Back <i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>
+        </tr>
+        </tr>
+      </table>
+      </div><div class="memdoc">
+        <ol>
+          <li><b>Directory Structure: </b> <br>
+            The project has a simple structure with three main directories:<br>
+            <ul>
+              <li><b>Classes:</b> Contains all PHP class files responsible for backend logic and data handling.</li><br>
+              <li><b>Components:</b> Houses frontend components written in HTML, CSS, JavaScript and some PHP, organized based on their functionality or feature.</li><br>
+              <li><b>CSS:</b> Contains .css file</li><br>
+              <li><b>Icons:</b> Stores all png/svg icons.</li><br>
+              <li><b>Images:</b> Stores all image files.</li><br>
+              <li><b>Includes:</b> Contains file with database details</li><br>
+              <li><b>JS:</b> Contains javascript file</li><br>
+            </ul>
+          </li>
+          <br>
+          <li>
+            <b>Key Components: </b><br>
+            The classes directory includes essential backend classes such as<strong> User, Basket, Pet, Order, Article</strong> responsible for<strong> handling user data, basket products, order information and updating or deleting pets.</strong> <br>
+            Within the components directory,<strong>frontend</strong>  components <strong> like Header, Footer, and PetCard</strong> are organized to <strong>facilitate the development of the user interface.</strong><br>
+            The documents directory contains testing documentation, including functionality testing, usability testing and more.
+          </li>
+          <br>
+          <li>
+            <b>Coding Standards: </b><br>
+            The project follows industry-standard coding conventions for both backend PHP code and frontend JavaScript/TypeScript code.
+            Code is well-documented with inline comments to explain complex logic and function purposes.
+
+            <dl class="note"><dt><b>Note:</b></dt><dd>
+              Please note that while efforts are underway to ensure that all code adheres to coding standards and is well-formatted, there may be instances where certain sections do not currently meet these criteria.
+              Rest assured, I am actively working to address these issues and maintain consistency throughout the codebase.
+              </dd>
+            </dl>
+          </li>
+
+          <br>
+          
+          <li>
+            <b>Version Control: </b><br>
+            The project utilizes Git for version control, hosted on GitHub.<br>
+            I plan to create separate branches for specific features in future updates.
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="memitem"  id="bug-section">
+      <div class="memproto">
+      <table class="mlabels">
+        <tr>
+        <td class="mlabels-left">
+            <table class="memname">
+              <tr>
+                <td class="memname">4. Known Bugs</td>
+              </tr>
+            </table>
+        </td>
+        <td class="mlabels-right">
+          <a href="#table-section">Go Back <i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>
+        </tr>
+        </tr>
+      </table>
+      </div><div class="memdoc">
+        <ol>
+          <li>Some validation might not work properly, might be slightly off</li>
+        </ol>
+        <dl class="note"><dt><b>Note:</b></dt><dd>
+          Please note that there might be more bugs than this page lists. If you find a bug by any chance please report it to me and I'll have a look into it.<br>
+          I am going to look for bugs from time to time, expect this list to update.
+          </dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="memitem"  id="contribution-sectoin">
+      <div class="memproto">
+      <table class="mlabels">
+        <tr>
+        <td class="mlabels-left">
+            <table class="memname">
+              <tr>
+                <td class="memname">5. How to Contribute</td>
+              </tr>
+            </table>
+        </td>
+        <td class="mlabels-right">
+          <a href="#table-section">Go Back <i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>
+        </tr>
+        </tr>
+      </table>
+      </div><div class="memdoc">
+        If you've got some spare time and feel like helping out, your contribution would be greatly appreciated!<br>
+        Of course, there's absolutely no pressure, but if you decide to lend a hand, know that it's valued and makes a real difference.<br>
+        <b>Thanks for considering it!</b><br><br>
+
+        Ways to Contribute:
+        <ol>
+          <li><b>Bug Reporting and Issue Tracking:</b><br>
+            Report and track any bugs or issues you find on the website to help ensure a seamless user experience and maintain high standards of functionality.          
+          </li>
+
+          <br>
+
+          <li><b>Translations:</b><br>
+            I welcome contributions for translations of both documentation and interfaces to make the project more accessible to users worldwide.
+          </li>
+
+          <br>
+
+          <li><b>Design and User Experience Enhancements:</b><br>
+            Your input on design mockups, user experience enhancements, and accessibility improvements would be invaluable as I plan to refine and enhance the design of this web app in the future.
+          </li>
+          <br>
+          <li><b>Documentation Improvements:</b><br>
+            Identify and implement enhancements to documentation to make it more comprehensive and user-friendly.          
+          </li>
+          <br>
+          <li><b>Testing and Feedback:</b><br>
+            Contribute to project quality by testing features, offering feedback, and reporting issues encountered.          
+          </li>
+
+          <br>
+          <li><b>Ideas & Suggestions</b><br>
+            Feel free to share your ideas and suggestions for improving the functionality, usability, and overall user experience of the web app. 
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="memitem"  id="contact-section">
+      <div class="memproto">
+      <table class="mlabels">
+        <tr>
+        <td class="mlabels-left">
+            <table class="memname">
+              <tr>
+                <td class="memname">6. Contact Information</td>
+              </tr>
+            </table>
+        </td>
+        <td class="mlabels-right">
+          <a href="#table-section">Go Back <i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>
+        </tr>
+        </tr>
+      </table>
+      </div><div class="memdoc">
+        For any inquiries, feedback, or collaboration opportunities, don't hesitate to reach out. You can contact me via email at dominiksubocz@gmail.com or through my social media channels.<br>
+        We welcome your questions, suggestions, and contributions as we strive to enhance our project together.<br><br>
+
+        <b>Contact Details:</b><br>
+        <ul>
+          <li>Email: dominiksubocz@gmail.com</li>
+          <li>LinkedIn: <a href="https://www.linkedin.com/in/dominik-subocz-72b63429b">Dominik Subocz</li>
+        </ul>
+      </div>
+    </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
