@@ -72,15 +72,15 @@
 
     <div class="header-content-bot header-content">
 
-            <div class="header-container1">
-              <div class="header-container2">
+    <div>
+              <div>
                 <h2> Pawfect Care Adoption </h2>
                 <p> Find your furry friend: Discover joy through pet adoption today. </p>
               </div>
             </div>
 
             <div>
-              <img class="header-img" src="images/dog-with-doctor.png" alt="Image of dog sitting next to vet.">
+              <img id="header-img" class="header-img" src="images/dog-with-doctor.png" alt="Pawfect Care logo with green fox">
             </div>
 
 
