@@ -1,11 +1,12 @@
 <?php
+/// This must come first when we need access to the current session
+session_start();
+
 require_once("classes/connection.php");
 require_once("classes/sql.php");
 require_once("classes/utils.php");
 require("classes/components.php");
 
-/// This must come first when we need access to the current session
-session_start();;
 
 Components::pageHeaderAlt("Book Appointment", ["style"], ["mobile-nav"]);
 
@@ -15,7 +16,15 @@ Components::pageHeaderAlt("Book Appointment", ["style"], ["mobile-nav"]);
 function build_calendar($month, $year){
 
 
-    $bookings = array();
+
+    // // Prepare the SQL statement with placeholders
+    // $stmt = $conn->prepare(SQL::$test);
+    
+    // // Bind parameters
+    // $stmt->bindParam(1, $month, PDO::PARAM_INT);
+    // $stmt->bindParam(2, $year, PDO::PARAM_INT);
+    
+    $bookings = array(); ///< Initialize an empty array to store bookings.
     
 
     /**
@@ -33,9 +42,9 @@ function build_calendar($month, $year){
     }else{
         $dayOfWeek = $dayOfWeek-1;
     }
-    
+
     /**
-     * Generates a calendar for booking appointments centered around the current date.
+     * Generates a calendar for booking appointments with navigation links to previous and next months.
      */
     $dateToday = date('Y-m-d');
     $calendar = "<center>Book Appointment</center>";
@@ -45,7 +54,7 @@ function build_calendar($month, $year){
     $next_year = date('y', mktime(0,0,0,$month+1,1,$year));
 
     /**
-     * Generate a calendar HTML string for the specified month and year.
+     * Generates a calendar HTML string for the specified month and year.
      */
     $calendar .= "<center><h2>$monthName $year</h2>";
     $calendar .= "<a class='btn btn-primary btn-xs' href='?month=".$prev_month."&year=".$prev_year."'>Prev Month</a>";
@@ -55,7 +64,7 @@ function build_calendar($month, $year){
     $calendar .= "<tr>";
 
     /**
-     * Generate table header cells for each day of the week.
+     * Generates table header cells for each day of the week.
      */
     foreach($daysOfWeek as $day){
         $calendar .= "<th class='day-names'>$day</th>";
@@ -73,7 +82,7 @@ function build_calendar($month, $year){
     }
 
     /**
-     * Pads a string to a certain length with another string on the left.
+     * Generates a calendar HTML table for a given month and year, with booking information for each day.
      */
     $month = str_pad($month, 2, "0", STR_PAD_LEFT);
     while($currentDay <= $numberDays){
@@ -111,7 +120,7 @@ function build_calendar($month, $year){
     }
 
     /**
-     * Generate empty table cells for the remaining days in the week after a given day.
+     * Add empty table cells to the calendar for the remaining days in the week after a given day.
      */
     if($dayOfWeek < 7){
         $remainingDays =  7 - $dayOfWeek;
@@ -129,8 +138,8 @@ function build_calendar($month, $year){
 /**
  * Check the total number of bookings for a given date.
  *
- * @param string $date The date for which bookings need to be checked.
- * @return int The total number of bookings for the given date.
+ * @param string $date The date for which bookings need to be checked
+ * @return int The total number of bookings for the given date
  */
 function checkSlots($date){
 
@@ -156,6 +165,9 @@ function checkSlots($date){
         <div class="row">
             <div class="col-md-12">
             <?php
+            /**
+             * Generates a calendar for the specified month and year, or the current month and year if not provided.
+             */
             $dateComponents = getdate();
             if(isset($_GET['month'])&&($_GET['year'])){
                 $month = $_GET['month'];

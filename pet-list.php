@@ -1,7 +1,7 @@
 <?php
 
 /// This must come first when we need access to the current session
-session_start();;
+session_start();
 
 require("classes/components.php");
 require("classes/pet.php");
@@ -36,9 +36,10 @@ Components::pageHeader("All Books", ["style"], ["mobile-nav"]);
             <?php
         
             /**
-             * Retrieves all pets from the database and passes them to the 'allPets' method in the 'Components' class.
+             * Retrieves all pets from the Book class.
+             * Passes them to the allPets method in the Components class.
              */
-            $pets = Pet::getAllPets();
+            $pets = Book::getAllPets();
             Components::allPets($pets);
         
             ?>

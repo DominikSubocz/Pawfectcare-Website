@@ -1,6 +1,6 @@
 <?php
 /// This must come first when we need access to the current session
-session_start();;
+session_start();
 
 require("classes/user.php");
 
@@ -12,8 +12,8 @@ $conn = Connection::connect();
 if (isset($_GET['date'])) {
     $date = $_GET['date'];
 
-    /// Prepare the SQL statement to fetch existing bookings for the given date
-    $stmt = $conn->prepare(SQL::$getBookingsByDate);
+    /// Fetch existing bookings for the given date
+    $stmt = $conn->prepare(SQL::$test2);
     $stmt->bindParam(1, $date, PDO::PARAM_STR);
     $stmt->execute();
 
@@ -64,13 +64,13 @@ $start = "09:00";
 $end = "18:00";
 
 /**
- * Generate timeslots based on the given duration, cleanup time, start, and end time.
+ * Generate time slots based on the given duration, cleanup time, start, and end time.
  *
- * @param int $duration The duration of each timeslot in minutes.
- * @param int $cleanup The cleanup time between each timeslot in minutes.
+ * @param int $duration The duration of each time slot in minutes.
+ * @param int $cleanup The cleanup time between each time slot in minutes.
  * @param string $start The start time in "Y-m-d H:i:s" format.
  * @param string $end The end time in "Y-m-d H:i:s" format.
- * @return array An array of timeslots formatted as "start-end".
+ * @return array An array of time slots formatted as "start-end".
  */
 function timeslots($duration, $cleanup, $start, $end) {
     $start = new DateTime($start);
@@ -121,7 +121,7 @@ function timeslots($duration, $cleanup, $start, $end) {
 
             <?php 
             /**
-             * Display each timeslot as a button with a specific color based on whether it is booked or not.
+             * Iterates through each timeslot and creates a button element for it.
              */
             $timeslots = timeslots($duration, $cleanup, $start, $end);
             foreach($timeslots as $ts): ?>
@@ -172,6 +172,9 @@ function timeslots($duration, $cleanup, $start, $end) {
     <script src="https:///ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https:///maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script>
+        /**
+         * Function to handle the click event on elements with the class "book".
+         */
         $(".book").click(function() {
             var timeslot = $(this).attr('data-timeslot');
             $("#slot").html(timeslot);

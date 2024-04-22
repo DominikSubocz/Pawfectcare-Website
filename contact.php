@@ -1,19 +1,17 @@
 <?php
 /// This must come first when we need access to the current session
-session_start();;
+session_start();
 
 require("classes/components.php");
 require("classes/utils.php");
 require("components/form-validation.php");
 
 
-components::pageHeaderAlt("Checkout", ["style"], ["mobile-nav"]);
+
+components::pageHeaderAlt("Checkout", ["style"], ["mobile-nav"]); ///< Alternative page header (no wave)
 ?>
-
-<main class="content-wrapper contact-content">
-
-
-<h2>PHP Form Validation Example</h2>
+<main class="content-wrapper form-content">
+<h2>Contact Form</h2>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
   <label for="name">Full name:</label><br>
   <input type="text" name="name" value="<?php echo $name;?>"><br>
