@@ -1,16 +1,19 @@
 <?php
 
 /// This must come first when we need access to the current session
-session_start();
+session_start();;
 
 require("classes/components.php");
 require("classes/utils.php");
 
-$output = "";
+/// if (!isset($_SESSION["user_role"]) || $_SESSION["user_role"] !== "Admin"){
+///     header("Location: " . Utils::$projectFilePath . "/book-list.php");
+/// }
+
+$output = ""; ///< Variable to store output as a string.
 
 /**
- * Validates the form submission and creates a new book entry if validation passes.
- * If successful, redirects to the pet.php page with the newly created book's ID.
+ * Validates the form submission and creates a new pet if the form data is valid.
  */
 if ($_SERVER["REQUEST_METHOD"] ==="POST" && isset($_POST["addSubmit"])) {
     require("classes/pet.php");
