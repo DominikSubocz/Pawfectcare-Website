@@ -29,11 +29,11 @@ To run PawfectCare locally, follow these steps:
 
 ## Documentation
 
-Documentation website for this project can be found [here](link). The documentation provides detailed information on how to use the Simply Rugby Management Web App, including installation instructions, usage guidelines, and feature explanations. It also includes technical details for developers interested in contributing to the project or extending its functionality. Please refer to the documentation for any questions or assistance with using the application.
+Documentation website for this project is currently under development and will be released soon. The documentation provides detailed information on how to use the PawfectCare website, including installation instructions, usage guidelines, and feature explanations. It also includes technical details for developers interested in contributing to the project or extending its functionality. Please refer to the documentation for any questions or assistance with using the application.
 
 ## Contributing
 
-Contributions are welcome! If you'd like to contribute to the Simply Rugby Management Web App, please follow these steps:
+Contributions are welcome! If you'd like to contribute to the PawfectCare Website, please follow these steps:
 
 1. Fork the repository
 2. Create a new branch for your feature or bug fix.
