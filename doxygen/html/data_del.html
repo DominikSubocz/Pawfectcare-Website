@@ -92,7 +92,7 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </div><!--header-->
 <div class="contents">
   <dl class="note"><dt><b>Note:</b></dt><dd>
-    You must have admin or coach priveledges to perform these operations.</dd>
+    You must have admin priveledges to perform these operations.</dd>
   </dl>
     <div class="memitem" id="table-section">
       <div class="memproto">
@@ -110,7 +110,9 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
       </table>
       </div><div class="memdoc">
       <ol>
-        <li><a href="#del-section">Deleting Data</a></li>
+        <li><a href="#del-section">Deleting Pets</a></li>
+        <li><a href="#del-story-section">Deleting Pet Stories</a></li>
+
       </ol> 
       </div>
     </div>
@@ -122,7 +124,7 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
         <td class="mlabels-left">
             <table class="memname">
               <tr>
-                <td class="memname">1. Deleting Data</td>
+                <td class="memname">1. Deleting Pets</td>
               </tr>
             </table>
         </td>
@@ -134,23 +136,17 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
     </td>
       </div><div class="memdoc">
 
-        <h3>Deleting Data</h3>
+        <h3>Deleting Pets</h3>
 
         <p>
-            To delete data from the system, follow these steps:
+            To delete pet from the system, follow these steps:
         </p>
             <ol>
-                <li>Navigate to Respective List:</li>
-                <p>Go to the list from which you want to delete data.</p>
-                <li>Select Record to Delete:</li>
-                <p>Either:</p>
-                <ul>
-                    <li>Tick the checkbox next to the record you want to delete.</li>
-                    <li>Navigate to the profile of the record and click the "Delete" button.</li>
-                </ul>
+                <li>Navigate to Pet List</li>
+                <li>Select Pet to Delete</li>
                 <li>Click Delete Button</li>
-                <li>Return to List:</li>
-                <p>After submitting, you will be redirected back to the respective list.</p>
+                <li>Return to List</li>
+                <li>After submitting, you will be redirected back to the respective list.</li>
             </ol>
 
         <dl class="note"><dt><b>Note:</b></dt><dd>
@@ -161,6 +157,36 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
       </div>
     </div>
 
+    <div class="memitem" id="del-story-section">
+      <div class="memproto">
+      <table class="mlabels">
+        <tr>
+        <td class="mlabels-left">
+            <table class="memname">
+              <tr>
+                <td class="memname">2. Deleting Pet Stories</td>
+              </tr>
+            </table>
+        </td>
+        <td class="mlabels-right">
+          <a href="#table-section">Go Back <i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>
+        </tr>
+        </tr>
+      </table>
+    </td>
+      </div><div class="memdoc">
+
+        <h3>Deleting Pet Stories</h3>
+
+        <p>As for the current version of this website, you can remove pet storires via database query. I plan to add proper system for that in future updates.</p>
+
+        <dl class="note"><dt><b>Note:</b></dt><dd>
+          Error message will show up if the data is used in another table and cannot be removed.<br>
+          To resolve this: simply find where the data is used, update that record where the data is used to new one, then try deleting again.</dd>
+        </dl>
+
+      </div>
+    </div>
 
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -39,7 +39,6 @@ var NAVTREE =
         [ "Adding Data", "data_add.html"],
         [ "Editing Data", "data_edit.html"],
         [ "Deleting Data", "data_del.html"],
-        [ "Display Options", "data_display.html"],
       ] ],
       [ "Task-based Tutorials", "task_tuts.html", [
         [ "Step-by-Step Guides", "task_step_guides.html"],

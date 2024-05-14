@@ -92,7 +92,7 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </div><!--header-->
 <div class="contents">
   <dl class="note"><dt><b>Note:</b></dt><dd>
-    You must have admin or coach priveledges to perform these operations.</dd>
+    You must have admin priveledges to perform these operations.</dd>
   </dl>
     <div class="memitem" id="table-section">
       <div class="memproto">
@@ -110,9 +110,8 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
       </table>
       </div><div class="memdoc">
       <ol>
-        <li><a href="#edit-member-section">Editing Players, Juniors, Members, or Coaches</a></li>
-        <li><a href="#edit-skill-section">Editing Player's Skills</a></li>
-        <li><a href="#edit-event-section">Editing Games or Training Sessions</a></li>
+        <li><a href="#edit-member-section">Editing Pets</a></li>
+        <li><a href="#edit-event-section">Editing Pet Stories</a></li>
       </ol> 
       </div>
     </div>
@@ -124,7 +123,7 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
         <td class="mlabels-left">
             <table class="memname">
               <tr>
-                <td class="memname">1. Editing Players, Juniors, Members, or Coaches</td>
+                <td class="memname">1. Editing Pets</td>
               </tr>
             </table>
         </td>
@@ -136,35 +135,19 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
     </td>
       </div><div class="memdoc">
 
-        <h3>Editing Players, Juniors, Members, or Coaches</h3>
+        <h3>Editing Pets</h3>
 
         <p>
-            To edit existing player, junior, member, or coach, follow these steps:
+            To edit existing pet, follow these steps:
         </p>
             <ol>
-                <li>Navigate to Respective List:</li>
-                <p>Go to the list of players, members, coaches, or juniors in the system.</p>
-                <li>Select Member to Edit:</li>
-                <p>Either:</p>
-                <ul>
-                    <li>Tick the checkbox next to the member you want to edit.</li>
-                    <li>Navigate to the profile of the member and click the "Update" button.</li>
-                </ul>
+                <li>Navigate to Pet List</li>
+                <li>Select Pet to Edit:</li>
                 <li>Click Update Button</li>
                 <li>Fill in Form:</li>
-                <p>
-                    A form will be presented where you can edit the member's details.<br>
-                    Leave blank fields if you don't want to update certain information.
-                </p>
                 <li>Click Submit Button</li>
-                <li>Return to List:</li>
-                <p>After submitting, you will be redirected back to the respective list.</p>
+                <li>After submitting, you will be redirected back to the respective list.</li>
             </ol>
-
-        <dl class="note"><dt><b>Note:</b></dt><dd>
-          Addresses, doctors, and guardians will be automatically updated when entered in any of these profiles.          </dd>
-        </dl>
-
       </div>
     </div>
 
@@ -175,7 +158,7 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
         <td class="mlabels-left">
             <table class="memname">
               <tr>
-                <td class="memname">2. Editing Player's Skills</td>
+                <td class="memname">2. Editing Pet Stories</td>
               </tr>
             </table>
         </td>
@@ -187,78 +170,14 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
     </td>
       </div><div class="memdoc">
 
-        <h3>Editing Player's Skills</h3>
+        <h3>Editing Pet Stories</h3>
 
         <p>
-            To edit existing skills of player, junior, member, or coach, follow these steps:
+            As for the current version, you can only update pet's story via database query. I plan to add proper system for that in future updates.
         </p>
 
-        <ol>
-            <li>Select Player to Edit:</li>
-            <p>Either:</p>
-            <ul>
-                <li>Tick the checkbox next to the player you want to edit skills for.</li>
-                <li>Navigate to the profile of the player and click the "Update Skill" button.</li>
-            </ul>
-
-            <li>Fill in Form:</li>
-            <p>
-                A form will be presented where you can edit the player's skills.<br>
-                Leave blank fields if you don't want to update certain information.
-            </p>
-            <dl class="note"><dt><b>Note:</b></dt><dd>
-                Ratings for skills are must be between 1 and 5</dd>
-              </dl>
-              <li>Click Submit Button</li>
-              <li>Return to List:</li>
-              <p>After submitting, you will be redirected back to the respective list.</p>
-        </ol>
 
       </div>
-    </div>
-
-    <div class="memitem" id="edit-event-section">
-        <div class="memproto">
-        <table class="mlabels">
-          <tr>
-          <td class="mlabels-left">
-              <table class="memname">
-                <tr>
-                  <td class="memname">3. Editing Games or Training Sessions</td>
-                </tr>
-              </table>
-          </td>
-          <td class="mlabels-right">
-            <a href="#table-section">Go Back <i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>
-          </tr>
-          </tr>
-        </table>
-      </td>
-        </div><div class="memdoc">
-  
-          <h3>Editing Games or Training Sessions</h3>
-          <p>
-            To edit existing event, follow these steps:
-        </p>
-          <ol>
-              <li>Select Event to Edit:</li>
-              <p>Either:</p>
-              <ul>
-                  <li>Tick the checkbox next to the event you want to edit.</li>
-                  <li>Navigate to the profile of the event and click the "Update" button.</li>
-              </ul>
-  
-              <li>Fill in Form:</li>
-              <p>
-                  A form will be presented where you can edit the player's skills.<br>
-                  Leave blank fields if you don't want to update certain information.
-              </p>
-                <li>Click Submit Button</li>
-                <li>Return to List:</li>
-                <p>After submitting, you will be redirected back to the respective list.</p>
-          </ol>
-  
-        </div>
     </div>
 
 </div><!-- contents -->
