@@ -108,25 +108,25 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
       </div><div class="memdoc">
       <ol>
         <h4>Pets</h4>
-        <li><a href="#">Viewing Pets List</a></li>
-        <li><a href="#">Viewing Pet Profile</a></li>
-        <li><a href="#">Adopting Pet</a></li>
-        <li><a href="#">Adding New Pet</a></li>
-        <li><a href="#">Updating Pet</a></li>
-        <li><a href="#">Removing Pet</a></li>
+        <li><a href="#pet-list-section">Viewing Pets List</a></li>
+        <li><a href="#pet-profile-section">Viewing Pet Profile</a></li>
+        <li><a href="#pet-adopt-section">Adopting Pet</a></li>
+        <li><a href="#add-pet-section">Adding New Pet</a></li>
+        <li><a href="#update-pet-section">Updating Pet</a></li>
+        <li><a href="#delete-pet-section">Removing Pet</a></li>
         <h4>Basket Tasks</h4>
-        <li><a href="#">Incrementing Count of Adopted Pets</a></li>
-        <li><a href="#">Decrementing Count of Adopted Pets</a></li>
-        <li><a href="#">Removing Adopted Pet from the basket</a></li>
-        <li><a href="#">Proceeding with the order</a></li>
+        <li><a href="#inc-basket-section">Incrementing Count of Adopted Pets</a></li>
+        <li><a href="#dec-basket-section">Decrementing Count of Adopted Pets</a></li>
+        <li><a href="#remove-basket-section">Removing Adopted Pet from the basket</a></li>
+        <li><a href="#order-basket-section">Proceeding with the order</a></li>
         <h4>Booking Appointment Tasks</h4>
-        <li><a href="#">Using the Calendar</a></li>
-        <li><a href="#">Booking an Appointment</a></li>
+        <li><a href="#calendar-section">Using the Calendar</a></li>
+        <li><a href="#booking-section">Booking an Appointment</a></li>
         <h4>Blog Tasks </h4>
-        <li><a href="#">All Articles</a></li>
-        <li><a href="#">View Single Article</a></li>
+        <li><a href="#all-articles-section">All Articles</a></li>
+        <li><a href="#single-article-section">View Single Article</a></li>
         <h4>Contact & Help </h4>
-        <li><a href="#">Contact Help</a></li>
+        <li><a href="#contact-section">Contact Help</a></li>
         
 
       </ol> 
@@ -457,13 +457,147 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
         <h3>Using the Calendar</h3>
         <ol>
             <li>Log In</li>
-            <li>Navigate to Basket Page</li>
-            <li>Click on the 'Complete Order' button</li>
-            <li>Fill in and submit the form.</li>
-            <li>Your order will show up on your profile. That's it!</li>
+            <li>Navigate to Book Appointment Page</li>
+        </ol>
+        <ul>
+          <li>Click on the 'Next Month' button to see appointments for next month</li>
+          <li>Click on the 'Prev Month' button to see appointments for previous month</li>
+          <li>Click on the 'Current Month' button to see appointments for current month</li>
+          <li>You cannot book appointment on days with red buttons</li>
+          <li>You can only book days with green buttons</li>
+          <li>There 18 slots for each appointment, once there are 0 slots left, the appointment will become red, and you will not be able to book for that day.</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="memitem" id="booking-section">
+      <div class="memproto">
+      <table class="mlabels">
+        <tr>
+        <td class="mlabels-left">
+            <table class="memname">
+              <tr>
+                <td class="memname">12. Booking an Appointment</td>
+              </tr>
+            </table>
+        </td>
+        <td class="mlabels-right">
+          <a href="#table-section">Go Back <i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>
+        </tr>
+        </tr>
+      </table>
+    </td>
+      </div><div class="memdoc">
+
+        <h3>Booking an Appointment</h3>
+        <ol>
+            <li>Log In</li>
+            <li>Navigate to Book Appointment Page</li>
+            <li>Click on the green 'Book' button on day that suits you</li>
+            <li>Pick the time coloured green that suits you</li>
+            <li>Confirm your details and click submit</li>
+            <li>That's it!</li>
         </ol>
       </div>
     </div>
+    
+    <div class="memitem" id="all-articles-section">
+      <div class="memproto">
+      <table class="mlabels">
+        <tr>
+        <td class="mlabels-left">
+            <table class="memname">
+              <tr>
+                <td class="memname">13. All Articles</td>
+              </tr>
+            </table>
+        </td>
+        <td class="mlabels-right">
+          <a href="#table-section">Go Back <i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>
+        </tr>
+        </tr>
+      </table>
+    </td>
+      </div><div class="memdoc">
+
+        <h3>All Articles</h3>
+        <ol>
+            <li>Log In</li>
+            <li>Navigate to Blog Page</li>
+            <li>You will see a list of articles</li>
+            <li>That's it!</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="memitem" id="single-article-section">
+      <div class="memproto">
+      <table class="mlabels">
+        <tr>
+        <td class="mlabels-left">
+            <table class="memname">
+              <tr>
+                <td class="memname">14. View Single Article</td>
+              </tr>
+            </table>
+        </td>
+        <td class="mlabels-right">
+          <a href="#table-section">Go Back <i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>
+        </tr>
+        </tr>
+      </table>
+    </td>
+      </div><div class="memdoc">
+
+        <h3>View Single Article</h3>
+        <ol>
+            <li>Log In</li>
+            <li>Navigate to Blog Page</li>
+            <li>Click on an article you would like to read</li>
+            <li>That article will </li>
+            <li>That's it!</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="memitem" id="contact-section">
+      <div class="memproto">
+      <table class="mlabels">
+        <tr>
+        <td class="mlabels-left">
+            <table class="memname">
+              <tr>
+                <td class="memname">15. Contact Help</td>
+              </tr>
+            </table>
+        </td>
+        <td class="mlabels-right">
+          <a href="#table-section">Go Back <i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>
+        </tr>
+        </tr>
+      </table>
+    </td>
+      </div><div class="memdoc">
+
+        <h3>Contact Help</h3>
+        <ol>
+            <li>Log In</li>
+            <li>Navigate to Contact Us Page</li>
+            <li>Fill in the form:</li>
+            <p>Make sure you:</p>
+            <ul>
+              <li>Enter your full name</li>
+              <li>Enter your email address and contact number</li>
+              <li>Explain issue you're facing in as much detail as possible</li>
+            </ul>
+            <li>Make sure everything is correct before submitting</li>
+            <li>Submit</li>
+            <li>That's it!</li>
+        </ol>
+      </div>
+    </div>
+
+
     
 
     

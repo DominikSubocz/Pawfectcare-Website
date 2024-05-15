@@ -1,7 +1,7 @@
 <?php
 
 $credentials = array(
-    "server" => "localhost:8080",
+    "server" => "localhost",
     "user" => "root",
     "pass" => "",
     "dbName" => "pets",

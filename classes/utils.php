@@ -3,10 +3,7 @@
 /// A collection of utility functions for common tasks.
 class Utils {
   /// Uncomment this and comment line below to switch to localhost
-  // public static $projectFilePath = "http:///localhost/Pawfectcare-Website/";
-
-  public static $projectFilePath = "http:///192.168.0.14:8080/Pawfectcare-Website/";
-
+  public static $projectFilePath = "http:///localhost/Pawfectcare-Website/";
 
   public static $defaultPetCover = "default.png";
 
