@@ -173,29 +173,16 @@ $(document).ready(function(){initNavTree('annotated.html',''); initResizable(); 
             Database schema for this project consists of several key tables that store essential data for our application. Below is a summary of the main tables and their purposes:
         </p>
         <ul>
-            <li><b>Addresses:</b> Manages address information, including address IDs, lines, city, county, and postcode.</li>
+            <li><b>Articles:</b> Stores information for individual articles found on the blog page, including article IDs, article titles and title text.</li>
             <li><b>Users:</b> Stores user information, including user IDs, usernames, email addresses, and user roles.</li>
-            <li><b>Doctors:</b> Manages doctor details such as doctor IDs, first names, last names, and contact numbers.</li>
-            <li><b>Juniors:</b> Tracks information about junior players, including junior IDs, addresses, names, and health issues.</li>
-            <li><b>Guardians:</b> Stores guardian details such as guardian IDs, addresses, names, contact numbers, and relationships.</li>
-            <li><b>Junior Associations:</b> Manages associations between juniors, guardians, and doctors.</li>
-            <li><b>Players:</b> Manages player details such as player IDs, addresses, names, contact information, and next of kin details.</li>
-            <li><b>Members:</b> Stores member information, including member IDs, addresses, names, contact information, and email addresses.</li>
-            <li><b>Skills:</b> Manages various skills categorized by type and name.</li>
-            <li><b>Squads:</b> Tracks squad details including squad IDs, names, and levels.</li>
-            <li><b>Junior Skills:</b> Manages skill levels and comments for juniors within squads.</li>
-            <li><b>Player Skills:</b> Tracks skill levels and comments for players within squads.</li>
-            <li><b>Positions:</b> Stores rugby positions.</li>
-            <li><b>Junior Positions:</b> Manages positions for junior players.</li>
-            <li><b>Player Positions:</b> Manages positions for players.</li>
-            <li><b>Games:</b> Tracks game information including game IDs, squad IDs, names, opposition teams, locations, and results.</li>
-            <li><b>Coaches:</b> Stores coach details such as coach IDs, user IDs, names, contact information, and email addresses.</li>
-            <li><b>Sessions:</b> Manages session details including session IDs, coach IDs, squad IDs, names, locations, and timings.</li>
-            <li><b>Game Halves:</b> Tracks game halves including game half IDs, game IDs, team names, scores, and comments.</li>
-            <li><b>Training Details:</b> Stores training details such as session IDs, coach IDs, squad IDs, skills, activities, and player attendance.</li>
+            <li><b>Orders:</b> Stores order information, including order IDs, pets adopted in that order, quantity, price, etc</li>
+            <li><b>Petsinfo:</b> Stores information about individual pet, this includes pet ID, pet's name, age, adoption price, and species.</li>
+            <li><b>Petstories:</b> Stores stories for individual pets, later to be displayed on their profiles, this includes ID of the pet, and their story.</li>
+            <li><b>Postcodes:</b> Stores user's postcodes after completing orders.</li>
+            <li><b>Vets:</b> Stores information about each veterinary staff in the clinic, including their personal details.</li>
         </ul>
         
-        <p>This schema facilitates the storage and retrieval of data necessary for the application's functionality. Click <a href="../../../database.sql">here</a> to see the full SQL file</p>
+        <p>This schema facilitates the storage and retrieval of data necessary for the application's functionality. Click <a href="../../database.sql">here</a> to see the full SQL file</p>
 
     </div>
 </div>
