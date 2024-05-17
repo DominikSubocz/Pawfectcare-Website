@@ -1,3 +1,8 @@
+<a href="https://komarev.com/ghpvc/?username=alsiam">
+  <img align="right" src="https://komarev.com/ghpvc/?username=alsiam&label=Visitors&color=0e75b6&style=flat" alt="Profile visitor" />
+</a>
+
+
 # Pawfect Care Veterinary Website
 
 Welcome to Pawfect Care Veterinary Website! This repository contains the source code for my multiplatform website, developed as part of the Multiplatform Websites assessment for the HND Software Development (Year 2) course.
