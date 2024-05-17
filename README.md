@@ -2,6 +2,7 @@
    <img width="300" height="300" src="https://github.com/DominikSubocz/Pawfectcare-Website/assets/121230993/cd3a0017-c2d6-480d-b06b-7b67440cb924">
 </p>
 <hr>
+
 # Pawfect Care Veterinary Website
 
 Welcome to Pawfect Care Veterinary Website! This repository contains the source code for my multiplatform website, developed as part of the Multiplatform Websites assessment for the HND Software Development (Year 2) course.
@@ -33,7 +34,10 @@ To run PawfectCare locally, follow these steps:
 
 ## Documentation
 
-Documentation website for this project is currently under development and will be released soon. The documentation provides detailed information on how to use the PawfectCare website, including installation instructions, usage guidelines, and feature explanations. It also includes technical details for developers interested in contributing to the project or extending its functionality. Please refer to the documentation for any questions or assistance with using the application.
+Documentation website for this project is available on this <a href="https://pawfectcare-documentation.netlify.app/">website</a>. The documentation provides detailed information on how to use the PawfectCare website, including installation instructions, usage guidelines, and feature explanations. It also includes technical details for developers interested in contributing to the project or extending its functionality. Please refer to the documentation for any questions or assistance with using the application.
+
+![image](https://github.com/DominikSubocz/Pawfectcare-Website/assets/121230993/a01aa170-5d68-476e-beb5-e301f3097898)
+
 
 ## Contributing
 
