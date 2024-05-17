@@ -67,3 +67,6 @@ This project is licensed under the [GNU Affero General Public License (AGPL)](LI
 The GNU Affero General Public License is a copyleft license, meaning that any modification to the code must be released under the same license. This ensures that improvements to the software are shared back with the community, even if the software is used over the internet as a web service.
 
 For more details, please use the [LICENSE](LICENSE.txt) file.
+
+## Security Note
+Please note that while this website has some security measures in place, it is not fully secured. Password encryption and input sanitization are implemented; however, code can still be executed through the developer console. I plan to implement more security measures in the future. In the meantime, if you intend to use this website extensively, I recommend implementing additional security measures yourself.
