@@ -87,18 +87,9 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </div><!--header-->
 <div class="contents">
   <p><strong>Project Version: </strong>1.0.0</p>
-  <p id="date"></p>
-  <script>
-    const d = new Date();
+  <p><b>Release Date: 17/05/2024</b></p>
 
-    const day = String(d.getDate()).padStart(2, '0');
-    const month = String(d.getMonth() + 1).padStart(2, '0');
-    const year = d.getFullYear();
 
-    const formattedDate = `${day}/${month}/${year}`;
-    document.getElementById("date").innerHTML = "<strong>Current Date:</strong> " + formattedDate;
-
-  </script>
 
   <p><strong>Project Overview:</strong> Pawfect Care is a website created as a part of the Multiplatform Websites 
     assessment for the HND Software Development (Year 2) course.</p>
@@ -107,6 +98,65 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
     all shapes and sizes. It is of course a fictional practice created by me. I have designed and created this website
     from scratch. Some parts of the website aren't fully finished yet and may not function properly.
   </p>
+
+  <div class="memitem" id="release-section">
+    <div class="memproto">
+    <table class="mlabels">
+      <tr>
+      <td class="mlabels-left">
+          <table class="memname">
+            <tr>
+              <td class="memname">Release Notes</td>
+            </tr>
+          </table>
+      </td>
+      <td class="mlabels-right">
+
+      </tr>
+      </tr>
+    </table>
+  </td>
+    </div><div class="memdoc">
+      <h2>Release Notes</h2>
+      <hr>
+      <h3>May 2024</h3>
+      <p>Version 1.0.0 is the first stable version of the Pawfect Care Website, here are some things that it can do as for now:</p>
+      <h4>Managing Pets Information.</h4>
+      <p>
+        Version 1.0.0 gives you the ability to add new pets, update existing pets, and remove existing pets from the website. You can easily add pets as admin using the add button.<br>
+        You add an image for the pet, as well as enter their name, species and price for adoption. The age field is missing but I plan to fix that in future updates. You can also<br>
+        update pet information directly on their profile page, you can change their profile picture as well as their name, species and adoption price. The option to remove the pet <br>
+        is also available on their profile page. Note that only admins are able to perform these actions.
+        </p>
+      <br>
+      <h4>Appointment Booking</h4>
+      <p>
+        Version 1.0.0 also allows users to schedule an appointment for their beloved pets. Users will be able to book an appointment for any data throughout the week, apart from the weekends<br>
+        and the days before today's date. Available slots will be shown to inform users how many slots are left, by default there are 18 slots available for single day. Users will be also able<br>
+        to pick a timeslot that suits them. Users are only able to book appointments for days and timeslots coloured green, the slots coloured red cannot be booked. User will be notified after<br>
+        successful booking. As for now the booking information isn't kept anywhere, apart from the database, but I plan to add some things to user profile like booked appointments in future updates.
+      </p>
+      <br>
+      <h4>Pet Adoption</h4>
+      <p>          
+        Version 1.0.0 also allows users to adopt any pet available on the website. Users can adopt any pet they would like for the specified price. Once the user clicks the adopt button<br>
+        the adopted pet will show up in the user's basket. They will be able to increment and decrement the quantity of the same pet in the basket, but I plan to remove this feature for<br>
+        pets and add a accessory shop in future update. User will be able to finalize their order by completing the order, once they do so, their order will show up on their profile page.
+      </p>
+      <br>
+      <h4>Login System</h4>        
+      <p>
+        Version 1.0.0 has a simple login system that allows users to sign up and log in to the website. The login system only allows for one role as for now, but I plan to improve that<br>
+        system in the future by adding some security measures that will determine whether you're admin or regural user.
+      </p>
+      <br>
+      <h4>Contact Support</h4>        
+      <p>
+        Version 1.0.0 has a simple contact us page, which allows users to write messages, entering their details, and message describing the issue they're facing in detail. As for now<br>
+        the contact us page does nothing, nothing is stored or sent anywhere. I plan to get an email system as well as store user enqueries in database in future updates.
+      </p>
+    </div>
+  </div>
   
     <div class="memitem" id="table-section">
       <div class="memproto">
