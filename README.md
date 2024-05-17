@@ -1,5 +1,6 @@
-
-![logo](https://github.com/DominikSubocz/Pawfectcare-Website/assets/121230993/cd3a0017-c2d6-480d-b06b-7b67440cb924)
+<p align="center">
+ ![logo](https://github.com/DominikSubocz/Pawfectcare-Website/assets/121230993/cd3a0017-c2d6-480d-b06b-7b67440cb924)
+</p>
 <hr>
 # Pawfect Care Veterinary Website
 
