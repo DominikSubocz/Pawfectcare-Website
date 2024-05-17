@@ -22,8 +22,10 @@ Pawfect Care is a comprehensive veterinary website aimed at providing pet owners
 
 ## Responsive Design
 Optimized for multiplatform use, including desktops, tablets, and smartphones.
-![image](https://github.com/DominikSubocz/Pawfectcare-Website/assets/121230993/ebdbcff1-8605-47ba-bc04-18073fb7498e)
-![image](https://github.com/DominikSubocz/Pawfectcare-Website/assets/121230993/74a06f75-456b-48dd-9dab-3a8006a5a2ce)
+
+<img width="1000" height="750" src="https://github.com/DominikSubocz/Pawfectcare-Website/assets/121230993/c3fb0ba2-2481-4291-af8e-5b4ea11b934e">
+
+
 
 
 
