@@ -1,3 +1,6 @@
+
+![logo](https://github.com/DominikSubocz/Pawfectcare-Website/assets/121230993/cd3a0017-c2d6-480d-b06b-7b67440cb924)
+<hr>
 # Pawfect Care Veterinary Website
 
 Welcome to Pawfect Care Veterinary Website! This repository contains the source code for my multiplatform website, developed as part of the Multiplatform Websites assessment for the HND Software Development (Year 2) course.
